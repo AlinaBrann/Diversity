@@ -1,0 +1,117 @@
+.wrapper
+	@extend %overflow-y
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	min-height: 100%
+	&__content
+		flex: 1 1 auto
+
+.container
+	display: block
+	width: rem(1360px)
+	max-width: 100%
+	margin:  0 auto
+	padding: 0 
+	z-index: 10
+	padding-left: $indent-col-xs
+	padding-right: $indent-col-xs
+	+min-screen($screen-sm)
+		padding-left: $indent-col-sm
+		padding-right: $indent-col-sm
+	+min-screen($screen-md)
+		padding-left: $indent-col-sm
+		padding-right: $indent-col-sm
+	+min-screen($screen-lg)
+		padding-left: $indent-col-md
+		padding-right: $indent-col-md
+	&-fluid
+		padding: 0 
+
+.row
+	display: flex
+	flex-wrap: wrap
+	position: relative
+	margin-left: -$indent-col-xs 
+	margin-right: -$indent-col-xs
+	+min-screen($screen-sm)
+		margin-left: -$indent-col-xs
+		margin-right: -$indent-col-xs
+	+min-screen($screen-md)
+		margin-left: -$indent-col-md
+		margin-right: -$indent-col-md
+	+min-screen($screen-lg)
+		margin-left: -$indent-col-lg
+		margin-right: -$indent-col-lg
+
+=col($max-cols)
+	@for $i from 1 through $max-cols
+		&-#{$i}
+			display: flex
+			width: (100%/$max-cols*$i)
+
+.col
+	flex: auto
+	&-lg, &-md, &-sm, &-xs
+		@for $i from 1 through $cols-total
+			&-#{$i}
+				+box
+	&-xs
+		@for $i from 1 through $cols-total
+			&-#{$i}
+				padding-right: $indent-col-xs
+				padding-left: $indent-col-xs
+		+col($cols-total)
+	&-sm
+		+min-screen($screen-sm)
+			@for $i from 1 through $cols-total
+				&-#{$i}
+					padding-right: $indent-col-xs
+					padding-left: $indent-col-xs
+			+col($cols-total)
+	&-md
+		+min-screen($screen-md)
+			@for $i from 1 through $cols-total
+				&-#{$i}
+					padding-right: $indent-col-md
+					padding-left: $indent-col-md
+			+col($cols-total)
+	&-lg
+		+min-screen($screen-lg)
+			@for $i from 1 through $cols-total
+				&-#{$i}
+					padding-left: $indent-col-lg
+					padding-right: $indent-col-lg
+			+col($cols-total)
+
+=offset-width($max-cols)
+	@for $i from 0 through $max-cols
+		&-#{$i}
+			@if $i == 0
+				margin-left: 0
+			@else
+				margin-left: (100%/$max-cols*$i)
+
+.offset
+	&-xs
+		+screen($screen-xs, $screen-sm)
+			+offset-width($cols-total)
+	&-sm
+		+min-screen($screen-sm)
+			+offset-width($cols-total)
+	&-md
+		+min-screen($screen-md)
+			+offset-width($cols-total)
+	&-lg
+		+min-screen($screen-lg)
+			+offset-width($cols-total)
+
+.hidden-xs
+	+max-screen($screen-md)
+		display: none !important
+
+.visible-xs
+	display: none !important 
+	+max-screen($screen-md)
+		display: flex !important 
+		

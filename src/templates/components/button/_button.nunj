@@ -1,0 +1,10 @@
+{% macro button(props, attr = '', tag = 'button') %}
+<{{ tag }} class="button _{{ props.type }}{% if props.className %} {{ props.className }}{% endif %}{% if props.play %} _play{% endif %}" {{ attr }}>
+	{% if props.play %}
+		<svg class="play-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M12.1282 20.6655L22.5168 13.0907C23.0646 12.6913 23.0646 11.8741 22.5168 11.4747L12.1282 3.89995C11.4674 3.41811 10.5391 3.89012 10.5391 4.70797L10.5391 19.8575C10.5391 20.6753 11.4674 21.1473 12.1282 20.6655Z" fill="white"/>
+		</svg>
+	{% endif %}
+	{{ props.text }}
+</{{ tag }}>
+{% endmacro %}

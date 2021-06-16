@@ -1,0 +1,16 @@
+{% extends "../ext/base.nunj" %}
+
+{% from "../components/button/_button.nunj" import button %}
+
+{# Пример расширения существующего блока #}
+{# Например можно использовать для добавления уникальных тайтлов для каждой страницы #}
+{# {% block title %}Home / {{ super() }}{% endblock title %} #}
+
+{% block content %}
+	{% include '../components/preloader/_preloader.nunj' %}
+	{% include '../components/header/_header.nunj' %}
+
+	{% include '../components/intro/_intro.nunj' %}
+	
+
+{% endblock content %}

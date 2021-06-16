@@ -1,0 +1,32 @@
+{
+	"contactsHeaderMenu": "контакты",
+	"intro": "Соединяем <br><span class='_yellow intro-colored-text'>людей</span> и <span class='_blue intro-colored-text'>бренды</span>, создавая новые возможности для&nbsp;развития",
+	"menuItems": [
+		{
+			"name": "Главная",
+			"path": "/"
+		},
+		{
+			"name": "Элемент меню 2",
+			"path": "#"
+		},
+		{
+			"name": "Элемент меню 3",
+			"path": "#"
+		},
+		{
+			"name": "Элемент меню 4",
+			"path": "#"
+		}
+	],
+	"someData": [
+		{
+			"title": "Item 1",
+			"text": "Desc 1"
+		},
+		{
+			"title": "Item 2",
+			"text": "Desc 2"
+		}
+	]
+}

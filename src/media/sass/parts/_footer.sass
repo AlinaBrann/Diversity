@@ -1,0 +1,23 @@
+.footer
+	position: relative
+	padding-top: rem(15px)
+	+max-screen($screen-sm)
+		padding-top: rem(28px)
+		padding-left: rem(4px)
+.contacts
+	+max-screen($screen-sm)
+		padding-bottom: rem(115px)
+	&-info
+		color: #000 
+		font-size: rem(15px)
+		letter-spacing: 0.2px 
+		line-height: 1.5
+		+max-screen($screen-sm)
+			margin-bottom: rem(25px)
+			line-height: 1.55
+		a
+			border-bottom: 1px solid transparent
+			@extend .transition
+			&:hover
+				border-color: currentColor 
+				@extend .transition-hover 
