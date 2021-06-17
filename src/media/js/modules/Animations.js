@@ -12,41 +12,70 @@ function Animations() {
 	const sections = document.querySelectorAll('.animated-section');
 	let scrollSunTl = gsap.timeline();
 
-	gsap.timeline({
-		scrollTrigger: {
-			trigger: '.intro',
-			toggleClass: { targets: '.intro-colored-text, .intro-scroll-square', className: '_active' },
-			onLeaveBack: self => self.disable(),
-		},
-	});
-
-	TweenMax.fromTo(
-		'.intro',
-		0.855,
-		{
-			x: -55,
+	const $targetsAnimatedText = $('[data-animated-text]');
+	if ($targetsAnimatedText.length) {
+		TweenMax.set($targetsAnimatedText, {
 			alpha: 0,
-		},
-		{
-			x: 0,
-			alpha: 1,
-			force3D: true,
-			delay: 2.5,
-			clearProps: 'all',
-		}
-	);
-	scrollSunTl.to('.agencies-small', {
+		});
+		ShowHelper2.staggerWatch(
+			$targetsAnimatedText,
+			function(state, target) {
+				if (state) {
+					let targetDelayAttr = target.getAttribute('data-delay');
+					let targetDelay;
+					if (targetDelayAttr) {
+						targetDelay = targetDelayAttr;
+					} else {
+						targetDelayAttr = delay;
+					}
+					target.removeAttribute('data-animated-text');
+					ShowHelper2.unwatch(target);
+					TweenMax.fromTo(
+						target,
+						0.855,
+						{
+							x: -55,
+							alpha: 0,
+						},
+						{
+							x: 0,
+							alpha: 1,
+							force3D: true,
+							delay: targetDelay,
+							clearProps: 'all',
+						}
+					);
+					const animatedText = target.querySelectorAll('[data-animated-part]');
+					gsap.timeline({
+						scrollTrigger: {
+							trigger: target,
+							once: true,
+							toggleClass: {
+								targets: animatedText,
+								className: '_active',
+							},
+						},
+					});
+				}
+			},
+			true,
+			false,
+			55
+		);
+	}
+	scrollSunTl.to('.video-section', {
 		scrollTrigger: {
-			trigger: '.agencies',
-			start: 'top+=70 center',
-			end: 'bottom+=17000 top',
+			trigger: '.video-section',
+			start: 'top+=30 center',
+			once: true,
 			toggleClass: {
-				targets: '.agencies-small',
-				className: 'fixed',
+				targets: '.video-section',
+				className: '_active',
 			},
 			markers: false,
 		},
 	});
+
 	$('.fp-section.active')
 		.find('.animated-title')
 		.addClass('_active');

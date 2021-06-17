@@ -54,7 +54,15 @@ global.ProjectName = new function ProjectName() { // eslint-disable-line
 			$(this).parents('.header').toggleClass('_menu-opened');
 		});
 		
-		
+		// let array = document.querySelectorAll('.video-section-squares__square')
+		// let size = 4; //размер подмассива
+
+		// for (let i = 0; i <Math.ceil(array.length/size); i++){
+		// 	for (let index = 0; index < 4; index++) {
+		// 		array[(i*size + index)].css('transition-delay',(i*size) + size + 's')
+				
+		// 	}
+		// }
 		
 	});
 }();

@@ -1,8 +1,13 @@
-<section class="intro">
+<section class="intro" data-animated-text data-delay="2.5">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-10 offset-md-2">
-                <div class="intro-animated-text">{{ intro }}<div class="intro-scroll-square"></div></div>
+                <div class="intro-animated-text animated-text">
+                    Соединяем <br>
+                    <span class='_yellow colored-text' data-animated-part>людей</span> и 
+                    <span class='_blue colored-text' data-animated-part>бренды</span>, создавая новые возможности для&nbsp;развития
+                    <div class="intro-scroll-square" data-animated-part></div>
+                </div>
             </div>
         </div>
         

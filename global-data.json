@@ -1,6 +1,5 @@
 {
 	"contactsHeaderMenu": "контакты",
-	"intro": "Соединяем <br><span class='_yellow intro-colored-text'>людей</span> и <span class='_blue intro-colored-text'>бренды</span>, создавая новые возможности для&nbsp;развития",
 	"menuItems": [
 		{
 			"name": "Главная",
@@ -19,6 +18,7 @@
 			"path": "#"
 		}
 	],
+	"videoSectionText": "The Diversity – <span class='_red'>кратчайший путь</span> <br>к новому потребителю",
 	"someData": [
 		{
 			"title": "Item 1",

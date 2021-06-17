@@ -1,0 +1,13 @@
+<section class="about" data-animated-text>
+    <div class="about-animated-text animated-text">
+        Ежегодно 
+        <br>охватываем нашими проектами
+        <br><span class='_yellow colored-text' data-animated-part>1 800</span> населенных пунктов, 
+        <span class='_yellow colored-text' data-animated-part>15 000</span> магазинов, 
+        <span class='_yellow colored-text' data-animated-part>13 500</span> школ, 
+        <span class='_yellow colored-text' data-animated-part>500</span> ВУЗов и выдаем больше 
+        <span class='_blue colored-text' data-animated-part>10 000 000</span> сэмплов 
+        и&nbsp;консультаций
+
+    </div>
+</section>

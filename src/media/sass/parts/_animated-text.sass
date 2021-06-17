@@ -1,0 +1,24 @@
+.animated-text
+    font-size: rem(90px)
+    line-height: rem(111px)
+.colored-text
+    position: relative
+    &:before
+        +b
+        top: 0
+        left: rem(-5px)
+        width: 0
+        height: 100%
+        transition: width $default-transition-duration
+        z-index: -1
+    &._active
+        &:before
+            width: calc(100% + #{rem(10px)})
+    &._yellow
+        &:before
+            background: $yellow
+            transition-delay: $delay
+    &._blue
+        &:before
+            background: $blue
+            transition-delay: calc(#{$delay} + #{$default-transition-duration} + .1s)

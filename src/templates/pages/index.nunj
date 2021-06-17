@@ -11,6 +11,7 @@
 	{% include '../components/header/_header.nunj' %}
 
 	{% include '../components/intro/_intro.nunj' %}
-	
+	{% include '../components/videoSection/_videoSection.nunj' %}
+	{% include '../components/about/_about.nunj' %}
 
 {% endblock content %}

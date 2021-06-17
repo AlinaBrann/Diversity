@@ -1,0 +1,17 @@
+.about
+    display: flex
+    align-items: center
+    height: 80vh
+    padding: 0 $rightIndent
+    &-animated-text
+        margin-top: rem(130px)
+        margin-bottom: rem(80px)
+        font-size: rem(44px)
+        line-height: rem(72px)
+    .colored-text
+        white-space: nowrap
+        @for $i from 0 through 5
+            &:nth-of-type(#{$i})
+                &:before
+                    transition-delay: calc( #{$default-transition-duration} + (#{$i}s / 2))
+        

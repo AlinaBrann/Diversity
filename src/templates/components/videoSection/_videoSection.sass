@@ -1,0 +1,168 @@
+$squareDifference: .35vw
+$squareSize: 6.971vw
+$squareMidSize: $squareSize * 2 - $squareDifference 
+$squareAnimDur: 1.5s
+$squareSmallAnimDelay: 3.5s
+$squareMidAnimDelay: $squareAnimDur/2 + $squareSmallAnimDelay + .2
+$textAnimDelay: $squareMidAnimDelay+1s
+
+@function squareDelay($base)
+    $result: $squareAnimDur * 2
+    @for $_ from 1 through 1
+        $result: $squareAnimDur + $result / $base
+
+    @return $result
+.video-section
+    position: relative
+    min-height: 100vh
+    background: #EFEFEF
+    &-media
+        width: 100%
+        transform: translateY(rem(-30px)) scale(0.75)
+        transform-origin: top center
+        transition: 1s
+        ._active &
+            transform: translateY(rem(0px)) scale(1)
+        &__preview
+            +size(100%)
+            object-fit: cover
+    &-squares
+        $parent: &
+        position: absolute
+        top: 50%
+        left: $rightIndent
+        height: $squareSize * 4
+        display: flex
+        transform: translateY(-50%)
+        &__col
+            width: 0
+            margin-right: $squareDifference 
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            ._active &
+                animation: colAnim $squareAnimDur forwards
+                &:nth-child(1)
+                    margin-right: 0
+                    transition: $squareAnimDur/2
+                    transition-delay: $squareMidAnimDelay
+                @for $i from 3 through 8
+                    &:nth-child(#{$i})
+                        #{$parent}
+                            &__square-middle
+                                animation: squareHide $squareAnimDur squareDelay($i) forwards
+        &__square-middle
+            display: flex
+            width: $squareMidSize
+            height: $squareMidSize
+            flex-direction: column
+            justify-content: space-between
+            flex-wrap: wrap
+            ._active &
+                animation: squareMiddleCollapse $squareAnimDur/3 linear $squareMidAnimDelay forwards 
+
+        &__square
+            display: flex
+            width: 0
+            height: 50%
+            flex: 0 0 50%
+            justify-content: flex-end
+            transition: $squareAnimDur
+            &:after
+                content: ''
+                display: inline-block
+                width: 0
+                padding-top: 100%
+            ._active &
+                animation: square $squareAnimDur forwards
+                &:nth-child(-n+2)
+                    justify-content: flex-start
+                &:nth-child(2n)
+                    align-items: flex-end
+                &:nth-child(-1n+2)
+
+            span
+                width: calc(100% - #{$squareDifference})
+                height: calc(100% - #{$squareDifference})
+                flex-shrink: 0
+                display: block
+                background: rgba(255,255,255,.5)
+                transition: $squareAnimDur
+                ._active &
+                    animation: squareCollapse $squareAnimDur/3 linear $squareSmallAnimDelay forwards 
+        &__text
+            position: absolute
+            top: 50%
+            left: rem(112px)
+            font-size: rem(55px)
+            line-height: rem(74px)
+            font-family: "Lato"
+            opacity: 0
+            ._active &
+                animation: textAnim $squareAnimDur ease-in $textAnimDelay forwards 
+            ._red
+                position: relative
+                display: inline-block
+                &:before
+                    +b
+                    top: 55%
+                    left: rem(-3px)
+                    transform: translateY(-50%)
+                    width: 0
+                    height: 80%
+                    background: $red
+                    transition: width $squareAnimDur
+                    transition-delay: $textAnimDelay + 1.5
+                    z-index: -1
+                ._active &
+                    &:before
+                        width: calc(100% + #{rem(6px)})
+
+
+@keyframes colAnim
+    0%
+        width: 0
+    100%
+        width: $squareSize * 2
+
+@keyframes colAnimMargin
+    0%
+        margin-right: $squareDifference 
+    100%
+        margin-right: 0
+
+@keyframes square
+    0%
+        width: 0
+    100%
+        width: 50%
+
+@keyframes squareHide
+    0%
+        opacity: 1
+    100%
+        opacity: 0
+
+@keyframes squareCollapse
+    0%
+        width: calc(100% - #{$squareDifference})
+        height: calc(100% - #{$squareDifference})
+    100%
+        +size(100%)
+
+@keyframes squareMiddleCollapse
+    0%
+        width: $squareMidSize
+        height: $squareMidSize
+    100%
+        width: $squareSize * 2
+        height: $squareSize * 2
+        
+
+@keyframes textAnim
+    0%
+        opacity: 0
+        transform: translateX(-10%)
+    100%
+        opacity: 1
+        transform: translateX(0%)
