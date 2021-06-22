@@ -19,14 +19,84 @@
 		}
 	],
 	"videoSectionText": "The Diversity – <span class='_red'>кратчайший путь</span> <br>к новому потребителю",
-	"someData": [
-		{
-			"title": "Item 1",
-			"text": "Desc 1"
-		},
-		{
-			"title": "Item 2",
-			"text": "Desc 2"
-		}
-	]
+	"facts": {
+		"title": "Факты об агентстве",
+		"titleIcon": "icon-1.png",
+		"slider": [
+			{
+				"topText": "основано в ",
+				"number": "2007",
+				"underNumberText": "году",
+				"text": "профессионалами с опытом работы на стороне BTL агентств и  крупнейших производителей   ",
+				"founders": [
+					{
+						"name": "светлана соколова",
+						"image": "svetlana.png"
+					},
+					{
+						"name": "дмитрий малеев",
+						"image": "dmitriy.png"
+					},
+					{
+						"name": "александр сурков",
+						"image": "alexandr.png"
+					}
+				]
+			},
+			{
+				"number": "75 ",
+				"underNumberText": "специалистов ",
+				"text": "Diversity работают на вас только в Москве",
+				"img": "team.png"
+			},
+			{
+				"topText": "входим в ",
+				"number": "<span>топ</span>10",
+				"underNumberText": "агентств маркетинговых услуг России",
+				"list": ["по спонтанному знанию", "по сотрудничеству", "по готовности рекомендовать"],
+				"note": "*рейтинг РАМУ 2016 г.",
+				"img": "ramu-img.png",
+				"logoOnImg": "ramu-logo.png"
+			},
+			{
+				"topText": "Разрабатываем инструменты коммуникаций ",
+				"number": "<small>в </small>70<small>каналах</small>",
+				"childSlider": [
+					{
+						"title": "Парки",
+						"img": "child-slide-1.jpg"
+					},
+					{
+						"title": "фестивали",
+						"img": "child-slide-2.jpg"
+					},
+					{
+						"title": "horeca",
+						"img": "child-slide-3.jpg"
+					},
+					{
+						"title": "гипермаркеты",
+						"img": "child-slide-4.jpg"
+					},
+					{
+						"title": "бизнес центры",
+						"img": "child-slide-5.jpg"
+					},
+					{
+						"title": "университеты",
+						"img": "child-slide-6.jpg"
+					},
+					{
+						"title": "школы",
+						"img": "child-slide-7.jpg"
+					}
+				]
+			},
+			{
+				"onlyText": "Соединяем <span class='colored-text _yellow'>людей</span> и <span class='colored-text _blue'>бренды</span>, создавая новые возможности для&nbsp;развития"
+			}
+		],
+		"buttonText": "больше об агенстве",
+		"buttonTextLink": "/"
+	}
 }

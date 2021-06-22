@@ -1,0 +1,151 @@
+@function squareFactsDelay($base)
+    $result: .15
+    @for $_ from 1 through 1
+        $result: $default-transition-duration + $result * $base
+
+    @return $result
+.facts
+    &-slider
+        max-width: 100%
+        max-height: 100%
+        margin-bottom: rem(100px)
+        overflow: visible
+        z-index: 100
+        &-wrapper
+            width: 71%
+            position: relative
+    &-slide
+        display: flex !important
+        &-info
+            padding: rem(200px) rem(30px) rem(20px) rem(81px)
+            &__top-text
+                min-height: rem(41px)
+                margin-bottom: rem(35px)
+                font-size: rem(35px)
+                line-height: rem(41px)
+            &__number
+                margin-bottom: rem(30px)
+                font-size: rem(140px)
+                line-height: rem(41px)
+                span
+                    font-size: rem(80px)
+                small
+                    font-size: rem(35px)
+            &__under-number
+                margin-bottom: rem(8px)
+                font-size: rem(40px)
+            &__text
+                font-size: rem(25px)
+            &__list
+                margin-bottom: rem(20px)
+                font-size: rem(21px)
+                line-height: rem(31.5px)
+                li
+                    position: relative
+                    padding-left: rem(15px)
+                    &:before
+                        +b
+                        top: rem(16px)
+                        left: 0
+                        +size(4px)
+                        border-radius: 50%
+                        background: $font_color
+            &__note
+                position: absolute
+                bottom: 0
+                left: 0
+                font-size: rem(12px)
+            &__big-text
+                font-size: rem(50px)
+                line-height: rem(74px)
+                .colored-text
+                    .slick-active &
+                        &:before
+                            width: calc(100% + #{rem(10px)})
+        &-media
+            position: relative
+            flex-shrink: 0
+            flex-grow: 0
+            &__img
+                width: rem(521px)
+                height: rem(661px)
+                object-fit: cover
+            &__logo
+                position: absolute
+                left: rem(73px)
+                bottom: rem(83px)
+                height: rem(154px)
+        &-founders
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            width: rem(521px)
+            height: rem(661px)
+            background: #C4C4C4
+            &__item
+                display: flex
+                flex-direction: column
+                align-items: center
+                &:nth-of-type(even)
+                    align-self: flex-end
+                &:first-of-type
+                    margin-top: rem(-30px)
+                &:nth-of-type(2)
+                    margin-top: rem(-70px)
+                    margin-right: rem(-20px)
+                &:nth-of-type(3)
+                    margin-top: rem(-70px)
+                    margin-left: rem(30px)
+            &__img  
+                +size(rem(296px))
+                border-radius: 50%
+                margin-bottom: rem(10px)
+            &__name
+                font-size: rem(21px)
+                text-transform: capitalize
+        &-childslider
+            width: rem(521px)
+            height: rem(661px)
+            &__img
+                width: rem(521px)
+                height: rem(661px)
+                object-fit: cover
+            &__title
+                position: absolute
+                bottom: 10%
+                width: 100%
+                font-weight: 900
+                font-family: "Lato"
+                letter-spacing: rem(0.8px)
+                white-space: nowrap
+                text-transform: uppercase
+                text-align: center
+                color: #FFF
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+                span
+                    display: block
+                    margin: auto
+                    font-size: rem(150px)
+    &-squares
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        left: 0
+        display: flex
+        height: rem(121px) * 4.2
+        flex-direction: column
+        flex-wrap: wrap
+        z-index: 99
+        &__square
+            display: block
+            +size(rem(121px))
+            margin: rem(2px)
+            background: #FAFAFA
+            opacity: 0
+            @for $i from 1 through 29
+                &:nth-of-type(#{$i})
+                    transition-delay: squareFactsDelay($i)
+            ._active &
+                opacity: 1
+    .slider-nav
+        margin-left: rem(45px)

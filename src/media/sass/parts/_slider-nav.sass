@@ -1,0 +1,32 @@
+.slider-nav
+    display: flex !important
+    
+    button
+        font-size: rem(25px)
+        border: none
+        border-bottom: 1px solid #000
+        font-family: $thin
+        background: none
+        color: transparent
+        cursor: pointer
+        @extend .transition
+        &::first-letter
+            letter-spacing: 0.535em
+    li
+        display: block
+        @extend .transition
+        &:not(:last-of-type)
+            margin-right: rem(33px)
+        &.slick-active
+            transform: scale(1.2)
+            button
+                color: $font_color
+        @for $i from 1 through 10
+            
+            &:nth-of-type(#{$i})
+                button
+                    &:before
+                        content: '0'
+                
+        
+            

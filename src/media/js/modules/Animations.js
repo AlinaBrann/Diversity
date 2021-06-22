@@ -76,25 +76,21 @@ function Animations() {
 		},
 	});
 
-	$('.fp-section.active')
-		.find('.animated-title')
-		.addClass('_active');
 	sections.forEach(section => {
-		let imgs = section.querySelectorAll('.animated-image');
-		imgs.forEach(img => {
+		let animatedBlock = section.querySelectorAll('.animated-block');
+		animatedBlock.forEach(block => {
 			ScrollTrigger.create({
 				trigger: section,
-				start: 'top top+=25%',
+				start: 'top top',
+				end: 'top bottom',
 				toggleClass: {
-					targets: img,
+					targets: block,
 					className: '_active',
 				},
 				markers: false,
-
 				once: true,
 			});
 		});
-		let title = section.querySelector('.animated-title');
 	});
 
 	ShowHelper2.setViewpostScale(1);

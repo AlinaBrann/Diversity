@@ -30,7 +30,7 @@ $textAnimDelay: $squareMidAnimDelay+1s
         $parent: &
         position: absolute
         top: 50%
-        left: $rightIndent
+        left: $leftIndent
         height: $squareSize * 4
         display: flex
         transform: translateY(-50%)
@@ -97,6 +97,7 @@ $textAnimDelay: $squareMidAnimDelay+1s
             font-size: rem(55px)
             line-height: rem(74px)
             font-family: "Lato"
+            font-weight: normal
             opacity: 0
             ._active &
                 animation: textAnim $squareAnimDur ease-in $textAnimDelay forwards 

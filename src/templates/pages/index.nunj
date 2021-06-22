@@ -13,5 +13,6 @@
 	{% include '../components/intro/_intro.nunj' %}
 	{% include '../components/videoSection/_videoSection.nunj' %}
 	{% include '../components/about/_about.nunj' %}
+	{% include '../components/facts/_facts.nunj' %}
 
 {% endblock content %}

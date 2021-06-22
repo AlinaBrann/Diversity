@@ -4,7 +4,8 @@ global.TweenMax = TweenMax;
 global.$ = global.jQuery = require('jquery');
 global.Draggable = Draggable;
 require('./utils/jqExtensions');
-
+require('slick-carousel');
+import TextFill from 'textfilljs';
 // prettier-ignore
 global.ProjectName = new function ProjectName() { // eslint-disable-line
 	this.env = require('./utils/ENV');
@@ -20,6 +21,7 @@ global.ProjectName = new function ProjectName() { // eslint-disable-line
 		Popups: require('./modules/Popups'),
 		Tabs: require('./modules/Tabs'),
 		Animations: require('./modules/Animations'),
+		SlickSliders: require('./modules/SlickSliders'),
 	};
 
 	// Startup
@@ -63,6 +65,12 @@ global.ProjectName = new function ProjectName() { // eslint-disable-line
 				
 		// 	}
 		// }
+		let textFit = document.querySelectorAll(".facts-slide-childslider__title")
+		textFit.forEach((text) => {
+			TextFill(text,{
+				maxFontPixels: 220
+			  });
+		})
 		
 	});
 }();
