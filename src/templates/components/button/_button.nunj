@@ -1,5 +1,5 @@
 {% macro button(props, attr = '', tag = 'button') %}
-<{{ tag }} class="button _{{ props.type }}{% if props.className %} {{ props.className }}{% endif %}" {{ attr }}>
+<{{ tag }} class="button _{{ props.type }}{% if props.class %} {{ props.class }}{% endif %}" {{ attr }}>
 	{{ props.text }}
 </{{ tag }}>
 {% endmacro %}

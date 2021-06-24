@@ -1,0 +1,63 @@
+.case
+    position: relative
+    padding: rem(123px) rem(45px) 0
+    margin-bottom: rem(125px)
+    &__info
+        position: absolute
+        bottom: rem(12px)
+        left: rem(91px)
+        width: 100%
+    &-logos
+        display: flex
+        align-items: center
+        &__item
+            flex-grow: 0
+            flex-shrink: 0
+            margin-bottom: rem(27px)
+            &:not(:last-of-type)
+                margin-right: rem(45px)
+            img
+                width: auto
+                max-height: rem(45px)
+                object-fit: contain
+    &-text
+        width: 80%
+        font-size: rem(30px)
+        line-height: rem(37px)
+        letter-spacing: 0.3px
+        color: #FFF
+    &-category
+        position: absolute
+        right: rem(70px)
+        top: 0
+        background: $yellow
+        font-size: rem(23px)
+        line-height: 1
+    &-fact
+        position: absolute
+        width: 29%
+        top: rem(90px)
+        right: 0
+        font-size: rem(20px)
+        line-height: rem(32.5px)
+        font-family: "Lato"
+        text-transform: uppercase
+        span
+            font-size: rem(50px)
+            line-height: rem(32.5px)
+        &__text
+            position: relative
+            z-index: 1
+        &__triangle
+            position: absolute
+            top: 10%
+            left: rem(-40px)
+            width: 0
+            height: 0
+            border-top: rem(60px) solid $red
+            border-left: rem(60px) solid transparent
+            transform: translate(25%,0%) rotate(45deg)
+            transform-origin: right top
+            animation: triangle .5s ease-in infinite alternate
+            mix-blend-mode: multiply
+            z-index: 0

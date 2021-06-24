@@ -1,0 +1,72 @@
+.resources
+    margin-bottom: rem(235px)
+    &-title
+        margin-top: rem(-85px)
+    &-tabs
+        display: flex
+        width: rem(838px)
+        height: rem(838px)
+        background: url('../img/big-square-bg.png') no-repeat center
+        background-size: contain
+        &-wrapper
+            position: relative
+        &-nav
+            display: flex
+            width: 50%
+            height: 100%
+            flex-direction: column
+            justify-content: center
+            align-items: flex-start
+            padding-left: rem(119px)
+            &__item                
+                font-size: rem(35px)
+                line-height: 1
+                white-space: nowrap
+                z-index: 0
+                @extend .transition
+                span
+                    display: inline
+                    line-height: 1.2
+                    box-decoration-break: clone
+                    -webkit-box-decoration-break: clone
+                &:not(:last-of-type)
+                    margin-bottom: rem(74px)
+                &._active-tab
+                    background: none
+                    z-index: 10
+                    span
+                        background: $yellow
+        &-content
+            flex: auto
+            &-wrapper
+                flex: auto
+                display: flex
+                justify-content: flex-end
+            @for $i from 1 through 6
+                &:nth-of-type(#{$i})
+                    & > .resources-case
+                        margin-top: calc(12% * #{$i})
+
+    &-case
+        $parent: &
+        position: relative
+        margin-top: rem(70px)
+        +size(rem(380px),rem(450px))
+        background: #FFF
+        &__img
+            +size(100%)
+            object-fit: cover
+            object-position: center left
+        &__text
+            position: absolute
+            left: 10%
+            bottom: rem(70px)
+            width: 80%
+            text-align: center
+            font-size: rem(25px)
+            font-family: "Lato"
+            span
+                display: inline
+                padding: 0 rem(5px)
+                background: #FFF
+

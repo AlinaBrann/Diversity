@@ -1,0 +1,8 @@
+<section class="text-on-squares animated-section">
+    <div class="text-on-squares__squares animated-block">
+        {% for square in range(1, 12)  %}
+            <div class="text-on-squares__square square"></div>
+        {% endfor %}
+    </div>
+    <div class="text-on-squares__text animated-block">{{ textOnSquares.text }}{% if textOnSquares.link %} <a href="{{ textOnSquares.link }}" class="underline-text" target="_blank">{{ textOnSquares.linkText }}</a>{% endif %}</div>
+</section>

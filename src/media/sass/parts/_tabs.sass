@@ -1,0 +1,22 @@
+.tabs
+	&-nav
+		display: flex
+		justify-content: center
+		margin-bottom: 24px
+		+min-screen($screen-md)
+			margin-bottom: 0
+		&__item
+			position: relative
+			cursor: pointer
+			&._active-tab
+				background: $yellow
+
+	&-content
+		display: none
+		&._active-tab
+			display: block
+		&__inner
+			display: flex
+			flex-direction: column
+			align-items: center
+		

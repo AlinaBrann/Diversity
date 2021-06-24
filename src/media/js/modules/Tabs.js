@@ -50,17 +50,10 @@ Tabs.prototype = {
 		}
 
 		$tabs = $needTabs;
-
+		$tabs.first().addClass('_active-tab');
 		$openers.first().addClass('_active-tab');
 		var leftPos, newWidth;
 		var $background = $('.tabs__sliding-block');
-		var widthopeners = $('._active-tab').width();
-		console.log(widthopeners);
-		// $background
-		// 	.width($openers.first().width())
-		// 	.css('left', $('._active-tab').position.left)
-		// 	.data('origLeft', $background.position.left)
-		// 	.data('origWidth', $background.width());
 
 		let $firstTab = $tabs
 			.first()
@@ -70,7 +63,7 @@ Tabs.prototype = {
 			.filter('[data-tab-opener="' + $firstTab.attr('data-tab') + '"]')
 			.addClass('_active-tab');
 
-		$openers.click(function(e) {
+		$openers.on('mouseover', function(e) {
 			e.preventDefault();
 
 			let $this = $(this);

@@ -7,7 +7,7 @@
                 </a>
             </div>
             <div class="col-xs-6 col-md-6 flex _jcfe">
-                <a href="#" class="header-menu-contacts">{{ contactsHeaderMenu }}</a>
+                <a href="#" class="header-menu-contacts underline-text">{{ contactsHeaderMenu }}</a>
                 <button class="header-menu-button"></button>
             </div>
         </div>

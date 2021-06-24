@@ -98,5 +98,166 @@
 		],
 		"buttonText": "больше об агенстве",
 		"buttonTextLink": "/"
+	},
+	"textOnSquares": {
+		"text": "Входит в ",
+		"linkText": "The Diversity Group",
+		"link": "/"
+	},
+	"services": {
+		"title": "Сервисы, которые <br>оптимизируют путь",
+		"titleIcon": "icon-2.png"
+	},
+	"categories": [
+		{
+			"name": "Point of Entry",
+			"slug": "pointOfEntry"
+		},
+		{
+			"name": "Consumer Promo",
+			"slug": "consumerPromo"
+		},
+		{
+			"name": "Shopper marketing",
+			"slug": "shopperMarketing"
+		},
+		{
+			"name": "Digital",
+			"slug": "digital"
+		},
+		{
+			"name": "Trade",
+			"slug": "trade"
+		},
+		{
+			"name": "Events",
+			"slug": "events"
+		}
+	],
+	"cases": [
+		{
+			"name": "Время первых – Point of Entry",
+			"img": "vremya-pervih-img.png",
+			"logos": ["vremya-pervih.png"],
+			"link": "/",
+			"category": "Point of Entry",
+			"categorySlug": "pointOfEntry",
+			"text": "Создали самую масштабную университетскую программу",
+			"fact": "<span>70%</span> ВУЗов России сотрудничают с нами ежегодно"
+		},
+		{
+			"name": "TetraPak Пятерочка – Shopper Marketing",
+			"img": "tetrapak-img.png",
+			"logos": ["tetrapak.png", "pyaterochka.svg"],
+			"link": "/",
+			"category": "Shopper marketing",
+			"categorySlug": "shopperMarketing",
+			"text": "Подарили пользу молока тем, кто в&nbsp;ней нуждался",
+			"fact": "В <span>23</span> городах России Пятерочки дарили с нами добро"
+		},
+		{
+			"name": "Ganzo – Consumer Promo",
+			"img": "ganzo-img.png",
+			"logos": ["ganzo.png"],
+			"link": "/",
+			"category": "Consumer promo",
+			"categorySlug": "consumerPromo",
+			"text": "Мы открыли дверь во взрослый мир",
+			"fact": "<span>40%</span> response rate это по-взрослому"
+		},
+		{
+			"name": "Ganzo – Consumer Promo",
+			"img": "ganzo-img.png",
+			"logos": ["ganzo.png"],
+			"link": "/",
+			"category": "Consumer promo",
+			"categorySlug": "consumerPromo",
+			"text": "Мы открыли дверь во взрослый мир",
+			"fact": "40% response rate это по-взрослому"
+		}
+	],
+	"innovation": {
+		"title": "Инновации, повышающие <br>скорость достижения цели",
+		"titleIcon": "icon-3.png",
+		"slider": [
+			{
+				"img": "slide-1.jpg",
+				"buttonText": "геймификация механик",
+				"buttonLink": "/",
+				"text": "Новый подход для работы с новым поколением"
+			},
+			{
+				"img": "slide-2.jpg",
+				"buttonText": "Интерактивные фотостойки",
+				"buttonLink": "/",
+				"text": "Автоматизированные системы роста вовлеченности в бренд"
+			},
+			{
+				"img": "slide-3.jpg",
+				"buttonText": "Cемпломат",
+				"buttonLink": "/",
+				"text": "Автоматическая доставка продукта с максимальным эффектом"
+			}
+		]
+	},
+	"resources": {
+		"title": "Ресурсы, для самых мощных <br>маршрутов",
+		"titleIcon": "icon-4.png",
+		"tabs": [
+			{
+				"title": "Лаборатория <br>дизайн-мышления",
+				"slug": "designThinking",
+				"img": "slide-1.jpg",
+				"text": "Исследование рынка и&nbsp;потребителей, разработка новых решений и&nbsp;продуктов"
+			},
+			{
+				"title": "База данных <br>учреждений",
+				"slug": "dataBase",
+				"img": "slide-2.jpg",
+				"text": "Более 200&nbsp;000&nbsp;точек, сегментированных под разные целевые аудитории"
+			},
+			{
+				"title": "Diversitet",
+				"slug": "diversitet",
+				"img": "slide-3.jpg",
+				"text": "Школа менеджерского мастерства и&nbsp;программа стажировок"
+			},
+			{
+				"title": "Складские центры",
+				"slug": "warehouseCenters",
+				"img": "slide-4.jpg",
+				"text": "Категории А&nbsp;и&nbsp;В с&nbsp;возможностью ручных работ"
+			},
+			{
+				"title": "Работа <br>с&nbsp;персональными&nbsp;данными",
+				"slug": "personalData",
+				"img": "slide-5.jpg",
+				"text": "Лицензия на&nbsp;обработку персональных данных 77-20-017980"
+			},
+			{
+				"title": "PCIDSS",
+				"slug": "PCIDSS",
+				"img": "slide-6.jpg",
+				"text": "Payment Card Industry Data Security Standard ECM-20-629A1/CC-335"
+			}
+		]
+	},
+	"customers": {
+		"title": "Наши клиенты остаются <br>с нами",
+		"titleIcon": "icon-5.png",
+		"items": [
+			"100.svg",
+			"visa.png",
+			"takeda.png",
+			"IT.svg",
+			"bio.png",
+			"circle.svg",
+			"bay.png",
+			"5.png",
+			"hein.png",
+			"jj.svg",
+			"ast.png",
+			"asc.png"
+		]
 	}
 }

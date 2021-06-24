@@ -5,10 +5,11 @@
     position: relative
     &:before
         +b
-        top: 0
+        top: 60%
         left: rem(-5px)
+        transform: translateY(-50%)
         width: 0
-        height: 100%
+        height: 80%
         transition: width $default-transition-duration
         z-index: -1
     &._active

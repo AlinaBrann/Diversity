@@ -4,15 +4,21 @@
 
 {# Пример расширения существующего блока #}
 {# Например можно использовать для добавления уникальных тайтлов для каждой страницы #}
-{# {% block title %}Home / {{ super() }}{% endblock title %} #}
+{% block title %}Home / {{ super() }}{% endblock title %}
 
 {% block content %}
 	{% include '../components/preloader/_preloader.nunj' %}
 	{% include '../components/header/_header.nunj' %}
 
 	{% include '../components/intro/_intro.nunj' %}
-	{% include '../components/videoSection/_videoSection.nunj' %}
+	{% include '../components/video-section/_video-section.nunj' %}
 	{% include '../components/about/_about.nunj' %}
 	{% include '../components/facts/_facts.nunj' %}
+	{% include '../components/text-on-squares/_text-on-squares.nunj' %}
+	{% include '../components/services/_services.nunj' %}
+	{% include '../components/cases/_cases.nunj' %}
+	{% include '../components/innovation/_innovation.nunj' %}
+	{% include '../components/resources/_resources.nunj' %}
+	{% include '../components/customers/_customers.nunj' %}
 
 {% endblock content %}

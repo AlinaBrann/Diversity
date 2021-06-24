@@ -4,8 +4,8 @@
 	<div class="section__container">
 		<div class="section__row _aic">
 			<div class="section__col">
-				<h2 class="section-title">
-					<img src="media/img/title-icons/icon-1.png" class="section-title__icon" alt="">
+				<h2 class="section-title facts-title">
+					<img src="media/img/title-icons/{{ facts.titleIcon }}" class="section-title__icon" alt="">
 					<span>{{ facts.title }}</span>
 				</h2>
 			</div>

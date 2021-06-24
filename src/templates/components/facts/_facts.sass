@@ -5,10 +5,12 @@
 
     @return $result
 .facts
+    &-title
+        margin-top: -41%
     &-slider
         max-width: 100%
         max-height: 100%
-        margin-bottom: rem(100px)
+        margin-bottom: rem(85px)
         overflow: visible
         z-index: 100
         &-wrapper
@@ -17,15 +19,15 @@
     &-slide
         display: flex !important
         &-info
-            padding: rem(200px) rem(30px) rem(20px) rem(81px)
+            padding: rem(195px) rem(30px) rem(20px) rem(81px)
             &__top-text
                 min-height: rem(41px)
-                margin-bottom: rem(35px)
+                margin-bottom: rem(40px)
                 font-size: rem(35px)
                 line-height: rem(41px)
             &__number
-                margin-bottom: rem(30px)
-                font-size: rem(140px)
+                margin-bottom: rem(35px)
+                font-size: rem(150px)
                 line-height: rem(41px)
                 span
                     font-size: rem(80px)
@@ -33,7 +35,8 @@
                     font-size: rem(35px)
             &__under-number
                 margin-bottom: rem(8px)
-                font-size: rem(40px)
+                font-size: rem(35px)
+                line-height: rem(34px)
             &__text
                 font-size: rem(25px)
             &__list
@@ -67,7 +70,7 @@
             flex-shrink: 0
             flex-grow: 0
             &__img
-                width: rem(521px)
+                width: rem(480px)
                 height: rem(661px)
                 object-fit: cover
             &__logo
@@ -79,7 +82,7 @@
             display: flex
             flex-direction: column
             align-items: flex-start
-            width: rem(521px)
+            width: rem(480px)
             height: rem(661px)
             background: #C4C4C4
             &__item
@@ -137,15 +140,11 @@
         flex-wrap: wrap
         z-index: 99
         &__square
-            display: block
-            +size(rem(121px))
-            margin: rem(2px)
-            background: #FAFAFA
-            opacity: 0
+            @extend .square
             @for $i from 1 through 29
                 &:nth-of-type(#{$i})
                     transition-delay: squareFactsDelay($i)
             ._active &
                 opacity: 1
     .slider-nav
-        margin-left: rem(45px)
+        margin-left: rem(60px)

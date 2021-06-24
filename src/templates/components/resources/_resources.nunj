@@ -1,0 +1,35 @@
+<section class="section resources">
+    <div class="section__container">
+        <div class="section__row _aic">
+			<div class="section__col">
+				<h2 class="section-title resources-title">
+					<img src="media/img/title-icons/{{ resources.titleIcon }}" class="section-title__icon" alt="">
+					<span>{{ resources.title }}</span>
+				</h2>
+			</div>
+            <div class="resources-tabs-wrapper">
+                <div class="resources-tabs" data-tabs>
+                    <ul class="resources-tabs-nav tabs-nav">
+                        {% for nav in resources.tabs %}
+                            <li class="resources-tabs-nav__item tabs-nav__item" data-auto-show data-tab-opener="{{ nav.slug }}">
+                                <span>{{ nav.title }}</span>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="resources-tabs-content-wrapper" data-auto-show-right>
+                    {% for content in resources.tabs %}
+                        <div class="tabs-content resources-tabs-content" data-tab="{{ content.slug }}">
+                            <div class="resources-case">
+                                <img src="media/img/resources/{{ content.img }}" alt="" class="resources-case__img">
+                                <div class="resources-case__text">
+                                    <span>{{ content.text }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+		</div>
+    </div>
+</section>

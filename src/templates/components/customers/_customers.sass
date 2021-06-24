@@ -1,0 +1,30 @@
+@function customersDelay($base)
+    $result: .2
+    @for $_ from 1 through 1
+        $result: $result * $base
+
+    @return $result
+.customers
+    &-title
+        margin-top: rem(160px)
+    &-list
+        display: flex
+        flex-wrap: wrap
+        &-wrapper
+            width: 63%
+        &__item
+            display: flex
+            align-items: center
+            justify-content: center
+            flex: 0 0 33%
+            margin: rem(65px) 0
+            opacity: 0
+            @extend .transition
+            @for $i from 1 through 12
+                &:nth-of-type(#{$i})
+                    transition-delay: customersDelay($i) + s
+            &._active
+                opacity: 1
+                    
+        &__img
+            transform: scale(0.5)

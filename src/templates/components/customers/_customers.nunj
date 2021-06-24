@@ -1,0 +1,23 @@
+<section class="section customers animated-section">
+    <div class="section__container">
+        <div class="section__row">
+			<div class="section__col">
+				<h2 class="section-title customers-title">
+					<img src="media/img/title-icons/{{ customers.titleIcon }}" class="section-title__icon" alt="">
+					<span>{{ customers.title }}</span>
+				</h2>
+			</div>
+            <div class="customers-list-wrapper">
+                
+                <ul class="customers-list">
+                    {% for item in customers.items %}
+                        <li class="customers-list__item animated-block">
+                            <img src="media/img/customers/{{ item }}" class="customers-list__img" alt="">
+                        </li>
+                    {% endfor %}
+                </ul>
+                    
+            </div>
+		</div>
+    </div>
+</section>

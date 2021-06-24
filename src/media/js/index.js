@@ -72,6 +72,8 @@ global.ProjectName = new function ProjectName() { // eslint-disable-line
 			  });
 		})
 		
+		$('.tabs-content').find('.services-case:not(:first-of-type)').remove()
+		
 	});
 }();
 

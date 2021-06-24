@@ -1,0 +1,68 @@
+.innovation
+    margin-bottom: rem(155px)
+    background: transparentize(#C4C4C4,.9) 
+    &__container
+        position: relative
+        top: rem(-58px)
+    &-slider
+        &-wrapper
+            position: relative
+            width: 63%
+        .slick
+            &-list
+                padding: 0 rem(230px) 0 0 !important
+            &-slide
+                transition: opacity 0.4s
+                opacity: 0
+            &-center
+                opacity: 1
+                + .slick-slide
+                    opacity: 1
+        &__slide
+            position: relative
+            +size(rem(600px), 100%)
+            &:before
+                +b
+                top: 0
+                left: 0
+                +size(rem(600px), rem(815px))
+                background: url('../img/innovation/squares.svg') no-repeat 
+                background-size: contain
+                @extend .transition
+                opacity: 0
+                z-index: 1
+            .slick-center &
+                &:before
+                    opacity: 1
+        &__img
+            +size(100%, rem(815px))
+            object-fit: cover
+            @extend .transition
+            transform: scale(0.87)
+            .slick-center &
+                transform: scale(1)
+        &__info
+            position: relative
+            display: flex 
+            flex-direction: column
+            align-items: center
+            margin-top: rem(-27px)
+            @extend .transition
+            transition-delay: .7s
+            opacity: 0
+            z-index: 1
+            .slick-center &
+
+                opacity: 1
+        &__button
+            margin-bottom: rem(12px)
+        &__text
+            width: 70%
+            font-size: rem(25px)
+            line-height: rem(32.5px)
+            text-align: center
+        &-nav
+            position: absolute
+            bottom: 0
+            left: 0
+            transform: translateX(-110%)

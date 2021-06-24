@@ -1,0 +1,28 @@
+.text-on-squares
+    position: relative
+    height: 50vh    
+    margin-bottom: rem(110px)
+    &__squares,
+    &__text
+        position: absolute
+        display: flex
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+    &__square
+        +size(rem(141px))
+        ._active & 
+            opacity: 1
+    &__text
+        display: block
+        white-space: nowrap
+        text-align: center
+        font-size: rem(35px)
+        letter-spacing: rem(18px)
+        @extend .transition
+        transition-delay: 2s
+        opacity: 0
+        &._active
+            opacity: 1
+        a
+            border-bottom: 1px solid #000

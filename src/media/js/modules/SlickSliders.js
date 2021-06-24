@@ -30,6 +30,12 @@ const OPTIONS_BY_TYPE = {
 		autoplay: true,
 		dots: false,
 	},
+	innovation: {
+		slidesToShow: 1,
+		centerMode: true,
+		focusOnSelect: true,
+		slidesToScroll: 1,
+	},
 };
 
 const CUSTOM_SETTINGS_BY_TYPE = {

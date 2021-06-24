@@ -1,0 +1,39 @@
+<section class="section services">
+    <div class="section__container">
+        <div class="section__row _aic">
+			<div class="section__col">
+				<h2 class="section-title services-title">
+					<img src="media/img/title-icons/{{ services.titleIcon }}" class="section-title__icon" alt="">
+					<span>{{ services.title }}</span>
+				</h2>
+			</div>
+            <div class="services-tabs-wrapper">
+                
+                <div class="services-tabs" data-tabs>
+                    <ul class="services-tabs-nav tabs-nav">
+                        {% for nav in categories %}
+                            <li class="services-tabs-nav__item tabs-nav__item" data-auto-show data-tab-opener="{{ nav.slug }}">{{ nav.name }}</li>
+                        {% endfor %}
+                    </ul>
+                    <div class="services-tabs-content-wrapper" data-auto-show-right>
+                    {% for content in categories %}
+                        <div class="tabs-content" data-tab="{{ content.slug }}">
+                            {% set rowloop = loop %}
+                            {% set item = 'item' + loop.index %}
+                            {% for item in cases  %}
+                                    {% if item.categorySlug == content.slug %}
+
+                                    <div class="services-case">
+                                        <img src="media/img/cases/{{ item.img }}" alt="" class="services-case__img">
+                                        <a href="{{ item.link }}" class="services-case__button"><span class="services-case__triangle"></span><span>Смотреть кейс</span></a>
+                                    </div>
+                                    {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+		</div>
+    </div>
+</section>
