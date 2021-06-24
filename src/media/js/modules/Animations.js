@@ -81,8 +81,8 @@ function Animations() {
 		animatedBlock.forEach(block => {
 			ScrollTrigger.create({
 				trigger: section,
-				start: 'top top',
-				end: 'top bottom',
+				start: 'top top+=20%',
+				end: 'bottom bottom',
 				toggleClass: {
 					targets: block,
 					className: '_active',

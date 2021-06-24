@@ -72,7 +72,10 @@ global.ProjectName = new function ProjectName() { // eslint-disable-line
 			  });
 		})
 		
-		$('.tabs-content').find('.services-case:not(:first-of-type)').remove()
+		$('.tabs-content').find('.services-case:not(:first-of-type)').remove();
+		
+		var copyright = new Date().getFullYear();
+		$('.footer__copyright span').text(copyright);
 		
 	});
 }();

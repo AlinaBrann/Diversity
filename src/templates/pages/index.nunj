@@ -20,5 +20,6 @@
 	{% include '../components/innovation/_innovation.nunj' %}
 	{% include '../components/resources/_resources.nunj' %}
 	{% include '../components/customers/_customers.nunj' %}
+	{% include '../components/footer/_footer.nunj' %}
 
 {% endblock content %}

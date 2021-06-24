@@ -1,7 +1,13 @@
+@function squareTextDelay($base)
+    $result: 2
+    @for $_ from 1 through 1
+        $result: $result / $base + 1
+    @return $result
 .text-on-squares
     position: relative
     height: 50vh    
     margin-bottom: rem(110px)
+    
     &__squares,
     &__text
         position: absolute
@@ -9,10 +15,23 @@
         top: 50%
         left: 50%
         transform: translate(-50%,-50%)
+    &__squares
+        @extend .transition
+        transition-duration: 1s
+        transform: translate(-150%,-50%)
+        &._active
+            transform: translate(-50%,-50%)
     &__square
         +size(rem(141px))
-        ._active & 
-            opacity: 1
+        transition-duration: .7s
+        opacity: 1      
+        @for $i from 1 through 7
+            &:nth-of-type(#{$i})
+                transition-delay: squareTextDelay($i) + s
+                opacity: 0
+                ._active & 
+                    opacity: 1
+                    
     &__text
         display: block
         white-space: nowrap

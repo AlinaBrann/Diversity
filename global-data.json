@@ -259,5 +259,82 @@
 			"ast.png",
 			"asc.png"
 		]
+	},
+	"footerRequest": "Заказать оценку стоимости <br><span>проекта</span>",
+	"footerItems": [
+		{
+			"blocks": [
+				{
+					"title": "The DIVERSITY",
+					"text": "Агенство коммуникаций"
+				},
+				{
+					"title": "Офис",
+					"text": " г. Москва, 2-й Кожевнический переулок, д.12, <br>Подъезд 13, 3 этаж",
+					"link": {
+						"text": "На карте",
+						"path": "/",
+						"underline": true
+					}
+				},
+				{
+					"link": {
+						"text": "Cхема проезда",
+						"path": "/",
+						"underline": true
+					}
+				}
+			]
+		},
+		{
+			"blocks": [
+				{
+					"title": "Телефон",
+					"link": {
+						"text": "+7 (495) 789 3821",
+						"path": "tel:+7(495)7893821"
+					}
+				},
+				{
+					"title": "Сотрудничество",
+					"link": {
+						"text": "we@thediversity.ru",
+						"path": "mailto:we@thediversity.ru",
+						"uppercase": true
+					}
+				},
+				{
+					"title": "Xотите у нас работать",
+					"link": {
+						"text": "hr@thediversity.ru",
+						"path": "mailto:hr@thediversity.ru",
+						"uppercase": true
+					}
+				}
+			]
+		},
+		{
+			"blocks": [
+				{
+					"title": "Присоединяйтесь",
+					"text": "к нам в соцсетях",
+					"social": [
+						{
+							"icon": "fb",
+							"link": "/"
+						},
+						{
+							"icon": "ig",
+							"link": "/"
+						}
+					]
+				}
+			]
+		}
+	],
+	"copyright": "TheDiversity ©",
+	"policy": {
+		"text": "Политика конфедициальности и обработки данных",
+		"path": "/"
 	}
 }

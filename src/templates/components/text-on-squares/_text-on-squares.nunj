@@ -1,6 +1,6 @@
 <section class="text-on-squares animated-section">
     <div class="text-on-squares__squares animated-block">
-        {% for square in range(1, 12)  %}
+        {% for square in range(1, 14)  %}
             <div class="text-on-squares__square square"></div>
         {% endfor %}
     </div>

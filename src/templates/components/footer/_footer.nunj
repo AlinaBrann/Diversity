@@ -1,0 +1,66 @@
+{% from "../icon/_icon.nunj" import icon %}
+
+<footer class="footer animated-section">
+    <div class="footer-content">
+        <div class="footer-row _first _aic _jcsb">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <a href="/" class="footer-logo__link">
+                        <img src="media/img/logo-white.svg" class="footer-logo__img" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <div class="footer-request animated-block">
+                    <div class="footer-request__triangle"></div>
+                    <div class="footer-request__text">{{ footerRequest }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-row _aist _jcsb">
+            {% for item in footerItems %}
+                <div class="footer-col">
+                    {% for blockItem in item.blocks %}
+                        <div class="footer-block">
+                            {% if blockItem.title %}
+                                <div class="footer-block__title">{{ blockItem.title }}</div>
+                            {% endif %}
+                            {% if blockItem.text %}
+                                <div class="footer-block__text">{{ blockItem.text }}</div>
+                            {% endif %}
+                            {% if blockItem.link %}
+                                <a href="{{ blockItem.link.link }}" class="footer-block__link{% if blockItem.link.underline === true %} _underline{% endif %}{% if blockItem.link.uppercase === true %} _uppercase{% endif %}">{{ blockItem.link.text }}</a>
+                            {% endif %}
+                            {% if blockItem.social %}
+                                <ul class="footer-block-social">
+                                    {% for item in blockItem.social %}
+                                        <li class="footer-block-social__item">
+                                            <a href="{{ item.link }}">
+                                                {{ icon({
+                                                    name: item.icon,
+                                                    width: "26",
+                                                    height: "26",
+                                                    fill: "#FFF"
+                                                })}}
+                                            </a>
+                                        </li>
+                                    {% endfor%}
+                                </ul>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="footer-row _jcsb">
+            <div class="footer-col">
+                <div class="footer__copyright">{{ copyright }}<span></span></div>
+            </div>
+            <div class="footer-col">
+                <a href="{{ policy.path }}" class="footer__policy">{{ policy.text }}</a>
+            </div>
+        </div>
+    </div>
+</footer>

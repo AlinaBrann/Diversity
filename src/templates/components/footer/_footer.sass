@@ -1,0 +1,99 @@
+.footer
+    padding: 0 rem(140px) rem(27px) rem(210px)
+    background: #262C30
+    color: transparentize(#FFF,.5)
+    &-content
+        padding-left: rem(48px)
+        margin-bottom: rem(20px)
+    &-logo
+        height: rem(64px)
+        margin-top: rem(47px)
+        &__img
+            height: 100%
+    &-request
+        position: relative
+        width: rem(230px)
+        height: rem(136px)
+        &__text
+            position: relative
+            padding-top: rem(5px)
+            font-size: rem(25px)
+            line-height: rem(30px)
+            text-align: center
+            color: #FFF
+            @extend .transition
+            transition-delay: .5s
+            opacity: 0
+            z-index: 1
+            ._active &
+                opacity: 1
+            span
+                position: relative
+                &:before
+                    +b
+                    bottom: 0
+                    left: 0
+                    width: 0
+                    transition: width 0.4s
+                    border-bottom: 1px solid currentColor
+                    transition-delay: .8s
+                ._active &
+                    &:before
+                        width: 100%
+        &__triangle
+            position: absolute
+            top: 0%
+            left: 50%
+            width: 0
+            height: 0
+            border-top: rem(230px) solid $red
+            border-left: rem(230px) solid transparent
+            transform: translate(-92%,-33%) rotate(135deg)
+            transform-origin: 75% 50%
+            animation: triangleBig .5s ease-in infinite alternate
+            @extend .transition
+            opacity: 0
+            z-index: 0
+            ._active &
+                opacity: 1
+    &-row
+        display: flex
+        width: 100%
+        &._first
+            margin-bottom: rem(213px)
+    &-col
+        width: max-content
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+    &-block
+        margin-bottom: rem(35px)
+        font-size: rem(20px)
+        line-height: rem(23.5px)
+        &__title
+            font-family: "Lato"
+            text-transform: uppercase
+        &__text
+            white-space: nowrap
+        &__link
+            @extend .transition
+            &._uppercase
+                text-transform: uppercase
+            &._underline
+                border-bottom: 1px solid currentColor
+            &:hover
+                color: #FFF
+        &-social
+            display: flex
+            margin-top: rem(20px)
+            &__item
+                @extend .transition
+                opacity: 0.5
+                &:not(:last-of-type)
+                    margin-right: rem(30px)
+                &:hover
+                    opacity: 1
+    &-bottom
+        font-size: rem(12px)
+        line-height: rem(30px)
+        border-top: 1px solid transparentize(#FFF,.5)
