@@ -17,7 +17,7 @@ const OPTIONS_BY_TYPE = {
 		slidesToScroll: 1,
 		fade: true,
 		infinite: false,
-		autoplay: false,
+		autoplay: true,
 		dots: true,
 		dotsClass: 'slider-nav',
 	},
@@ -35,6 +35,7 @@ const OPTIONS_BY_TYPE = {
 		centerMode: true,
 		focusOnSelect: true,
 		slidesToScroll: 1,
+		autoplay: true,
 	},
 };
 

@@ -4,9 +4,9 @@
 	// flex-direction: column
 	// justify-content: space-between
 	// scroll-snap-type: y mandatory
-	overflow: hidden
+	overflow-x: hidden
 	// overflow-y: scroll
-	min-height: 100%
+	
 	&__content
 		flex: 1 1 auto
 
@@ -110,11 +110,11 @@
 			+offset-width($cols-total)
 
 .hidden-xs
-	+max-screen($screen-md)
+	+max-screen($screen-sm)
 		display: none !important
 
 .visible-xs
 	display: none !important 
-	+max-screen($screen-md)
+	+max-screen($screen-sm)
 		display: flex !important 
 		

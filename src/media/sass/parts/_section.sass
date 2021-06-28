@@ -4,18 +4,43 @@
         align-items: center
         flex-wrap: wrap
         height: 100%
-        padding-left: $leftIndent
+        padding-left: $leftIndentXS
+        +min-screen($screen-sm)
+            padding-left: $leftIndentSM
+        +min-screen($screen-md)
+            padding-left: $leftIndent
     &__row
         display: flex
         width: 100%
+        flex-direction: column
+        align-items: flex-start
+        +min-screen($screen-md)
+            flex-direction: row
+            align-items: center
     &__col
         flex: auto
+        +max-screen($screen-sm)
+            display: flex
+            width: 100%
+            justify-content: center
     &-title
         display: flex
         flex-direction: column
         align-items: flex-start
         font-family: "Lato"
-        font-size: rem(28px)
+        font-size: 14px
+        +min-screen($screen-sm)
+            margin-bottom: rem(60px)
+            font-size: rem(20px)
+        +min-screen($screen-md)
+            margin-bottom: 0
+            font-size: rem(28px)
         &__icon
-            +size(rem(55px))
-            margin: 0 0 rem(37px) rem(90px)
+            +size(rem(25px))
+            margin: 0 0 10px 47px
+            +min-screen($screen-sm)
+                +size(rem(35px))
+                margin: 0 0 rem(17px) rem(50px)
+            +min-screen($screen-md)
+                +size(rem(55px))
+                margin: 0 0 rem(37px) rem(90px)

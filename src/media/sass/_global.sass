@@ -1,17 +1,13 @@
-// .pseudo
-// 	color: #000
-// 	border-bottom: 1px dotted
-// 	cursor: pointer
-// 	&:hover
-// 		color: #333
-// 		border-bottom: 1px dotted transparent
-
 html
 	font-size: 16px
+	+min-screen($screen-md)
+		font-size: 11px
 	+min-screen($screen-lg)
 		font-size: 14.2px
 	+min-screen($screen-xlg)
 		font-size: 16px
+	+min-screen($screen-max)
+		font-size: 19px
 
 body
 	font-weight: normal
@@ -31,6 +27,22 @@ section
 		clear: both
 		visibility: hidden
 		font-size: 0
+
+.pseudo
+	position: relative
+	color: $font_color
+	cursor: pointer
+	&:before
+		+b
+		left: 0
+		bottom: 0
+		width: 0
+		height: 1px
+		background: $font_color
+		transition: width .4s
+	&:hover
+		&:before
+			width: 100%
 
 .invisible-container
 	position: absolute
@@ -165,7 +177,7 @@ section
 	padding: 0
 
 ._order-1
-	+max-screen($screen-sm)
+	+max-screen($screen-xs)
 		order: -1
 
 ._pl0-xs

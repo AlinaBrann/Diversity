@@ -1,44 +1,82 @@
 .services
+    &__container
+        +max-screen($screen-sm)
+            padding: 0 $leftIndentSM
+        +max-screen($screen-xs)
+            padding: 0 9px
     &-title
-        margin-top: rem(-85px)
+        +min-screen($screen-md)
+            margin-top: rem(-85px)
+            margin-bottom: 0
     &-tabs
         display: flex
         align-items: center
-        width: rem(823px)
-        height: rem(823px)
+        width: 100%
+        height: auto
         background: url('../img/big-square-bg.png') no-repeat center
         background-size: contain
+        &:after
+            content: ''
+            display: inline-block
+            width: 0
+            padding-top: 100%   
+        +min-screen($screen-sm)
+            width: 100%
+        +min-screen($screen-md)
+            width: rem(823px)
+            height: rem(823px)
         &-wrapper
             position: relative
+            width: 100%
+            +min-screen($screen-md)
+                width: auto
         &-nav
             display: flex
             flex: 0
             flex-direction: column
             align-items: flex-start
-            height: 100%    
-            padding-top: rem(65px)
-            padding-left: rem(123px)
+            height: 100%  
+            padding-top: 10px
+            padding-left: 55px
+            +min-screen($screen-sm)
+                padding-top: 0
+            +min-screen($screen-md)
+                padding-top: rem(65px)
+                padding-left: rem(123px)
             &__item
-                font-size: rem(35px)
+                font-size: 16px
                 white-space: nowrap
                 line-height: 1
                 @extend .transition
+                +min-screen($screen-sm)
+                    font-size: rem(30px)
+                +min-screen($screen-md)
+                    font-size: rem(35px)
                 &:not(:last-of-type)
-                    margin-bottom: rem(74px)
+                    margin-bottom: 30px
+                    +min-screen($screen-sm)
+                        margin-bottom: rem(34px)
+                    +min-screen($screen-md)
+                        margin-bottom: rem(74px)
                 &:hover
                     background: $yellow
         &-content
             flex: auto
             &-wrapper
-                flex: auto
-                display: flex
-                justify-content: flex-end
+                display: none
+                +min-screen($screen-sm)
+                    flex: auto
+                    display: flex
+                    justify-content: flex-end
     &-case
         $parent: &
         position: relative
-        margin-top: rem(70px)
-        +size(rem(368px),rem(470px))
+        margin-top: rem(40px)
+        +size(rem(288px),rem(390px))
         background: #FFF
+        +min-screen($screen-md)
+            +size(rem(368px),rem(470px))
+            margin-top: rem(70px)
         &__img
             +size(100%)
             object-fit: cover
@@ -48,14 +86,18 @@
         &__button
             position: absolute
             bottom: rem(27px)
-            left: rem(75px)
-            padding: rem(14px) rem(23px)
+            left: rem(35px)
+            padding: rem(14px) rem(18px)
             color: #FFF
             font-size: rem(15px)
-            letter-spacing: rem(8px)
+            letter-spacing: rem(5px)
             text-transform: uppercase
             line-height: 1
             border: 2px solid #FFFFFF
+            +min-screen($screen-md)
+                left: rem(75px)
+                padding: rem(14px) rem(23px)
+                letter-spacing: rem(8px)
         &__triangle
             position: absolute
             top: 50%

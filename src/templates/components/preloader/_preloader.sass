@@ -1,5 +1,7 @@
 $logoW: rem(119px)
 $logoH: rem(43px)
+$logoWxs: 71px
+$logoHxs: 26px
 .preloader
     position: fixed
     top: 0
@@ -17,15 +19,27 @@ $logoH: rem(43px)
         opacity: 1
     &__logo
         position: absolute
-        top: calc(50% - #{$logoH} / 2)
-        left: calc(50% - #{$logoW} / 2)
-        +size($logoW,$logoH)
-        transform: scale(5)
+        top: calc(50% - #{$logoHxs} / 2)
+        left: calc(50% - #{$logoWxs} / 2)
+        +size($logoWxs,$logoHxs)
+        transform: scale(3)
         object-fit: contain
-        animation: preloaderLogo 1s 1s ease-out forwards
-
+        will-change: transform, top, left
+        animation: preloaderLogoXS 1s 1s ease-out forwards
+        +min-screen($screen-sm)
+            top: calc(50% - #{$logoH} / 2)
+            left: calc(50% - #{$logoW} / 2)
+            +size($logoW,$logoH)
+            animation: preloaderLogo 1s 1s ease-out forwards
+            transform: scale(5)
 @keyframes preloaderLogo
     0%
         transform: scale(5)
+    100%
+        transform: scale(1)
+
+@keyframes preloaderLogoXS
+    0%
+        transform: scale(3)
     100%
         transform: scale(1)

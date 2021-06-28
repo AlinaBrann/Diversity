@@ -1,5 +1,5 @@
-<section class="section customers animated-section">
-    <div class="section__container">
+<section class="customers section animated-section" id="customers">
+    <div class="section__container customers__container">
         <div class="section__row">
 			<div class="section__col">
 				<h2 class="section-title customers-title">

@@ -1,5 +1,5 @@
-<section class="section resources">
-    <div class="section__container">
+<section class="resources section" id="resources">
+    <div class="resources__container section__container">
         <div class="section__row _aic">
 			<div class="section__col">
 				<h2 class="section-title resources-title">

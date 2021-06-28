@@ -1,6 +1,8 @@
 .square
     display: block
-    +size(rem(121px))
+    +size(46px)
     margin: rem(2px)
     background: #FAFAFA
     opacity: 0
+    +min-screen($screen-sm)
+         +size(rem(121px))

@@ -5,16 +5,18 @@
     @return $result
 .text-on-squares
     position: relative
-    height: 50vh    
-    margin-bottom: rem(110px)
-    
+    height: 50vh        
+    +min-screen($screen-md)
+        margin-bottom: rem(110px)
     &__squares,
     &__text
         position: absolute
         display: flex
-        top: 50%
+        top: 65%
         left: 50%
         transform: translate(-50%,-50%)
+        +min-screen($screen-sm)
+            top: 50%
     &__squares
         @extend .transition
         transition-duration: 1s
@@ -22,9 +24,11 @@
         &._active
             transform: translate(-50%,-50%)
     &__square
-        +size(rem(141px))
+        +size(79px)
         transition-duration: .7s
         opacity: 1      
+        +min-screen($screen-sm)
+            +size(rem(141px))
         @for $i from 1 through 7
             &:nth-of-type(#{$i})
                 transition-delay: squareTextDelay($i) + s
@@ -36,12 +40,17 @@
         display: block
         white-space: nowrap
         text-align: center
-        font-size: rem(35px)
-        letter-spacing: rem(18px)
+        font-size: 12px
+        letter-spacing: 6px
         @extend .transition
         transition-delay: 2s
         opacity: 0
+        +min-screen($screen-sm)
+            font-size: rem(30px)
+            letter-spacing: rem(12px)
+        +min-screen($screen-md)
+            font-size: rem(35px)
+            letter-spacing: rem(18px)
         &._active
             opacity: 1
-        a
-            border-bottom: 1px solid #000
+

@@ -1,16 +1,49 @@
 .innovation
-    margin-bottom: rem(155px)
-    background: transparentize(#C4C4C4,.9) 
+    position: relative
+    margin-bottom: 86px
+    padding-bottom: 25px
+    &:before
+        +b
+        +size(100%,77%)
+        bottom: 0
+        left: 0
+        background: transparentize(#C4C4C4,.9) 
+    +min-screen($screen-sm)
+        padding-bottom: rem(40px)
+        margin-bottom: rem(80px)
+    +min-screen($screen-md)
+        padding-bottom: 0
+        margin-bottom: rem(155px)
+        &:before
+            +size(100%)
+    &__title
+        margin-right: $leftIndentXS
+        +min-screen($screen-md)
+            margin: 0
     &__container
         position: relative
-        top: rem(-58px)
+        +min-screen($screen-md)
+            top: rem(-58px)
+    &__row
+        +max-screen($screen-sm)
+            align-items: center
     &-slider
         &-wrapper
             position: relative
-            width: 63%
+            width: 100%
+            margin-top: 40px
+            +min-screen($screen-sm)
+                margin-top: 0
+            +min-screen($screen-md)
+                width: 63%
+                margin-top: 0
         .slick
             &-list
-                padding: 0 rem(230px) 0 0 !important
+                padding: 0 46px 0 0 !important
+                +min-screen($screen-sm)
+                    padding: 0 rem(130px) 0 calc(#{rem(130px)} - #{ $leftIndentSM}) !important
+                +min-screen($screen-md)
+                    padding: 0 rem(230px) 0 0 !important
             &-slide
                 transition: opacity 0.4s
                 opacity: 0
@@ -18,27 +51,38 @@
                 opacity: 1
                 + .slick-slide
                     opacity: 1
+                    cursor: pointer
         &__slide
             position: relative
-            +size(rem(600px), 100%)
+            +size(80vw, 100%)
+            +min-screen($screen-sm)
+                width: calc(100vw - (#{rem(130px)} - #{ $leftIndentSM}) * 2)
+            +min-screen($screen-md)
+                +size(rem(600px), 100%)
             &:before
                 +b
                 top: 0
                 left: 0
-                +size(rem(600px), rem(815px))
+                +size(100%)
                 background: url('../img/innovation/squares.svg') no-repeat 
                 background-size: contain
                 @extend .transition
                 opacity: 0
                 z-index: 1
+                +min-screen($screen-sm)
+                    +size(rem(600px), 100%)
             .slick-center &
                 &:before
                     opacity: 1
         &__img
-            +size(100%, rem(815px))
+            +size(100%)
             object-fit: cover
             @extend .transition
             transform: scale(0.87)
+            +min-screen($screen-sm)
+                width: calc(100vw - (#{rem(130px)} - #{ $leftIndentSM}) * 2)
+            +min-screen($screen-md)
+                +size(100%, rem(815px))
             .slick-center &
                 transform: scale(1)
         &__info
@@ -46,23 +90,38 @@
             display: flex 
             flex-direction: column
             align-items: center
-            margin-top: rem(-27px)
+            margin-top: -7px
             @extend .transition
             transition-delay: .7s
             opacity: 0
             z-index: 1
+            +min-screen($screen-sm)
+                margin-top: rem(-27px)
             .slick-center &
-
                 opacity: 1
         &__button
             margin-bottom: rem(12px)
+            +max-screen($screen-xs)
+                letter-spacing: 3px
+                margin-bottom: 15px
+                padding: 2px 20px 0
+                font-size: 7px
         &__text
             width: 70%
-            font-size: rem(25px)
-            line-height: rem(32.5px)
+            font-size: 12px
+            line-height: 16.5px
             text-align: center
+            +min-screen($screen-sm)
+                font-size: rem(25px)
+                line-height: rem(32.5px)
         &-nav
-            position: absolute
-            bottom: 0
-            left: 0
-            transform: translateX(-110%)
+            margin-top: 12px
+            justify-content: center
+            margin-right: $leftIndentXS
+            +min-screen($screen-md)
+                position: absolute
+                bottom: 0
+                left: 0
+                margin-top: 0
+                transform: translateX(-110%)
+                justify-content: flex-start

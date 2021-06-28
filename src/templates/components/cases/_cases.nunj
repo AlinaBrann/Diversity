@@ -1,11 +1,11 @@
 {% from "../case/_case.nunj" import case %}
 {% from "../button/_button.nunj" import button %}
 
-<section class="cases">
+<section class="cases" id="cases">
     <div class="container">
         <div class="row">
             {% for item in cases.slice(0,4) %}
-                <div class="col-xs-12 col-md-6" data-auto-show>
+                <div class="col-xs-12 col-sm-6 col-md-6">
                     {{ case( item)}}
                 </div>
                 

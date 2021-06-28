@@ -1,36 +1,74 @@
 .resources
-    margin-bottom: rem(235px)
+    margin-bottom: 90px
+    +min-screen($screen-md)
+        margin-bottom: rem(235px)
+    &__container
+        +max-screen($screen-sm)
+            padding: 0 $leftIndentSM
+        +max-screen($screen-xs)
+            padding: 0 9px
     &-title
-        margin-top: rem(-85px)
+        +max-screen($screen-sm - 1px)
+            margin: 0 auto 14px
+        +min-screen($screen-md)
+            margin: rem(-85px) 0 0
     &-tabs
         display: flex
-        width: rem(838px)
-        height: rem(838px)
-        background: url('../img/big-square-bg.png') no-repeat center
+        width: 100%
+        background: url('../img/big-square-bg-2.png') no-repeat center
         background-size: contain
+        align-items: center
+        &:after
+            content: ''
+            display: inline-block
+            width: 0
+            padding-top: 100%   
+        +min-screen($screen-md)
+            width: rem(838px)
+            height: rem(838px)
         &-wrapper
             position: relative
+            width: 100%
+            +min-screen($screen-md)
+                width: auto
         &-nav
             display: flex
-            width: 50%
+            width: 100%
             height: 100%
             flex-direction: column
             justify-content: center
             align-items: flex-start
-            padding-left: rem(119px)
+            padding-left: 40px
+            +min-screen($screen-sm)
+                width: 50%
+                padding-left: $leftIndentSM
+            +min-screen($screen-md)
+                padding-left: rem(119px)
             &__item                
-                font-size: rem(35px)
+                font-size: 14px
                 line-height: 1
                 white-space: nowrap
                 z-index: 0
                 @extend .transition
+                
                 span
                     display: inline
                     line-height: 1.2
                     box-decoration-break: clone
                     -webkit-box-decoration-break: clone
+                +min-screen($screen-sm)
+                    white-space: normal
+                    font-size: rem(30px)
+                +min-screen($screen-md)
+                    font-size: rem(35px)
                 &:not(:last-of-type)
-                    margin-bottom: rem(74px)
+                    margin-bottom: 29px
+                    +min-screen($screen-sm)
+                        margin-bottom: rem(34px)
+                    +min-screen($screen-md)
+                        &:not(:last-of-type)
+                            margin-bottom: rem(74px)
+                    
                 &._active-tab
                     background: none
                     z-index: 10
@@ -39,20 +77,25 @@
         &-content
             flex: auto
             &-wrapper
-                flex: auto
-                display: flex
-                justify-content: flex-end
-            @for $i from 1 through 6
-                &:nth-of-type(#{$i})
-                    & > .resources-case
-                        margin-top: calc(12% * #{$i})
+                display: none
+                +min-screen($screen-sm)
+                    flex: auto
+                    display: flex
+                    justify-content: flex-end
+            +min-screen($screen-md)
+                @for $i from 1 through 6
+                    &:nth-of-type(#{$i})
+                        & > .resources-case
+                            margin-top: calc(12% * #{$i})
 
     &-case
         $parent: &
         position: relative
         margin-top: rem(70px)
-        +size(rem(380px),rem(450px))
+        +size(100%,rem(450px))
         background: #FFF
+        +min-screen($screen-md)
+            +size(rem(380px),rem(450px))
         &__img
             +size(100%)
             object-fit: cover

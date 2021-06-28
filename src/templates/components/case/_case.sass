@@ -1,63 +1,142 @@
 .case
+    width: 100%
     position: relative
-    padding: rem(123px) rem(45px) 0
-    margin-bottom: rem(125px)
+    padding: 90px 0 0
+    margin-bottom: 64px
+    transition: opacity 0.4s
+    opacity: 0
+    +min-screen($screen-md)
+        padding: rem(123px) rem(45px) 0
+        margin-bottom: rem(125px)
+    &._active
+        opacity: 1
+    &__img
+        +size(100%)
+        object-fit: cover
     &__info
         position: absolute
-        bottom: rem(12px)
-        left: rem(91px)
+        bottom: 30px
+        left: 24px
         width: 100%
+        max-width: 100%
+        +min-screen($screen-md)
+            left: rem(91px)
+            bottom: rem(12px)
     &-logos
         display: flex
         align-items: center
+        flex-wrap: wrap
+        max-width: 70%
+        transition: opacity 0.4s
+        transition-delay: 0.6s
+        opacity: 0
+        ._active &
+            opacity: 1
         &__item
             flex-grow: 0
             flex-shrink: 0
-            margin-bottom: rem(27px)
+            margin-bottom: 13px
             &:not(:last-of-type)
-                margin-right: rem(45px)
+                margin-right: 18px
+            +min-screen($screen-md)  
+                margin-bottom: rem(25px)   
+                &:not(:last-of-type)
+                    margin-right: rem(45px)
             img
                 width: auto
-                max-height: rem(45px)
+                max-height: 37px
                 object-fit: contain
+                +min-screen($screen-md)
+                    max-height: rem(45px)
     &-text
-        width: 80%
-        font-size: rem(30px)
-        line-height: rem(37px)
+        width: 70%
+        font-size: 14px
+        line-height: 15.5px
         letter-spacing: 0.3px
         color: #FFF
+        transition: opacity 0.4s
+        transition-delay: .8s
+        opacity: 0
+        +min-screen($screen-md)
+            font-size: rem(30px)
+            line-height: rem(37px)
+        ._active &
+            opacity: 1
     &-category
         position: absolute
         right: rem(70px)
         top: 0
-        background: $yellow
-        font-size: rem(23px)
+        font-size: 14px
         line-height: 1
+        transition: opacity 0.4s
+        transition-delay: 1s
+        opacity: 0
+        +min-screen($screen-md)
+            font-size: rem(23px)
+        &:before
+            +b
+            left: 0
+            top: 0
+            height: 100%
+            width: 0
+            transition: width 0.4s
+            transition-delay: 1.7s
+            background: $yellow
+            z-index: -1
+        ._active &
+            opacity: 1
+            &:before
+                width: 100%
     &-fact
         position: absolute
-        width: 29%
-        top: rem(90px)
+        width: max-content
+        max-width: 50%
+        top: 66px
         right: 0
-        font-size: rem(20px)
-        line-height: rem(32.5px)
+        font-size: 16px
+        line-height: 20px
         font-family: "Lato"
         text-transform: uppercase
-        span
-            font-size: rem(50px)
+        +min-screen($screen-md)
+            top: rem(90px)
+            font-size: rem(20px)
             line-height: rem(32.5px)
+        span
+            white-space: nowrap
+            font-size: 30px
+            line-height: 20px
+            +min-screen($screen-md)
+                font-size: rem(50px)
+                line-height: rem(32.5px)
+        ._white
+            color: #FFF
         &__text
             position: relative
             z-index: 1
+            transition: opacity 0.4s
+            transition-delay: 1.5s
+            opacity: 0
+            ._active &
+                opacity: 1
         &__triangle
             position: absolute
             top: 10%
-            left: rem(-40px)
+            left: -35px
             width: 0
             height: 0
-            border-top: rem(60px) solid $red
-            border-left: rem(60px) solid transparent
+            border-top: 55px solid $red
+            border-left: 55px solid transparent
             transform: translate(25%,0%) rotate(45deg)
             transform-origin: right top
             animation: triangle .5s ease-in infinite alternate
             mix-blend-mode: multiply
             z-index: 0
+            transition: opacity 0.4s
+            transition-delay: 2s
+            opacity: 0
+            +min-screen($screen-md)  
+                left: rem(-40px)
+                border-top: rem(60px) solid $red
+                border-left: rem(60px) solid transparent
+            ._active &
+                opacity: 1

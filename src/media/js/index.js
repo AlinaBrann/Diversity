@@ -29,42 +29,32 @@ global.ProjectName = new function ProjectName() { // eslint-disable-line
 		// Remove _loading modificator
 		this.dom.$html.removeClass('_loading');
 
-		function offset(el) {
-			var rect = el.getBoundingClientRect(),
-			scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-			scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-			return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
-		}
 		
-		// example use
-		let headerLogo = document.querySelector('.header-logo');
-		let logoOffset = offset(headerLogo);
-		
-		let preloader = $('.preloader')
-		let preloaderLogo = $('.preloader__logo')
+		const headerLogo = document.querySelector('.header-logo');
+		let top = headerLogo.getBoundingClientRect().top
+		let left = headerLogo.getBoundingClientRect().left
+		const preloader = $('.preloader')
+		const preloaderLogo = $('.preloader__logo')
 		setTimeout(() => {
 			preloaderLogo.animate({
-				left: logoOffset.left,
-				top: logoOffset.top
+				left: left,
+				top: top
 			}, 1000, function() {
 				preloader.removeClass('_visible')
 			})
 		}, 1000);
 
-		var menu = $('.header-menu-button');
+		const menu = $('.header-menu-button');
 		menu.on('click', function(){
-			$(this).parents('.header').toggleClass('_menu-opened');
+			$(this).parents('.header').addClass('_menu-opened');
 		});
 		
-		// let array = document.querySelectorAll('.video-section-squares__square')
-		// let size = 4; //размер подмассива
-
-		// for (let i = 0; i <Math.ceil(array.length/size); i++){
-		// 	for (let index = 0; index < 4; index++) {
-		// 		array[(i*size + index)].css('transition-delay',(i*size) + size + 's')
-				
-		// 	}
-		// }
+		const menuCloser = $('[data-menu-closer]');
+		menuCloser.on('click', function(){
+			$(this).parents('.header').removeClass('_menu-opened');
+		});
+		
+		
 		let textFit = document.querySelectorAll(".facts-slide-childslider__title")
 		textFit.forEach((text) => {
 			TextFill(text,{
@@ -73,7 +63,7 @@ global.ProjectName = new function ProjectName() { // eslint-disable-line
 		})
 		
 		$('.tabs-content').find('.services-case:not(:first-of-type)').remove();
-		
+
 		var copyright = new Date().getFullYear();
 		$('.footer__copyright span').text(copyright);
 		

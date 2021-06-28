@@ -1,14 +1,42 @@
+{% from "../icon/_icon.nunj" import icon %}
+
 <header class="header">
     <div class="container">
         <div class="row">
             <div class="col-xs-6 col-md-6">
-                <a href="/" class="header-logo">
-                    <img src="media/img/logo.svg" class="header-logo__image" alt="">
-                </a>
+                <div class="header-logo _black-logo">
+                    <img src="media/img/logo.svg " class="header-logo__image" alt="">
+                </div>
+                <div data-anchor="intro" class="header-logo _white-logo">
+                    <img src="media/img/logo-full-white.svg" class="header-logo__image" alt="">
+                </div>
             </div>
             <div class="col-xs-6 col-md-6 flex _jcfe">
-                <a href="#" class="header-menu-contacts underline-text">{{ contactsHeaderMenu }}</a>
-                <button class="header-menu-button"></button>
+                <div class="header-menu-wrapper">
+                    <button class="header-menu-button"></button>
+                    <div class="header-menu-contacts underline-text" data-anchor="contacts">{{ contactsHeaderMenu }}</div>
+                    <div class="header-menu">
+                        <div class="header-menu-backdrop" data-menu-closer></div>
+                        <div class="header-menu-closer" data-menu-closer>
+                            {{ icon({
+                                name: "cancel",
+                                width: "50",
+                                height: "50"
+                            })}}
+                        </div>
+                        <menu class="header-menu-list">
+                            {% for item in menuItems%}
+                                {% if item.anchor %}
+                                    <li class="header-menu-list__item pseudo" data-menu-closer data-anchor="{{ item.anchor }}">{{ item.name }}</li>
+                                {% else %}
+                                    <li class="header-menu-list__item">
+                                        <a href="{{ item.path }}" class="header-menu-list__link">{{ item.name }}</a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </menu>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

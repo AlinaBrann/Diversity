@@ -1,6 +1,8 @@
 $squareDifference: .35vw
 $squareSize: 7.971vw
+$squareSizeXS: 9.9vw
 $squareMidSize: $squareSize * 2 - $squareDifference 
+$squareMidSizeXS: $squareSizeXS * 2 - $squareDifference 
 $squareAnimDur: 1.5s
 $squareSmallAnimDelay: 3.5s
 $squareMidAnimDelay: $squareAnimDur/2 + $squareSmallAnimDelay + .2
@@ -14,8 +16,10 @@ $textAnimDelay: $squareMidAnimDelay+1s
     @return $result
 .video-section
     position: relative
-    height: 113vh
+    height: 55vh
     background: #EFEFEF
+    +min-screen($screen-md)
+        height: 113vh
     &-media
         width: 100%
         height: 100%
@@ -30,19 +34,24 @@ $textAnimDelay: $squareMidAnimDelay+1s
     &-squares
         $parent: &
         position: absolute
-        top: 56%
-        left: $leftIndent
-        height: $squareSize * 4
+        top: 50%
+        left: 56px
+        height: $squareSizeXS * 4
         display: flex
         transform: translateY(-50%)
+        +min-screen($screen-md)
+            top: 56%
+            left: $leftIndent
+            height: $squareSize * 4
         &__col
             width: 0
             margin-right: $squareDifference 
             display: flex
             flex-direction: column
             justify-content: space-between
+            will-change: width
             ._active &
-                animation: colAnim $squareAnimDur forwards
+                animation: colAnimXS $squareAnimDur forwards
                 &:nth-child(1)
                     margin-right: 0
                     transition: $squareAnimDur/2
@@ -52,15 +61,23 @@ $textAnimDelay: $squareMidAnimDelay+1s
                         #{$parent}
                             &__square-middle
                                 animation: squareHide $squareAnimDur squareDelay($i) forwards
+            +min-screen($screen-md)
+                ._active &
+                    animation: colAnim $squareAnimDur forwards
         &__square-middle
             display: flex
-            width: $squareMidSize
-            height: $squareMidSize
+            +size($squareMidSizeXS)
             flex-direction: column
             justify-content: space-between
             flex-wrap: wrap
+            will-change: width,height
             ._active &
-                animation: squareMiddleCollapse $squareAnimDur/3 linear $squareMidAnimDelay forwards 
+                animation: squareMiddleCollapseXS $squareAnimDur/3 linear $squareMidAnimDelay forwards 
+            +min-screen($screen-md)
+                +size($squareMidSize)
+
+                ._active &
+                    animation: squareMiddleCollapse $squareAnimDur/3 linear $squareMidAnimDelay forwards 
 
         &__square
             display: flex
@@ -69,6 +86,7 @@ $textAnimDelay: $squareMidAnimDelay+1s
             flex: 0 0 50%
             justify-content: flex-end
             transition: $squareAnimDur
+            will-change: width
             &:after
                 content: ''
                 display: inline-block
@@ -103,19 +121,30 @@ $textAnimDelay: $squareMidAnimDelay+1s
                 display: block
                 background: rgba(255,255,255,.5)
                 transition: $squareAnimDur
+                will-change: transform
                 ._active &
                     animation: squareCollapse $squareAnimDur/3 linear $squareSmallAnimDelay forwards 
         &__text
             position: absolute
-            top: 50%
-            left: rem(112px)
-            font-size: rem(55px)
-            line-height: rem(74px)
+            top: 75%
+            left: 0
+            width: 70%
+            font-size: 20px
+            line-height: 28px
             font-family: "Lato"
             font-weight: normal
             opacity: 0
+            +min-screen($screen-sm)
+                top: 50%
+                width: auto
+                left: rem(112px)
+                font-size: rem(35px)
+                line-height: rem(54px)
+            +min-screen($screen-md)
+                font-size: rem(55px)
+                line-height: rem(74px)
             ._active &
-                animation: textAnim $squareAnimDur ease-in $textAnimDelay forwards 
+                animation: textAnim $squareAnimDur/3 ease-in $textAnimDelay forwards 
             ._red
                 position: relative
                 display: inline-block
@@ -127,7 +156,7 @@ $textAnimDelay: $squareMidAnimDelay+1s
                     width: 0
                     height: 80%
                     background: $red
-                    transition: width $squareAnimDur
+                    transition: width $squareAnimDur/3
                     transition-delay: $textAnimDelay + 1.5
                     z-index: -1
                 ._active &
@@ -140,6 +169,12 @@ $textAnimDelay: $squareMidAnimDelay+1s
         width: 0
     100%
         width: $squareSize * 2
+
+@keyframes colAnimXS
+    0%
+        width: 0
+    100%
+        width: $squareSizeXS * 2
 
 @keyframes colAnimMargin
     0%
@@ -172,7 +207,14 @@ $textAnimDelay: $squareMidAnimDelay+1s
     100%
         width: $squareSize * 2
         height: $squareSize * 2
-        
+
+@keyframes squareMiddleCollapseXS
+    0%
+        width: $squareMidSizeXS
+        height: $squareMidSizeXS
+    100%
+        width: $squareSizeXS * 2
+        height: $squareSizeXS * 2       
 
 @keyframes textAnim
     0%

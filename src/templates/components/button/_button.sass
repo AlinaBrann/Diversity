@@ -1,9 +1,19 @@
 .button
-    height: rem(54px)
-    padding: rem(2px) rem(17px) 0
+    height: 38px
+    padding: 2px 27px 0
     text-transform: uppercase
-    letter-spacing: rem(8px)
-    font-size: rem(15px)
-    line-height: rem(54px)
+    letter-spacing: 5px
+    font-size: 8px
+    line-height: 38px
     background: $yellow
+    @extend .transition
     border: none
+    +min-screen($screen-sm)
+        height: rem(54px)
+        padding: rem(2px) rem(17px) 0
+        font-size: rem(15px)
+        line-height: rem(54px)
+        letter-spacing: rem(8px)
+    &:hover
+        @extend .transition-hover
+        background: #ffdf8d

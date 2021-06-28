@@ -10,57 +10,127 @@
     &-slider
         max-width: 100%
         max-height: 100%
-        margin-bottom: rem(85px)
+        margin-bottom: 60px
         overflow: visible
         z-index: 100
+        +min-screen($screen-sm)
+            margin-bottom: rem(85px)
         &-wrapper
-            width: 71%
+            max-width: 100%
             position: relative
+            +min-screen($screen-md)
+                width: 71%
     &-slide
         display: flex !important
         &-info
-            padding: rem(195px) rem(30px) rem(20px) rem(81px)
+            flex: auto
+            padding: 30px 15px 20px 0
+            +min-screen($screen-sm)
+                padding: rem(75px) rem(60px) rem(20px) rem(40px)
+            +min-screen($screen-md)
+                padding: rem(195px) rem(30px) rem(20px) rem(60px)
             &__top-text
-                min-height: rem(41px)
-                margin-bottom: rem(40px)
-                font-size: rem(35px)
-                line-height: rem(41px)
-            &__number
-                margin-bottom: rem(35px)
-                font-size: rem(150px)
-                line-height: rem(41px)
-                span
-                    font-size: rem(80px)
-                small
+                min-height: 20px
+                margin-bottom: 10
+                font-size: 16px
+                line-height: 20px
+                +min-screen($screen-sm)
+                    min-height: rem(31px)
+                    margin-bottom: rem(30px)
+                    font-size: rem(25px)
+                    line-height: rem(31px)
+                +min-screen($screen-md)
+                    min-height: rem(41px)
+                    margin-bottom: rem(40px)
                     font-size: rem(35px)
+                    line-height: rem(41px)
+            &__number
+                white-space: nowrap
+                margin-bottom: 0px
+                font-size: 40px
+                line-height: 41.5px
+                +min-screen($screen-sm)
+                    margin-bottom: rem(25px)
+                    font-size: rem(100px)
+                    line-height: rem(31px)
+                +min-screen($screen-md)
+                    margin-bottom: rem(35px)
+                    font-size: rem(150px)
+                    line-height: rem(41px)
+                span
+                    font-size: 30px
+                    +min-screen($screen-sm)
+                        font-size: rem(60px)
+                    +min-screen($screen-md)
+                        font-size: rem(80px)
+                small
+                    font-size: 20px
+                    +min-screen($screen-sm)
+                        font-size: rem(25px)
+                    +min-screen($screen-md)
+                        font-size: rem(35px)
             &__under-number
                 margin-bottom: rem(8px)
-                font-size: rem(35px)
-                line-height: rem(34px)
+                font-size: 16px
+                line-height: 20px
+                +min-screen($screen-sm)
+                    font-size: rem(25px)
+                    line-height: rem(24px)
+                +min-screen($screen-md)
+                    font-size: rem(35px)
+                    line-height: rem(34px)
             &__text
-                font-size: rem(25px)
+                font-size: 14px
+                line-height: 18px
+                +min-screen($screen-sm)
+                    font-size: rem(18px)
+                    line-height: rem(24.5px)
+                +min-screen($screen-md)
+                    font-size: rem(25px)
+                    line-height: rem(34.5px)
             &__list
-                margin-bottom: rem(20px)
-                font-size: rem(21px)
-                line-height: rem(31.5px)
+                margin-bottom: 10px
+                font-size: 11px
+                line-height: 15px
+                +min-screen($screen-sm)
+                    margin-bottom: rem(15px)
+                    font-size: rem(18px)
+                    line-height: rem(21.5px)
+                +min-screen($screen-md)
+                    margin-bottom: rem(20px)
+                    font-size: rem(21px)
+                    line-height: rem(31.5px)
                 li
                     position: relative
-                    padding-left: rem(15px)
+                    padding-left: 8px
                     &:before
                         +b
-                        top: rem(16px)
+                        top: 8px
                         left: 0
                         +size(4px)
                         border-radius: 50%
                         background: $font_color
+                    +min-screen($screen-sm)
+                        padding-left: rem(15px)
+                        &:before
+                            top: rem(16px)
             &__note
                 position: absolute
-                bottom: 0
+                bottom: 5px
                 left: 0
-                font-size: rem(12px)
+                font-size: 9px
+                +min-screen($screen-sm)
+                    bottom: 0
+                    font-size: rem(12px)
             &__big-text
-                font-size: rem(50px)
-                line-height: rem(74px)
+                font-size: 18px
+                line-height: 29px
+                +min-screen($screen-sm)
+                    font-size: rem(30px)
+                    line-height: rem(54px)
+                +min-screen($screen-md)
+                    font-size: rem(50px)
+                    line-height: rem(74px)
                 .colored-text
                     .slick-active &
                         &:before
@@ -70,21 +140,36 @@
             flex-shrink: 0
             flex-grow: 0
             &__img
-                width: rem(480px)
-                height: rem(661px)
+                width: 160px
+                height: 100%
                 object-fit: cover
+                +min-screen($screen-sm)
+                    width: rem(380px)
+                +min-screen($screen-md)
+                    width: rem(480px)
+                    height: rem(661px)
             &__logo
                 position: absolute
-                left: rem(73px)
-                bottom: rem(83px)
-                height: rem(154px)
+                left: 10px
+                bottom: 15px
+                max-width: 100%
+                +min-screen($screen-sm)
+                    height: rem(154px)
+                    left: rem(73px)
+                    bottom: rem(83px)
         &-founders
             display: flex
+            width: 120px
+            height: 225px
             flex-direction: column
             align-items: flex-start
-            width: rem(480px)
-            height: rem(661px)
             background: #C4C4C4
+            +min-screen($screen-sm)
+                width: rem(380px)
+                height: rem(440px)
+            +min-screen($screen-md)
+                width: rem(500px)
+                height: rem(661px)
             &__item
                 display: flex
                 flex-direction: column
@@ -92,27 +177,71 @@
                 &:nth-of-type(even)
                     align-self: flex-end
                 &:first-of-type
-                    margin-top: rem(-30px)
+                    margin-top: -20px
                 &:nth-of-type(2)
-                    margin-top: rem(-70px)
-                    margin-right: rem(-20px)
+                    margin: auto 0
+                    margin-right: -10px
                 &:nth-of-type(3)
-                    margin-top: rem(-70px)
-                    margin-left: rem(30px)
+                    margin-top: auto
+                    margin-left: 10px
+                +min-screen($screen-sm)
+                    &:first-of-type
+                        margin-top: rem(-30px)
+                    &:nth-of-type(2)
+                        margin-top: rem(-50px)
+                        margin-bottom: 0
+                        margin-right: 0
+                    &:nth-of-type(3)
+                        margin-top: rem(-50px)
+                        margin-left: rem(30px)
+                +min-screen($screen-md)
+                    &:first-of-type
+                        margin-top: rem(-30px)
+                    &:nth-of-type(2)
+                        margin-top: rem(-80px)
+                        margin-bottom: 0
+                        margin-right: rem(-30px)
+                    &:nth-of-type(3)
+                        margin-top: rem(-60px)
+                        margin-left: rem(30px)
             &__img  
-                +size(rem(296px))
+                +size(60px)
                 border-radius: 50%
-                margin-bottom: rem(10px)
+                margin-bottom: 5px
+                +min-screen($screen-sm)
+                    margin-bottom: rem(10px)
+                    +size(rem(150px))
+                +min-screen($screen-md)
+                    +size(rem(296px))
             &__name
-                font-size: rem(21px)
+                width: 70%
+                margin: auto
+                font-size: 10px
+                text-align: center
                 text-transform: capitalize
+                +min-screen($screen-sm)
+                    width: 100%
+                    font-size: rem(21px)
         &-childslider
-            width: rem(521px)
-            height: rem(661px)
-            &__img
+            width: 120px
+            height: 220px
+            +min-screen($screen-sm)
+                width: rem(380px)
+                height: 100%
+            +min-screen($screen-md)
                 width: rem(521px)
                 height: rem(661px)
+            &__img
+                width: 120px
+                height: 220px
                 object-fit: cover
+                +min-screen($screen-sm)
+                    width: rem(380px)
+                    height: 100%
+                +min-screen($screen-md)
+                    width: rem(521px)
+                    height: rem(661px)
+                
             &__title
                 position: absolute
                 bottom: 10%
@@ -128,17 +257,27 @@
                 span
                     display: block
                     margin: auto
-                    font-size: rem(150px)
+                    font-size: 40px
+                    +min-screen($screen-sm)
+                        font-size: rem(150px)
     &-squares
         position: absolute
-        top: 50%
+        top: 30%
         transform: translateY(-50%)
-        left: 0
+        left: -16px
         display: flex
-        height: rem(121px) * 4.2
+        height: 46px * 4.2
         flex-direction: column
         flex-wrap: wrap
         z-index: 99
+        +min-screen($screen-sm)
+            top: 50%
+            left: 0
+            height: rem(91px) * 4.2
+        +min-screen($screen-md)
+            top: 50%
+            left: 0
+            height: rem(121px) * 4.2
         &__square
             @extend .square
             @for $i from 1 through 29
@@ -147,4 +286,7 @@
             ._active &
                 opacity: 1
     .slider-nav
-        margin-left: rem(60px)
+        margin-top: 10px
+        +min-screen($screen-sm)
+            margin-top: 0
+            margin-left: rem(60px)

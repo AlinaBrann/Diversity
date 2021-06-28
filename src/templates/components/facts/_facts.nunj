@@ -1,9 +1,9 @@
 {% from "../button/_button.nunj" import button %}
 
-<section class="section facts animated-section" data-slider="facts">
+<section class="facts section animated-section" id="facts" data-slider="facts">
 	<div class="section__container">
 		<div class="section__row _aic">
-			<div class="section__col">
+			<div class="section__col hidden-xs">
 				<h2 class="section-title facts-title">
 					<img src="media/img/title-icons/{{ facts.titleIcon }}" class="section-title__icon" alt="">
 					<span>{{ facts.title }}</span>

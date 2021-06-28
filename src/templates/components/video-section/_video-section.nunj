@@ -1,5 +1,5 @@
 <section class="video-section">
-    <div class="video-section-media">
+    <div class="video-section-media" data-auto-show>
         <img src="media/img/video-preview.jpg" class="video-section-media__preview" alt="">
     </div>
     <div class="video-section-squares">

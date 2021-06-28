@@ -2,20 +2,24 @@
 	"contactsHeaderMenu": "контакты",
 	"menuItems": [
 		{
-			"name": "Главная",
-			"path": "/"
+			"name": "сервисы",
+			"anchor": "services"
 		},
 		{
-			"name": "Элемент меню 2",
-			"path": "#"
+			"name": "кейсы",
+			"path": "cases"
 		},
 		{
-			"name": "Элемент меню 3",
-			"path": "#"
+			"name": "инновации",
+			"path": "innovation"
 		},
 		{
-			"name": "Элемент меню 4",
-			"path": "#"
+			"name": "ресурсы",
+			"anchor": "resources"
+		},
+		{
+			"name": "факты",
+			"anchor": "facts"
 		}
 	],
 	"videoSectionText": "The Diversity – <span class='_red'>кратчайший путь</span> <br>к новому потребителю",
@@ -100,7 +104,7 @@
 		"buttonTextLink": "/"
 	},
 	"textOnSquares": {
-		"text": "Входит в ",
+		"text": "Входит <br class='visible-xs'>в ",
 		"linkText": "The Diversity Group",
 		"link": "/"
 	},
@@ -136,44 +140,104 @@
 	],
 	"cases": [
 		{
-			"name": "Время первых – Point of Entry",
-			"img": "vremya-pervih-img.png",
-			"logos": ["vremya-pervih.png"],
-			"link": "/",
-			"category": "Point of Entry",
-			"categorySlug": "pointOfEntry",
-			"text": "Создали самую масштабную университетскую программу",
-			"fact": "<span>70%</span> ВУЗов России сотрудничают с нами ежегодно"
-		},
-		{
 			"name": "TetraPak Пятерочка – Shopper Marketing",
-			"img": "tetrapak-img.png",
+			"img": "tetrapak-img.jpg",
 			"logos": ["tetrapak.png", "pyaterochka.svg"],
 			"link": "/",
 			"category": "Shopper marketing",
 			"categorySlug": "shopperMarketing",
 			"text": "Подарили пользу молока тем, кто в&nbsp;ней нуждался",
-			"fact": "В <span>23</span> городах России Пятерочки дарили с нами добро"
+			"fact": "В <span>23</span> городах <br>России Пятерочки <br>дарили с нами <br>добро"
+		},
+		{
+			"name": "Время первых – Point of Entry",
+			"img": "vremya-pervih-img.jpg",
+			"logos": ["vremya-pervih.png"],
+			"link": "/",
+			"category": "Point of Entry",
+			"categorySlug": "pointOfEntry",
+			"text": "Создали самую масштабную университетскую программу",
+			"fact": "<span>70%</span> <br>ВУЗов России <br>сотрудничают <br>с нами <br>ежегодно"
 		},
 		{
 			"name": "Ganzo – Consumer Promo",
-			"img": "ganzo-img.png",
+			"img": "ganzo-img.jpg",
 			"logos": ["ganzo.png"],
 			"link": "/",
 			"category": "Consumer promo",
 			"categorySlug": "consumerPromo",
-			"text": "Мы открыли дверь во взрослый мир",
-			"fact": "<span>40%</span> response rate это по-взрослому"
+			"text": "Мы открыли дверь <br>во взрослый мир",
+			"fact": "<span>40%</span> <br>response rate <br>это по-взрослому"
 		},
+
 		{
-			"name": "Ganzo – Consumer Promo",
-			"img": "ganzo-img.png",
-			"logos": ["ganzo.png"],
+			"name": "",
+			"img": "star-img.jpg",
 			"link": "/",
 			"category": "Consumer promo",
 			"categorySlug": "consumerPromo",
-			"text": "Мы открыли дверь во взрослый мир",
-			"fact": "40% response rate это по-взрослому"
+			"text": "Каждый месяц мы запускаем новую национальную кампанию",
+			"fact": "<span>12 000 000</span><div class='_white'>покупок продуктов</div>"
+		},
+		{
+			"name": "Acuvue",
+			"img": "acuvue-img.jpg",
+			"logos": ["acuvue.png"],
+			"link": "/",
+			"category": "Consumer promo",
+			"categorySlug": "consumerPromo",
+			"text": "Наши консультанты помогли увидеть мир лучше",
+			"fact": "<span>200</span> <br>оптик приняли <br>участие в акции"
+		},
+		{
+			"name": "",
+			"img": "img-1.jpg",
+			"logos": ["bayer.png", "astellas.png", "takeda.png", "bionorica.png"],
+			"link": "/",
+			"category": "Trade",
+			"categorySlug": "trade",
+			"text": "Проверяем качество работы аптек для наших клиентов с 2012 года",
+			"fact": "<span>30%</span><br>рост продаж <br>за период работы"
+		},
+		{
+			"name": "",
+			"img": "img-2.jpg",
+			"logos": ["asc.png"],
+			"link": "/",
+			"category": "Trade",
+			"categorySlug": "trade",
+			"text": "Создали программу лояльности в стиле agile",
+			"fact": "<span>3 000</span><br>активных <br>участников"
+		},
+		{
+			"name": "",
+			"img": "img-3.jpg",
+			"logos": ["my-blue.png"],
+			"link": "/",
+			"category": "Events",
+			"categorySlug": "events",
+			"text": "Устроили атмосферный чилл на stereoleto",
+			"fact": "<span>2 000</span><br>за 5 часов <br>контвертированы <br>в бренд"
+		},
+		{
+			"name": "",
+			"img": "img-4.jpg",
+			"logos": ["sto.png"],
+			"link": "/",
+			"category": "Event",
+			"categorySlug": "event",
+			"text": "Застроили самую красивую инсталляцию на ГУМ-катке",
+			"fact": "<span>100</span>дней <br>работы на главной<br>площади страны"
+		},
+		{
+			"name": "",
+			"img": "img-5.jpg",
+			"logos": ["heineken.png"],
+			"link": "/",
+			"category": "Digital",
+			"categorySlug": "digital",
+			"text": "Сформировали внутреннюю CRM с нуля",
+			"fact": "<span>5 000 000</span> <br>уникальных профилей<br>собрано в единую БД"
 		}
 	],
 	"innovation": {
@@ -205,13 +269,13 @@
 		"titleIcon": "icon-4.png",
 		"tabs": [
 			{
-				"title": "Лаборатория <br>дизайн-мышления",
+				"title": "Лаборатория <br class='hidden-xs'>дизайн-мышления",
 				"slug": "designThinking",
 				"img": "slide-1.jpg",
 				"text": "Исследование рынка и&nbsp;потребителей, разработка новых решений и&nbsp;продуктов"
 			},
 			{
-				"title": "База данных <br>учреждений",
+				"title": "База данных <br class='hidden-xs'>учреждений",
 				"slug": "dataBase",
 				"img": "slide-2.jpg",
 				"text": "Более 200&nbsp;000&nbsp;точек, сегментированных под разные целевые аудитории"
@@ -229,7 +293,7 @@
 				"text": "Категории А&nbsp;и&nbsp;В с&nbsp;возможностью ручных работ"
 			},
 			{
-				"title": "Работа <br>с&nbsp;персональными&nbsp;данными",
+				"title": "Работа <br class='hidden-xs'>с&nbsp;персональными&nbsp;данными",
 				"slug": "personalData",
 				"img": "slide-5.jpg",
 				"text": "Лицензия на&nbsp;обработку персональных данных 77-20-017980"
@@ -249,9 +313,9 @@
 			"100.svg",
 			"visa.png",
 			"takeda.png",
-			"IT.svg",
+			"IT.png",
 			"bio.png",
-			"circle.svg",
+			"circle.png",
 			"bay.png",
 			"5.png",
 			"hein.png",
@@ -275,6 +339,12 @@
 						"text": "На карте",
 						"path": "/",
 						"underline": true
+					},
+					"linkOnMobile": {
+						"text": "Cхема проезда",
+						"path": "/",
+						"underline": true,
+						"showOnMobile": true
 					}
 				},
 				{
@@ -282,7 +352,8 @@
 						"text": "Cхема проезда",
 						"path": "/",
 						"underline": true
-					}
+					},
+					"hideOnMobile": true
 				}
 			]
 		},

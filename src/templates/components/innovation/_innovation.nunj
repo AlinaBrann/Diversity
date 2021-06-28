@@ -1,10 +1,10 @@
 {% from "../button/_button.nunj" import button %}
 
-<section class="section innovation">
-    <div class="section__container innovation__container">
-        <div class="section__row _aic">
+<section class="innovation section" id="innovation">
+    <div class="innovation__container section__container">
+        <div class="section__row innovation__row _aic">
 			<div class="section__col">
-				<h2 class="section-title">
+				<h2 class="section-title innovation__title">
 					<img src="media/img/title-icons/{{ innovation.titleIcon }}" class="section-title__icon" alt="">
 					<span>{{ innovation.title }}</span>
 				</h2>

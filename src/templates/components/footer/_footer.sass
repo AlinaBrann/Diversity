@@ -1,30 +1,52 @@
 .footer
-    padding: 0 rem(140px) rem(27px) rem(210px)
+    padding: 0 16px 10px 16px
     background: #262C30
     color: transparentize(#FFF,.5)
+    +min-screen($screen-md)
+        padding: 0 rem(140px) rem(27px) rem(210px)
     &-content
-        padding-left: rem(48px)
+        padding-left: 26px
         margin-bottom: rem(20px)
+        +min-screen($screen-sm)
+            padding-right: 26px
+        +min-screen($screen-md)
+            padding-right: 0
+            padding-left: rem(48px)
     &-logo
-        height: rem(64px)
-        margin-top: rem(47px)
+        height: 32px
+        margin-bottom: 55px
+        +min-screen($screen-sm)
+            margin-top: rem(47px)
+        +min-screen($screen-md)
+            height: rem(64px)
+            margin-bottom: 0
         &__img
             height: 100%
     &-request
         position: relative
-        width: rem(230px)
-        height: rem(136px)
+        width: 100px
+        height: 77px
+        margin-left: auto
+        margin-right: 27px
+        +min-screen($screen-md)
+            width: rem(230px)
+            height: rem(136px)
+            margin: 0
         &__text
             position: relative
             padding-top: rem(5px)
-            font-size: rem(25px)
-            line-height: rem(30px)
+            font-size: 12px
+            line-height: 14px
             text-align: center
             color: #FFF
             @extend .transition
             transition-delay: .5s
-            opacity: 0
+            opacity: 1
             z-index: 1
+            +min-screen($screen-md)
+                opacity: 0
+                font-size: rem(25px)
+                line-height: rem(30px)
             ._active &
                 opacity: 1
             span
@@ -46,35 +68,55 @@
             left: 50%
             width: 0
             height: 0
-            border-top: rem(230px) solid $red
-            border-left: rem(230px) solid transparent
+            border-top: 110px solid $red
+            border-left: 110px solid transparent
             transform: translate(-92%,-33%) rotate(135deg)
             transform-origin: 75% 50%
             animation: triangleBig .5s ease-in infinite alternate
             @extend .transition
-            opacity: 0
+            opacity: 1
             z-index: 0
+            +min-screen($screen-md)
+                opacity: 0
+                border-top: rem(230px) solid $red
+                border-left: rem(230px) solid transparent
             ._active &
                 opacity: 1
     &-row
         display: flex
         width: 100%
+        flex-direction: column
+        +min-screen($screen-sm)
+            flex-direction: row
+            flex-wrap: wrap
+        +min-screen($screen-md)
+            flex-wrap: nowrap
         &._first
-            margin-bottom: rem(213px)
+            align-items: flex-start
+            +min-screen($screen-md)
+                align-items: center
+                margin-bottom: rem(213px)
     &-col
-        width: max-content
+        width: 100%
         display: flex
         flex-direction: column
         justify-content: space-between
+        +min-screen($screen-sm)
+            width: max-content
     &-block
-        margin-bottom: rem(35px)
-        font-size: rem(20px)
-        line-height: rem(23.5px)
+        margin-bottom: 30px
+        font-size: 12px
+        line-height: 14px
+        +min-screen($screen-md)
+            margin-bottom: rem(35px)
+            font-size: rem(20px)
+            line-height: rem(23.5px)
         &__title
             font-family: "Lato"
             text-transform: uppercase
         &__text
-            white-space: nowrap
+            +min-screen($screen-md)
+                white-space: nowrap
         &__link
             @extend .transition
             &._uppercase
@@ -83,9 +125,19 @@
                 border-bottom: 1px solid currentColor
             &:hover
                 color: #FFF
+            &-wrapper
+                margin-top: 15px
+                width: 80%
+                +min-screen($screen-sm)
+                    width: 60%
+                +min-screen($screen-md)
+                    width: auto
+                    margin-top: 0
         &-social
             display: flex
-            margin-top: rem(20px)
+            margin-top: 20px
+            +min-screen($screen-md)
+                margin-top: rem(20px)
             &__item
                 @extend .transition
                 opacity: 0.5
@@ -94,6 +146,17 @@
                 &:hover
                     opacity: 1
     &-bottom
-        font-size: rem(12px)
-        line-height: rem(30px)
+        padding-top: 5px
+        font-size: 8px
+        line-height: 26px
         border-top: 1px solid transparentize(#FFF,.5)
+        +max-screen($screen-md)
+            text-align: center
+        +min-screen($screen-md)
+            padding-top: 0
+            font-size: rem(12px)
+            line-height: rem(30px)
+        &__row
+            align-items: center
+            +min-screen($screen-md)
+                justify-content: space-between

@@ -1,6 +1,6 @@
 {% from "../icon/_icon.nunj" import icon %}
 
-<footer class="footer animated-section">
+<footer class="footer animated-section" id="contacts">
     <div class="footer-content">
         <div class="footer-row _first _aic _jcsb">
             <div class="footer-col">
@@ -10,7 +10,7 @@
                     </a>
                 </div>
             </div>
-            <div class="footer-col">
+            <div class="footer-col _order-1">
                 <div class="footer-request animated-block">
                     <div class="footer-request__triangle"></div>
                     <div class="footer-request__text">{{ footerRequest }}</div>
@@ -21,15 +21,24 @@
             {% for item in footerItems %}
                 <div class="footer-col">
                     {% for blockItem in item.blocks %}
-                        <div class="footer-block">
+                        <div class="footer-block{% if blockItem.hideOnMobile === true %} hidden-xs{% endif %}">
                             {% if blockItem.title %}
                                 <div class="footer-block__title">{{ blockItem.title }}</div>
                             {% endif %}
                             {% if blockItem.text %}
                                 <div class="footer-block__text">{{ blockItem.text }}</div>
                             {% endif %}
-                            {% if blockItem.link %}
-                                <a href="{{ blockItem.link.link }}" class="footer-block__link{% if blockItem.link.underline === true %} _underline{% endif %}{% if blockItem.link.uppercase === true %} _uppercase{% endif %}">{{ blockItem.link.text }}</a>
+                            {% if blockItem.link and blockItem.linkOnMobile %}
+                                <div class="footer-block__link-wrapper flex _jcsb">
+                            {% endif %}
+                                    {% if blockItem.link %}
+                                        <a href="{{ blockItem.link.path }}" class="footer-block__link{% if blockItem.link.underline === true %} _underline{% endif %}{% if blockItem.link.uppercase === true %} _uppercase{% endif %}">{{ blockItem.link.text }}</a>
+                                    {% endif %}
+                                    {% if blockItem.linkOnMobile %}
+                                        <a href="{{ blockItem.linkOnMobile.path }}" class="footer-block__link{% if blockItem.linkOnMobile.showOnMobile === true %} visible-xs{% endif %}{% if blockItem.linkOnMobile.underline === true %} _underline{% endif %}{% if blockItem.linkOnMobile.uppercase === true %} _uppercase{% endif %}">{{ blockItem.linkOnMobile.text }}</a>
+                                    {% endif %}
+                            {% if blockItem.link and blockItem.linkOnMobile %}
+                                </div>
                             {% endif %}
                             {% if blockItem.social %}
                                 <ul class="footer-block-social">
@@ -54,7 +63,7 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <div class="footer-row _jcsb">
+        <div class="footer-row footer-bottom__row _jcsb">
             <div class="footer-col">
                 <div class="footer__copyright">{{ copyright }}<span></span></div>
             </div>

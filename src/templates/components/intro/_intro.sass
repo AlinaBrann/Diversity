@@ -1,12 +1,20 @@
 .intro
     display: flex
     align-items: center
-    min-height: 100vh
+    min-height: 94.6vh
+    +min-screen($screen-sm)
+        min-height: 100vh
     &-animated-text
-        margin-top: 16vh
+        margin-top: 22vh
         margin-bottom: 10vh
+        margin-left: 22px
+        +min-screen($screen-sm)
+            margin-top: 16vh
+            margin-left: 10vw
+        +min-screen($screen-md)
+            margin-left: 0
     &-scroll-square
-        display: inline-block
+        display: none
         +size(rem(50px))
         margin-left: rem(14px)
         background: $grey
@@ -14,7 +22,9 @@
         @extend .transition
         transition-delay: $delayLong + 1
         opacity: 0
-        animation: squareScroll 2s infinite ease-in
+        +min-screen($screen-sm)
+            display: inline-block
+            animation: squareScroll 2s infinite ease-in
         &._active
             opacity: 1
     .colored-text

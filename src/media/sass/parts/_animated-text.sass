@@ -1,6 +1,12 @@
 .animated-text
-    font-size: rem(90px)
-    line-height: rem(111px)
+    font-size: 33px
+    line-height: 40px
+    +min-screen($screen-sm)
+        font-size: rem(70px)
+        line-height: rem(91px)
+    +min-screen($screen-md)
+        font-size: rem(90px)
+        line-height: rem(111px)
 .colored-text
     position: relative
     &:before

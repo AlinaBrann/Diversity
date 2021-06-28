@@ -8,10 +8,23 @@ import { from, gsap } from 'gsap';
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
 function Animations() {
-	const delay = 0.5;
+	const delay = 0.7;
 	const sections = document.querySelectorAll('.animated-section');
 	let scrollSunTl = gsap.timeline();
 
+	var anchor = '[data-anchor]';
+	dom.$body.on('click', anchor, function(event) {
+		event.preventDefault();
+		var $this = $(this),
+			href = '#' + $this.data('anchor');
+		gsap.to(window, {
+			duration: 2,
+			scrollTo: {
+				y: href,
+			},
+		});
+		return false;
+	});
 	const $targetsAnimatedText = $('[data-animated-text]');
 	if ($targetsAnimatedText.length) {
 		TweenMax.set($targetsAnimatedText, {
@@ -75,13 +88,24 @@ function Animations() {
 			markers: false,
 		},
 	});
+	scrollSunTl.to('.footer', {
+		scrollTrigger: {
+			trigger: '.footer',
+			start: 'top top',
+			toggleClass: {
+				targets: '.header',
+				className: '_white',
+			},
+			markers: false,
+		},
+	});
 
 	sections.forEach(section => {
 		let animatedBlock = section.querySelectorAll('.animated-block');
 		animatedBlock.forEach(block => {
 			ScrollTrigger.create({
 				trigger: section,
-				start: 'top top+=20%',
+				start: 'top top+=50%',
 				end: 'bottom bottom',
 				toggleClass: {
 					targets: block,
@@ -92,11 +116,23 @@ function Animations() {
 			});
 		});
 	});
-
+	let animatedCase = document.querySelectorAll('.case');
+	animatedCase.forEach(block => {
+		ScrollTrigger.create({
+			trigger: block,
+			start: 'top top+=70%',
+			end: 'bottom bottom',
+			toggleClass: {
+				targets: block,
+				className: '_active',
+			},
+			markers: false,
+			once: true,
+		});
+	});
 	ShowHelper2.setViewpostScale(1);
 
 	const $targets = $('[data-auto-show]');
-
 	if ($targets.length) {
 		TweenMax.set($targets, {
 			alpha: 0,
@@ -111,7 +147,7 @@ function Animations() {
 					ShowHelper2.unwatch(target);
 					TweenMax.fromTo(
 						target,
-						0.855,
+						0.9,
 						{
 							y: 15,
 							alpha: 0,
@@ -127,8 +163,8 @@ function Animations() {
 				}
 			},
 			true,
-			false,
-			55
+			true,
+			15
 		);
 	}
 
@@ -145,7 +181,7 @@ function Animations() {
 					ShowHelper2.unwatch(target);
 					TweenMax.fromTo(
 						target,
-						0.855,
+						0.9,
 						{
 							x: 15,
 							alpha: 0,
@@ -161,8 +197,8 @@ function Animations() {
 				}
 			},
 			true,
-			false,
-			55
+			true,
+			15
 		);
 	}
 	const $targetsLeft = $('[data-auto-show-left]');
@@ -179,7 +215,7 @@ function Animations() {
 					ShowHelper2.unwatch(target);
 					TweenMax.fromTo(
 						target,
-						0.855,
+						0.9,
 						{
 							x: -55,
 							alpha: 0,
@@ -195,11 +231,22 @@ function Animations() {
 				}
 			},
 			true,
-			false,
-			55
+			true,
+			15
 		);
 	}
 	ShowHelper2.start();
+
+	let lastScrollTop = 0;
+	dom.$window.on('scroll', function() {
+		let scrollTop = $(this).scrollTop();
+		if (scrollTop > lastScrollTop) {
+			$('.header').addClass('_onscroll');
+		} else {
+			$('.header').removeClass('_onscroll');
+		}
+		lastScrollTop = scrollTop;
+	});
 }
 
 export default new Animations();

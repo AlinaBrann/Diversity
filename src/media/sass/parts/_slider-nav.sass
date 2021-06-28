@@ -2,7 +2,7 @@
     display: flex !important
     
     button
-        font-size: rem(20px)
+        font-size: 14px
         border: none
         border-bottom: 1px solid #000
         font-family: $thin
@@ -12,11 +12,17 @@
         @extend .transition
         &::first-letter
             letter-spacing: 0.35em
+        +min-screen($screen-sm)
+            font-size: rem(20px)
+        &:hover
+            color: $font_color
     li
         display: block
         @extend .transition
         &:not(:last-of-type)
-            margin-right: rem(29px)
+            margin-right: 14px
+            +min-screen($screen-sm)
+                margin-right: rem(29px)
         &.slick-active
             transform: scale(1.2)
             button
@@ -28,7 +34,7 @@
                     &:before
                         content: '0'
     &__item        
-        font-size: rem(20px)
+        font-size: 14px
         border-bottom: 1px solid #000
         font-family: $thin
         color: transparent
@@ -36,6 +42,10 @@
         @extend .transition
         &::first-letter
             letter-spacing: 0.35em
+        +min-screen($screen-sm)
+            font-size: rem(20px)
         &._active
             transform: scale(1.2)
+            color: $font_color
+        &:hover
             color: $font_color
