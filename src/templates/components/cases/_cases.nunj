@@ -1,22 +1,32 @@
 {% from "../case/_case.nunj" import case %}
 {% from "../button/_button.nunj" import button %}
-
-<section class="cases" id="cases">
-    <div class="container">
-        <div class="row">
-            {% for item in cases.slice(0,4) %}
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    {{ case( item)}}
-                </div>
-                
-            {% endfor %}
+{% macro casesBlock(props) %}
+{% set sliseNumber = props.slice %}
+<section class="cases{% if props.class %} {{ props.class }}{% endif %}" id="cases">
+    <div class="container{% if props.container %} {{ props.container }}{% endif %}">
+        <div class="cases-wrapper">
+            <div class="row">
+                {% if props.slice %}
+                    {% for item in cases.slice(0,sliseNumber) %}
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            {{ case( item)}}
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    {% for item in cases %}
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            {{ case( item, props.caseClass
+                            )}}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
         </div>
         <div class="row">
             <div class="col-xs-12 col-md-12 flex _jcc" data-auto-show>
-                {{ button({
-                    text: "все кейсы"
-                })}}
+                <a href="/cases.html" class="button">все кейсы </a>
             </div>
         </div>
     </div>
 </section>
+{% endmacro %}

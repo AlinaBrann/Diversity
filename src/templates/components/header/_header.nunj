@@ -4,12 +4,12 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-6 col-md-6">
-                <div class="header-logo _black-logo">
+                <a href="/" class="header-logo _black-logo">
                     <img src="media/img/logo.svg " class="header-logo__image" alt="">
-                </div>
-                <div data-anchor="intro" class="header-logo _white-logo">
+                </a>
+                <a href="/" class="header-logo _white-logo">
                     <img src="media/img/logo-full-white.svg" class="header-logo__image" alt="">
-                </div>
+                </a>
             </div>
             <div class="col-xs-6 col-md-6 flex _jcfe">
                 <div class="header-menu-wrapper">

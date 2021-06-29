@@ -1,0 +1,20 @@
+.page
+    padding-top: rem(120px)
+    +min-screen($screen-md)
+        padding-top: rem(180px)
+    &__container
+        padding-left: $leftIndentXS
+        +min-screen($screen-sm)
+            padding-left: $leftIndentSM
+            &._with-pr
+                padding-right: rem(28px)
+        +min-screen($screen-md)
+            padding-left: $leftIndent
+            &._with-pr
+                padding-right: rem(28px)
+    &__title
+        margin-bottom: 40px
+        font-size: 30px
+        +min-screen($screen-sm)
+            font-size: rem(45px)
+            margin-bottom: rem(70px)

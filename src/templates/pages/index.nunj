@@ -1,6 +1,7 @@
 {% extends "../ext/base.nunj" %}
 
 {% from "../components/button/_button.nunj" import button %}
+{% from "../components/cases/_cases.nunj" import casesBlock %}
 
 {# Пример расширения существующего блока #}
 {# Например можно использовать для добавления уникальных тайтлов для каждой страницы #}
@@ -16,7 +17,9 @@
 	{% include '../components/facts/_facts.nunj' %}
 	{% include '../components/text-on-squares/_text-on-squares.nunj' %}
 	{% include '../components/services/_services.nunj' %}
-	{% include '../components/cases/_cases.nunj' %}
+	{{ casesBlock({
+		slice: 4
+	})}}
 	{% include '../components/innovation/_innovation.nunj' %}
 	{% include '../components/resources/_resources.nunj' %}
 	{% include '../components/customers/_customers.nunj' %}

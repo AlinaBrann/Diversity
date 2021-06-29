@@ -63,7 +63,13 @@ Tabs.prototype = {
 			.filter('[data-tab-opener="' + $firstTab.attr('data-tab') + '"]')
 			.addClass('_active-tab');
 
-		$openers.on('mouseover', function(e) {
+		let $openerEvent;
+		if ($openers.parents('.tabs-nav').hasClass('_by-click')) {
+			$openerEvent = 'click';
+		} else {
+			$openerEvent = 'mouseover';
+		}
+		$openers.on($openerEvent, function(e) {
 			e.preventDefault();
 
 			let $this = $(this);

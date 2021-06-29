@@ -1,0 +1,50 @@
+{% extends "../ext/base.nunj" %}
+
+{% from "../components/button/_button.nunj" import button %}
+{% from "../components/cases/_cases.nunj" import casesBlock %}
+{% from "../components/case/_case.nunj" import case %}
+
+{# Пример расширения существующего блока #}
+{# Например можно использовать для добавления уникальных тайтлов для каждой страницы #}
+{% block title %}{{ casesPageTitle }} / {{ super() }}{% endblock title %}
+
+{% block content %}
+	{% include '../components/preloader/_preloader.nunj' %}
+	{% include '../components/header/_header.nunj' %}
+    <div class="cases-page page" data-tabs>
+        <div class="page__container container _with-pr">
+            <h1 class="page__title">{{ casesPageTitle }}</h1>
+            {% include '../components/filter/_filter.nunj' %}
+            <div class="cases-page__cases">
+                
+                {% for content in categories %}
+                    <div class="tabs-content" data-tab="all">
+                        <div class="row">
+                            {% set item = 'item' + loop.index %}
+                            {% for item in cases  %}
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    {{ case(item) }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="tabs-content" data-tab="{{ content.slug }}">
+                        <div class="row">
+                            {% set item = 'item' + loop.index %}
+                            {% for item in cases  %}
+                                {% if item.categorySlug == content.slug %}
+                                    <div class="col-xs-12 col-sm-6 col-md-6">
+                                        {{ case(item) }}
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+                
+            </div>
+        </div>
+    </div>
+    {% include '../components/footer/_footer.nunj' %}
+
+{% endblock content %}
