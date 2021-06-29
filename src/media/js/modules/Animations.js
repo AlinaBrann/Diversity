@@ -88,18 +88,20 @@ function Animations() {
 			markers: false,
 		},
 	});
-	scrollSunTl.to('.footer', {
-		scrollTrigger: {
-			trigger: '.footer',
+
+	let headerTrigger = document.querySelectorAll('[data-header-trigger]');
+	headerTrigger.forEach(block => {
+		ScrollTrigger.create({
+			trigger: block,
 			start: 'top top',
+			end: 'bottom top',
 			toggleClass: {
 				targets: '.header',
 				className: '_white',
 			},
 			markers: false,
-		},
+		});
 	});
-
 	sections.forEach(section => {
 		let animatedBlock = section.querySelectorAll('.animated-block');
 		animatedBlock.forEach(block => {

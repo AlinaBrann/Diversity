@@ -143,11 +143,17 @@
 			"name": "TetraPak Пятерочка – Shopper Marketing",
 			"img": "tetrapak-img.jpg",
 			"logos": ["tetrapak.png", "pyaterochka.svg"],
+			"logosColor": ["tetrapak.svg", "5.png"],
 			"link": "/",
 			"category": "Shopper marketing",
 			"categorySlug": "shopperMarketing",
 			"text": "Подарили пользу молока тем, кто в&nbsp;ней нуждался",
-			"fact": "В <span>23</span> городах <br>России Пятерочки <br>дарили с нами <br>добро"
+			"fact": "В <span>23</span> городах <br>России Пятерочки <br>дарили с нами <br>добро",
+			"facts": [
+				"<strong>4 000</strong> <span>магазинов</span> <span>«Пятёрочка в 23 городах</span> <small>дарили с нами добро</small>",
+				"<strong>9 000</strong> <span>упаковок</span> <span>молока Tetra Pak®</span> <small>нуждающиеся получили бесплатно</small>",
+				"<strong>9 100</strong> <span>призов</span> <small>для&nbsp;покупателей</small>"
+			]
 		},
 		{
 			"name": "Время первых – Point of Entry",

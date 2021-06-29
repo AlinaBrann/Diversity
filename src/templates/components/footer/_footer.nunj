@@ -1,6 +1,6 @@
 {% from "../icon/_icon.nunj" import icon %}
 
-<footer class="footer animated-section" id="contacts">
+<footer class="footer animated-section" id="contacts" data-header-trigger>
     <div class="footer-content">
         <div class="footer-row _first _aic _jcsb">
             <div class="footer-col">

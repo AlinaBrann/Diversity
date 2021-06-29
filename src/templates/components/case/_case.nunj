@@ -1,6 +1,6 @@
 {% macro case(props, className = '')%}
     <div class="case{% if className %} {{ className }}{% endif %}">
-        <a href="/">
+        <a href="/case.html">
             <img src="media/img/cases/{{ props.img }}" class="case__img" alt="">
             <div class="case-category">{{ props.category }}</div>
             <div class="case-fact">

@@ -197,3 +197,27 @@ section
 	&:hover
 		&:before
 			width: 0
+
+.back-link
+	position: absolute
+	bottom: rem(20px)
+	left: $leftIndentXS
+	padding-right: rem(38px)
+	+min-screen($screen-sm)
+        left: $leftIndentSM
+	+min-screen($screen-md)
+		left: 0
+	&__text
+		position: relative
+		font-size: rem(20px)
+		letter-spacing: rem(11px)
+		line-height: rem(97px)
+		z-index: 1
+	&__squares
+		position: absolute
+		top: 50%
+		right: 0
+		transform: translateY(-50%)
+		display: flex
+	&__square.square
+		opacity: 1

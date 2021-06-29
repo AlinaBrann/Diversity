@@ -1,0 +1,99 @@
+.case-page
+    padding: 0
+    &__container
+        +max-screen($screen-sm)
+            padding: 0
+    &__case
+        display: flex
+        padding: 0
+        margin: 0
+        flex-direction: column
+        +min-screen($screen-md)
+            flex-direction: row
+    &__col
+        display: block
+        +min-screen($screen-md)
+            min-height: 100vh
+            &:first-of-type
+                width: 49%
+            &:last-of-type
+                flex: auto
+    &__content
+        padding-top: rem(47px)
+        padding-left: $leftIndentXS
+        padding-right: $leftIndentXS
+        padding-bottom: rem(113px)
+        +min-screen($screen-sm)
+            padding-top: rem(67px)
+            padding-left: $leftIndentSM
+            padding-right: $leftIndentSM
+        +min-screen($screen-md)
+            padding-left: 0
+            padding-right: rem(50px)
+            padding-top: rem(167px)
+    &__category
+        display: inline-block
+        margin-bottom: rem(40px)
+        font-size: rem(18px)
+        +min-screen($screen-sm)
+            margin-bottom: rem(60px)
+    &__category,
+    &-fact
+        position: relative
+        top: 0
+        left: 0
+    &__img
+        height: 50vh
+        object-position: top center
+        +min-screen($screen-md)
+            height: 100%
+            object-position: center
+        &-wrapper
+            order: -1
+            +min-screen($screen-md)
+                order: 0
+    &-logos
+        margin-bottom: rem(20px)
+        &__item
+            +max-screen($screen-xs)
+                img
+                    max-height: 23px
+    &__text
+        width: 80%
+        margin-bottom: rem(50px)
+        font-size: 20px
+        line-height: 26px
+        +min-screen($screen-sm)
+            font-size: rem(35px)
+            line-height: rem(44px)
+        +min-screen($screen-md)
+            margin-bottom: rem(80px)
+    &-facts
+        display: flex
+        flex-wrap: wrap
+        flex-direction: column
+        justify-content: space-between
+        +min-screen($screen-sm)
+            flex-direction: row
+    &-fact
+        flex: 0 0 43%
+        margin-bottom: rem(20px)
+        line-height: rem(26px)
+        +min-screen($screen-md)
+            margin-bottom: rem(60px)
+            line-height: rem(21px)
+        strong
+            font-size: rem(35px)
+        span
+            font-size: rem(22px)
+            line-height: rem(21px)
+            & + span
+                font-size: rem(18px)
+        small
+            font-size: rem(14px)
+            font-family: "Lato-Thin"
+        &__triangle
+            top: 18%
+            left: rem(-32px)
+            border-top-width: rem(20px)
+            border-left-width: rem(20px)
