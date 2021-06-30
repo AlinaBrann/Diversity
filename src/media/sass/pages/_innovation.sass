@@ -1,0 +1,81 @@
+.innovation-page
+    padding-bottom: 50px
+    +min-screen($screen-sm)
+        padding-bottom: rem(110px)
+    &-tab
+        background-size: 100%
+        background-position: top 50% right
+        background-repeat: no-repeat
+        +min-screen($screen-sm)
+            background-size: 60%
+            background-position: top 30% right
+            background-repeat: no-repeat
+        &-title
+            margin-bottom: rem(35px)
+            text-transform: uppercase
+        &-subtitle
+            width: 80%
+            margin-bottom: rem(16px)
+            font-size: 18px
+            line-height: 28px
+            font-family: "Lato"
+            +min-screen($screen-sm)
+                width: 40%
+                font-size: rem(28px)
+                line-height: rem(41px)
+        &-list
+            margin-bottom: 50px
+            +min-screen($screen-sm)
+                margin-left: auto
+            +min-screen($screen-md)
+                width: 47%
+                margin-bottom: 0
+            &__item
+                position: relative
+                margin-bottom: 20px
+                padding-left: rem(15px)
+                font-size: 18px
+                line-height: 22px
+                +min-screen($screen-sm)
+                    margin-bottom: rem(50px)
+                    font-size: rem(25px)
+                    line-height: rem(39px)
+                &:before
+                    +b
+                    top: rem(17px)
+                    left: 0
+                    +size(4px)
+                    background: $font_color
+                    border-radius: 50%
+    &-slider
+        .slick
+            &-list
+                padding: 0 46px 0  !important
+                +min-screen($screen-sm)
+                    padding: 0 $leftIndentSM 0 !important
+                +min-screen($screen-md)
+                    padding: 0 $leftIndent 0 !important
+            &-slide
+                transition: opacity 0.4s
+                opacity: 0
+                +min-screen($screen-md)
+                    height: rem(577px)
+            &-center
+                opacity: 1
+                + .slick-slide
+                    opacity: 1
+                    cursor: pointer
+        &__img
+            +size(100%)
+            object-fit: cover
+            @extend .transition
+            transform: scale(0.95)
+            .slick-center &
+                transform: scale(1)
+        &-nav
+            position: relative
+            display: flex
+            justify-content: center
+            margin: rem(40px) 0 0 
+            +min-screen($screen-md)
+                margin: rem(80px) 0 0 

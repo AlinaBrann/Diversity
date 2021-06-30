@@ -12,12 +12,12 @@
             <div class="innovation-slider-wrapper">
                 <div data-slider="innovation">
                     <div class="innovation-slider" data-slider-slides>
-                        {% for item in innovation.slider %}
+                        {% for item in innovation.items %}
                             <div class="innovation-slider__slide">
                                 <img src="media/img/innovation/{{ item.img }}" class="innovation-slider__img" alt="">
                                 <div class="innovation-slider__info">
                                     {{ button({
-                                        text: item.buttonText,
+                                        text: item.title,
                                         class: "innovation-slider__button"
                                     })}}
                                     <div class="innovation-slider__text">{{ item.text }}</div>
@@ -27,7 +27,7 @@
                         {% endfor %}
                     </div>
                     <ul class="slider-nav innovation-slider-nav" data-slider-dots>
-                        {% for item in innovation.slider %}
+                        {% for item in innovation.items %}
                             <li class="slider-nav__item"></li>
                         {% endfor %}
                     </ul>

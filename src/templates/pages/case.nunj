@@ -16,7 +16,7 @@
                 {% for item in cases.slice(0,1) %}
                     <div class="case case-page__case page__row">
                         <div class="case-page__col">
-                            <div class="case-page__content">
+                            <div class="case-page__content" data-auto-show-left>
                                 <div class="case-category case-page__category">{{ item.category }}</div>
                                 <ul class="case-logos case-page-logos">
                                     {% for logo in item.logosColor %}
@@ -45,7 +45,7 @@
                             </div>
                             
                         </div>
-                        <div class="case-page__col case-page__img-wrapper">
+                        <div class="case-page__col case-page__img-wrapper" data-auto-show-right>
                             <img src="media/img/cases/{{ item.img }}" class="case__img case-page__img" alt="">
                         </div>
                     </div>

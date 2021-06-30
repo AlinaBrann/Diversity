@@ -1,0 +1,68 @@
+{% extends "../ext/base.nunj" %}
+
+{% from "../components/button/_button.nunj" import button %}
+{% from "../components/case/_case.nunj" import case %}
+{% from "../components/filter/_filter.nunj" import filter %}
+
+{% block title %}Инновации / {{ super() }}{% endblock title %}
+
+{% block content %}
+{% include '../components/preloader/_preloader.nunj' %}
+{% include '../components/header/_header.nunj' %}
+
+<div class="innovation-page page" data-tabs>
+    <div class="page__container container">
+        <h1 class="page__title" data-auto-show>Инновации</h1>
+
+        {{ filter(innovation.categories)}}
+    </div>
+    {% for content in innovation.categories %}
+    
+
+        {% set item = 'item' + loop.index %}
+        {% for item in innovation.items  %}
+        {% if item.categorySlug == content.slug %}
+        <div class="tabs-content innovation-page-tab" style="background-image: url('media/img/innovation/{{ item.background }}')" data-tab="{{ content.slug }}">
+            <div class="page__container container flex _fdc">
+
+                <h2 class="section-title innovation-page-tab-title" data-auto-show>
+                    <img src="media/img/title-icons/{{ item.titleIcon }}"
+                        class="section-title__icon" alt="">
+                    <span>{{ item.title }}</span>
+                </h2>
+
+                <div class="innovation-page-tab-subtitle" data-auto-show>{{ item.text }}</div>
+
+                <ul class="innovation-page-tab-list">
+                    {% for li in item.list %}
+                        <li class="innovation-page-tab-list__item" data-auto-show>{{ li }}</li>
+                    {% endfor %}
+                </ul>
+                
+            </div>
+            <div class="innovation-page-slider" data-slider="innovation" data-auto-show>
+                <div data-slider-slides>
+                    {% for slide in item.slider %}
+                        <div class="innovation-page-slider__slide">
+                            <img src="media/img/innovation/{{ slide }}" class="innovation-page-slider__img" alt="">
+                        </div>
+                    {% endfor %}
+                </div>
+                <ul class="slider-nav innovation-page-slider-nav" data-slider-dots>
+                    {% for slide in item.slider %}
+                        <li class="slider-nav__item"></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+            
+    
+    {% endfor %}
+
+   
+</div>
+{% include '../components/footer/_footer.nunj' %}
+
+{% endblock content %}

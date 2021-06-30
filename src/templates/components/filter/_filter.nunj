@@ -1,7 +1,9 @@
+{% macro filter(props)%}
 <section class="filter">
-    <ul class="filter-tabs-nav tabs-nav _by-click">
-        {% for nav in categories %}
+    <ul class="filter-tabs-nav tabs-nav _by-click{% if props.length <= 3 %} _jcfs{% endif %}">
+        {% for nav in props %}
             <li class="filter-tabs-nav__item tabs-nav__item" data-tab-opener="{{ nav.slug }}" data-auto-show>{{ nav.name }}</li>
         {% endfor %}
     </ul>
 </section>
+{% endmacro %}

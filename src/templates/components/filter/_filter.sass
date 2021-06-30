@@ -13,6 +13,8 @@
             +min-screen($screen-md)
                 flex-wrap: nowrap
                 justify-content: space-between
+                &._jcfs
+                    justify-content: flex-start
             &__item
                 font-size: 16px
                 margin: 0 8px 10px
@@ -26,3 +28,5 @@
                 &:not(:last-of-type)
                     +min-screen($screen-md)
                         margin-right: rem(20px)
+                        ._jcfs & 
+                            margin-right: 10%

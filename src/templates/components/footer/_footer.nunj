@@ -4,7 +4,7 @@
     <div class="footer-content">
         <div class="footer-row _first _aic _jcsb">
             <div class="footer-col">
-                <div class="footer-logo">
+                <div class="footer-logo" data-auto-show>
                     <a href="/" class="footer-logo__link">
                         <img src="media/img/logo-white.svg" class="footer-logo__img" alt="">
                     </a>
@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-        <div class="footer-row _aist _jcsb">
+        <div class="footer-row _aist _jcsb" data-auto-show>
             {% for item in footerItems %}
                 <div class="footer-col">
                     {% for blockItem in item.blocks %}
