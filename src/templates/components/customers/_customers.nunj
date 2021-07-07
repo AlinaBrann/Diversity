@@ -1,6 +1,6 @@
 <section class="customers section animated-section" id="customers">
     <div class="section__container customers__container">
-        <div class="section__row">
+        <div class="section__row customers__row">
 			<div class="section__col">
 				<h2 class="section-title customers-title">
 					<img src="media/img/title-icons/{{ customers.titleIcon }}" class="section-title__icon" alt="">

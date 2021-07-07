@@ -1,0 +1,47 @@
+.contacts-block
+    margin-bottom: 30px
+    font-size: 12px
+    line-height: 14px
+    +min-screen($screen-md)
+        margin-bottom: rem(35px)
+        font-size: rem(20px)
+        line-height: rem(23.5px)
+    &__icon
+        +size(rem(56px))
+        margin-bottom: rem(24px)
+    &__title
+        font-family: "Lato"
+        text-transform: uppercase
+    &__text
+        +min-screen($screen-md)
+            white-space: nowrap
+    &__link
+        display: inline-block
+        @extend .transition
+        cursor: pointer
+        &._uppercase
+            text-transform: uppercase
+        &._underline
+            border-bottom: 1px solid currentColor
+        &:hover
+            color: #FFF
+        &-wrapper
+            margin-top: 15px
+            width: 80%
+            +min-screen($screen-sm)
+                width: 60%
+            +min-screen($screen-md)
+                width: auto
+                margin-top: 0
+    &-social
+        display: flex
+        margin-top: 20px
+        +min-screen($screen-md)
+            margin-top: rem(20px)
+        &__item
+            @extend .transition
+            opacity: 0.5
+            &:not(:last-of-type)
+                margin-right: rem(30px)
+            &:hover
+                opacity: 1

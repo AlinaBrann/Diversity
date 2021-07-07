@@ -1,145 +1,42 @@
-{% from "../datepicker/_datepicker.nunj" import datepicker %}
+{% from "../icon/_icon.nunj" import icon %}
 
 <div class="popups-wrapper">
 	<div class="popups-wrapper__content">
 
-		<div class="popup" data-popup="request-auto">
-			<div class="full-screen container ">
-				<div class="row">
-					<div class="col-xs-12 col-md-4 offset-md-4">
-						<div class="popup__title">Заявка</div>
-						<div class="popup__subtitle">
-							на аренду 
-							<span>Mercedes-Benz G-класс G63 AMG</span>
+		<div class="popup" data-popup="map">
+			<div class="popup__close" data-popup-closer>
+				{{ icon({
+					name: "close",
+					width: "14",
+					height: "14"
+				})}}
+			</div>
+			<div class="popup__container">
+				<div class="popup__title">{{ popupMap.title }}</div>
+				<a href="{{ popupMap.fileLink }}" class="popup__file" download>
+					<span>{{ popupMap.fileText }}</span>
+					{{ icon({
+						name: "arrow-down",
+						width: "16",
+						height: "12"
+					})}}
+					{{ popupMap.fileSize }}
+				</a>
+				<div class="popup-map">
+					<img src="media/img/popup-map.jpg" class="popup-map__img" alt="">
+					<div class="popup-map-address">
+						<img src="media/img/favicon.svg" class="popup-map-address__logo" alt="">
+						<div class="popup-map-address__text">
+							<span>{{ mainTitle }}</span>
+							{{ address }}
 						</div>
-						<form action="" class="popup-form">
-							<div class="popup-form-input">
-								<label for="phone" class="popup-form-input__label">{{ popups.fieldLabel }}</label>
-								<input id="phone" type="text" class="input popup-form-input__input" value="+7 912 345 67 89">
-							</div>
-							<div class="popup-form-input">
-								<label class="popup-form-input__label">
-									{{ popups.datepickerLabel }}
-									<button type="button" class="popup-clear-datepicker clear-datepicker">{{ popups.clearButton }}</button>
-								</label>
-								{{ datepicker({
-									class: "_dark datepicker-popup"
-								})}}
-							</div>
-							<div class="popup-form-input popup-form-time-block flex _aic">
-								<div class="popup-form-checkbox">
-									<input type="checkbox" id="check" class="checkbox-time-trigger">
-									<label for="check" class="popup-form-checkbox__label">{{ popups.enterTimeButton }}</label>
-								</div>
-								<div class="popup-form-time">
-									<input id="time" type="text" class="input popup-form-input__input" value="23:55">
-								</div>
-							</div>
-							<div class="flex popup-details detail-sidebar-result">
-								<div class="detail-sidebar-result__col">
-									<span>{{ detailSidebarContent.duration }}</span>
-									<div class="detail-sidebar-total-days" data-datepicker-total>0</div>
-								</div>
-								<div class="detail-sidebar-result__col">
-									<span>{{ detailSidebarContent.rentAmount }}</span>
-									<div class="detail-sidebar-total-days">130 000 ₽</div>
-								</div>
-								<div class="detail-sidebar-result__col">
-									<span>{{ detailSidebarContent.deposit }}</span>
-									<div class="detail-sidebar-total-days">130 000 ₽</div>
-								</div>
-							</div>
-							{{ button({
-								class: "_full",
-								type: "submit",
-								text: popups.button,
-								attr: "data-popup-opener='thanks'"
-							})}}
-							<div class="popup-note hidden-xs">{{ popups.note }}</div>
-						</form>
-						
-					</div>
-				</div>
-				
-				
-			</div>
-		</div>
-
-		<div class="popup" data-popup="request">
-			<div class="full-screen container ">
-				<div class="row">
-					<div class="col-xs-12 col-md-4 offset-md-4">
-						<div class="popup__title">Заявка</div>
-						<form action="" class="popup-form">
-							<div class="popup-form-input">
-								<label for="phone" class="popup-form-input__label">{{ popups.fieldLabel }}</label>
-								<input id="phone" type="text" class="input popup-form-input__input" value="+7 912 345 67 89">
-							</div>
-							<div class="popup-form-input">
-								<label class="popup-form-input__label">
-									{{ popups.datepickerLabel }}
-									<button type="button" class="popup-clear-datepicker clear-datepicker hidden-xs">{{ popups.clearButton }}</button>
-								</label>
-								{{ datepicker({
-									class: "_dark datepicker-popup"
-								})}}
-							</div>
-							<div class="popup-form-input popup-form-time-block flex hidden-xs _aic">
-								<div class="popup-form-checkbox">
-									<input type="checkbox" id="check2" class="checkbox-time-trigger">
-									<label for="check2" class="popup-form-checkbox__label">{{ popups.enterTimeButton }}</label>
-								</div>
-								<div class="popup-form-time">
-									<input id="time2" type="text" class="input popup-form-input__input" value="23:55">
-								</div>
-							</div>
-							<div class="flex popup-details detail-sidebar-result">
-								<div class="detail-sidebar-result__col">
-									<span>{{ detailSidebarContent.duration }}</span>
-									<div class="detail-sidebar-total-days" data-datepicker-total>0</div>
-								</div>
-								<div class="detail-sidebar-result__col">
-									<span>{{ detailSidebarContent.rentAmount }}</span>
-									<div class="detail-sidebar-total-days">130 000 ₽</div>
-								</div>
-								<div class="detail-sidebar-result__col">
-									<span>{{ detailSidebarContent.deposit }}</span>
-									<div class="detail-sidebar-total-days">130 000 ₽</div>
-								</div>
-							</div>
-							{{ button({
-								class: "_full",
-								type: "submit",
-								text: popups.button
-							})}}
-							<div class="popup-note hidden-xs">{{ popups.note }}</div>
-						</form>
-						
-					</div>
-				</div>
-				<div id="timer"></div>
-
-				
-			</div>
-		</div>
-
-		<div class="popup _thanks" data-popup="thanks">
-			<div class="full-screen container ">
-				<div class="row">
-					<div class="col-xs-12 col-md-6 offset-md-3">
-						<div class="popup__title _small">{{ popups.thanksTitle }}</div>
-						<div class="popup__text">{{ popups.thanksText }}</div>
-						<div id="countdown"></div>
 					</div>
 				</div>
 			</div>
+			
 		</div>
+
+		
 	</div>
-	<div class="popup__close _grey" data-popup-closer>
-		{{ icon({
-			name: "close",
-			width: "58",
-			height: "58"
-		})}}
-	</div>
+	
 </div>

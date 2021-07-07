@@ -1,0 +1,17 @@
+.contacts-page
+    &__row
+        flex-direction: column
+        +min-screen($screen-sm)
+            flex-direction: row
+    &__col
+        +min-screen($screen-sm)
+            flex: 0 0 50%
+    &-block
+        &:not(:first-of-type)
+            .contacts-block__title
+                text-transform: none
+    
+    .contacts-block__link
+        &:hover
+            color: $font_color
+            border-color: transparent

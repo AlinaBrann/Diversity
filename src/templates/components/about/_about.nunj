@@ -1,4 +1,4 @@
-<section class="about" data-animated-text>
+<section class="about" data-animated-text data-delay="1">
     <div class="about-animated-text animated-text">
         Ежегодно 
         <br>охватываем нашими проектами

@@ -14,7 +14,7 @@
             <div class="col-xs-6 col-md-6 flex _jcfe">
                 <div class="header-menu-wrapper">
                     <button class="header-menu-button"></button>
-                    <div class="header-menu-contacts underline-text" data-anchor="contacts">{{ contactsHeaderMenu }}</div>
+                    <a href="/contacts.html" class="header-menu-contacts underline-text">{{ contactsHeaderMenu }}</a>
                     <div class="header-menu">
                         <div class="header-menu-backdrop" data-menu-closer></div>
                         <div class="header-menu-closer" data-menu-closer>

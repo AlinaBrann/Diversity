@@ -12,7 +12,9 @@
                 <div class="services-tabs" data-tabs>
                     <ul class="services-tabs-nav tabs-nav">
                         {% for nav in categories %}
-                            <li class="services-tabs-nav__item tabs-nav__item" data-tab-opener="{{ nav.slug }}" data-auto-show>{{ nav.name }}</li>
+                            <li class="services-tabs-nav__item tabs-nav__item" data-tab-opener="{{ nav.slug }}" data-auto-show>
+                                <a href="/cases.html?tab={{ nav.slug }}">{{ nav.name }}</a>
+                            </li>
                         {% endfor %}
                     </ul>
                     <div class="services-tabs-content-wrapper" data-auto-show-right>

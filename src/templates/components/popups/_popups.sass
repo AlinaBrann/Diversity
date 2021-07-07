@@ -2,11 +2,10 @@
 	position: fixed
 	top: 0
 	left: 0
-	z-index: 100
+	z-index: 1000
 	display: none
 	width: 100%
 	height: 100%
-	background: #0C3744
 	overflow: hidden
 	will-change: transform
 	&__content
@@ -21,127 +20,84 @@
 .popup
 	$parent-selector: &
 	position: relative
-	min-height: 100%
-	padding-top: 76px
-	+min-screen($screen-sm)
-		padding-top: calc(36px + 7.8125vh)
-	+min-screen($screen-md)
-		padding-top: calc(36px + 6.4865vh)
-		&._thanks
-			padding-top: 19vh
+	width: 95%
+	margin: 20vh 0
+	background: #f7f6f6
+	box-shadow: 0px 4px 8px 11px rgba(0, 0, 0, 0.1)
+
 	&__close
-		position: fixed
+		position: absolute
 		+size(36px)
-		right: 30px
+		right: 20px
 		top: 30px
+		display: flex
+		align-items: center
+		justify-content: center
 		@extend .transition
 		z-index: 10
 		cursor: pointer
-		&:hover
-			transform: rotate(90deg)
 		+min-screen($screen-sm)
 			+size(rem(58px))
 			right: rem(40px)
 			top: rem(40px)
 		+min-screen($screen-lg)
-			right: rem(40px)
-			top: rem(40px)
-		svg
-			+size(100%)
+			right: rem(50px)
+			top: rem(46px)
+	&__container
+        padding: rem(58px) $leftIndentXS rem(45px)
+        +min-screen($screen-sm)
+            padding: rem(88px) $leftIndentSM rem(75px)
+        +min-screen($screen-md)
+            padding: rem(88px) $leftIndent rem(75px)
 	&__title
-		margin-bottom: rem(16px)
-		font-size: rem(72px)
-		line-height: rem(79px)
-		text-align: center
-		&._small
-			margin-bottom: rem(16px)
-			font-size: rem(48px)
-			line-height: rem(52px)
-	&__subtitle
-		margin-bottom: 40px
-		font-size: 18px
-		text-align: center
-		span
-			display: block
+		margin-bottom: rem(20px)
+		font-size: 20px
+		text-transform: uppercase
 		+min-screen($screen-sm)
-			margin-bottom: rem(40px)
-			font-size: rem(24px)
-	&__text
-		margin-bottom: rem(64px)
-		font-size: rem(24px)
-		text-align: center
-	&-form
-		padding-bottom: 5vh
-		&-input
-			margin-bottom: rem(32px)
-			&__label
-				display: flex
-				margin-bottom: rem(14px)
-				color: $brand_color
-			&__input
-				background: transparentize(#02090D, .7)
-		&-time
+			font-size: rem(25px)
+	&__file
+		display: flex
+		font-size: 18px
+		margin-bottom: rem(20px)
+		+min-screen($screen-sm)
+			font-size: rem(20px)
+		span
+			text-transform: uppercase
+			font-family: "Lato"
+		.icon
+			+size(rem(14px))
+			margin: 7px 7px 0
+			+min-screen($screen-sm)
+				margin: rem(10px) rem(15px) 0 rem(10px)
+	&-map
+		position: relative
+		width: 100%
+		height: 200px
+		background: #C4C4C4
+		+min-screen($screen-sm)
+			height: rem(413px)
+		+min-screen($screen-md)
+			height: rem(613px)
+		&__img
+			+size(100%)
+			object-fit: cover
+		&-address
+			position: absolute
 			display: flex
-			width: 0
-			opacity: 0
-			transition: .5s
-			._active &
-				flex: auto
-				opacity: 1
-			&-block
-				justify-content: center
-				transition: .5s
-				._empty &
-					display: none
-				.input
-					flex: 0 1 auto
-					margin-left: rem(24px)
-				.button
-					flex-shrink: 0
-		&-checkbox
-			$parent: &
-			&__label
-				position: relative
-				padding-left: rem(36px)
-				font-size: rem(18px)
-				&:after,
-				&:before
-					+b
-					top: 0
-					left: 0
-					+size(rem(24px))
-					@extend .transition
-				&:before
-					background: #092933
-					border-radius: rem(4px)
-				&:after
-					width: 0
-					background: url('../img/check.svg') no-repeat center left rem(4px)
-					background-size: rem(15px)
-					transition: .5s 
-
-			input
-				display: none
-				&:checked
-					+ #{$parent}
-						&__label
-							&:before
-								background: $blue
-							&:after
-								width: rem(24px)
-
-	&-clear-datepicker
-		margin-left: auto
-		color: $blue
-		font-size: rem(16px)
-		background: none
-		border: none
-		cursor: pointer
-	&-note
-        margin-top: rem(16px)
-        text-align: center
-        color: $brand_color
-	&-details
-		._empty &
-			display: none
-
+			max-width: rem(260px)
+			left: 47%
+			bottom: rem(43px)
+			padding: 0 rem(9px) rem(8px)
+			background: #FFF
+			&__logo
+				+size(rem(30px))
+				margin-top: rem(-10px)
+				margin-right: rem(15px)
+			&__text
+				font-size: rem(12px)
+				span
+					display: block
+					font-family: "Lato"
+					text-transform: uppercase
+					font-size: rem(14px)
+					line-height: rem(23.5px)

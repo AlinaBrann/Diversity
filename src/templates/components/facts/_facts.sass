@@ -23,12 +23,12 @@
     &-slide
         display: flex !important
         &-info
-            flex: auto
+            flex: 0 1 auto
             padding: 30px 15px 20px 0
             +min-screen($screen-sm)
                 padding: rem(75px) rem(60px) rem(20px) rem(40px)
             +min-screen($screen-md)
-                padding: rem(195px) rem(30px) rem(20px) rem(60px)
+                padding: rem(195px) rem(30px) rem(20px) rem(40px)
             &__top-text
                 min-height: 20px
                 margin-bottom: 10
@@ -159,13 +159,13 @@
                     bottom: rem(83px)
         &-founders
             display: flex
-            width: 120px
+            width: 150px
             height: 225px
             flex-direction: column
             align-items: flex-start
             background: #C4C4C4
             +min-screen($screen-sm)
-                width: rem(380px)
+                width: rem(350px)
                 height: rem(440px)
             +min-screen($screen-md)
                 width: rem(500px)
@@ -173,46 +173,49 @@
             &__item
                 display: flex
                 flex-direction: column
+                flex-shrink: 0
                 align-items: center
                 &:nth-of-type(even)
                     align-self: flex-end
                 &:first-of-type
                     margin-top: -20px
+                    margin-left: -20px
                 &:nth-of-type(2)
-                    margin: auto 0
-                    margin-right: -10px
+                    margin-top: -30px
+                    margin-right: 0px
                 &:nth-of-type(3)
-                    margin-top: auto
-                    margin-left: 10px
+                    margin-top: -20px
+                    margin-left: -10px
                 +min-screen($screen-sm)
                     &:first-of-type
                         margin-top: rem(-30px)
+                        margin-left: rem(-30px)
                     &:nth-of-type(2)
                         margin-top: rem(-50px)
                         margin-bottom: 0
-                        margin-right: 0
+                        
                     &:nth-of-type(3)
                         margin-top: rem(-50px)
-                        margin-left: rem(30px)
+                        margin-left: rem(0px)
                 +min-screen($screen-md)
                     &:first-of-type
                         margin-top: rem(-30px)
                     &:nth-of-type(2)
                         margin-top: rem(-80px)
                         margin-bottom: 0
-                        margin-right: rem(-30px)
+                        margin-right: rem(-10px)
                     &:nth-of-type(3)
-                        margin-top: rem(-60px)
-                        margin-left: rem(30px)
+                        margin-top: rem(-70px)
+                        margin-left: rem(-20px)
             &__img  
-                +size(60px)
+                +size(80px)
                 border-radius: 50%
                 margin-bottom: 5px
                 +min-screen($screen-sm)
                     margin-bottom: rem(10px)
-                    +size(rem(150px))
+                    +size(rem(180px))
                 +min-screen($screen-md)
-                    +size(rem(296px))
+                    +size(rem(276px))
             &__name
                 width: 70%
                 margin: auto
@@ -221,6 +224,8 @@
                 text-transform: capitalize
                 +min-screen($screen-sm)
                     width: 100%
+                    font-size: rem(18px)
+                +min-screen($screen-md)
                     font-size: rem(21px)
         &-childslider
             width: 120px

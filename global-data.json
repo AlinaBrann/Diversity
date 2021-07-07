@@ -1,4 +1,6 @@
 {
+	"mainTitle": "The DIVERSITY",
+	"address": "2-й Кожевнический переулок, д.12, Подъезд 13, 3 этаж",
 	"contactsHeaderMenu": "контакты",
 	"menuItems": [
 		{
@@ -267,6 +269,7 @@
 			{
 				"img": "slide-1.jpg",
 				"title": "геймификация механик",
+				"slug": "gamification",
 				"titleIcon": "icon-1.png",
 				"background": "tab-bg-1.jpg",
 				"categorySlug": "gamification",
@@ -282,6 +285,7 @@
 			{
 				"img": "slide-2.jpg",
 				"title": "Интерактивные фотостойки",
+				"slug": "photoStands",
 				"titleIcon": "icon-3.png",
 				"background": "tab-bg-2.jpg",
 				"categorySlug": "photoStands",
@@ -291,11 +295,13 @@
 					"Выдают приятные подарки без промоутера",
 					"Связь через аккаунт в Инстаграм",
 					"Быстрая регистрация чека и мгновенная выдача подарка-мультфильма на телефон"
-				]
+				],
+				"slider": ["slide-5.jpg", "slide-3.jpg", "slide-2.jpg", "slide-1.jpg"]
 			},
 			{
 				"img": "slide-3.jpg",
 				"title": "Cемпломаты",
+				"slug": "semplomats",
 				"titleIcon": "icon-6.png",
 				"background": "tab-bg-3.jpg",
 				"categorySlug": "semplomats",
@@ -305,7 +311,8 @@
 					"Новый автоматизированный способ доставки сэмплов",
 					"Конверсия в покупку - теперь измеримый показатель!",
 					"Стоимость за 1 контакт в 2 раза меньше по сравнению с прямым сэмплингом"
-				]
+				],
+				"slider": ["slide-5.jpg", "slide-3.jpg", "slide-2.jpg", "slide-1.jpg"]
 			}
 		]
 	},
@@ -355,7 +362,7 @@
 		"title": "Наши клиенты остаются <br>с нами",
 		"titleIcon": "icon-5.png",
 		"items": [
-			"100.svg",
+			"100.png",
 			"visa.png",
 			"takeda.png",
 			"IT.png",
@@ -364,7 +371,7 @@
 			"bay.png",
 			"5.png",
 			"hein.png",
-			"jj.svg",
+			"jj.png",
 			"ast.png",
 			"asc.png"
 		]
@@ -379,15 +386,17 @@
 				},
 				{
 					"title": "Офис",
+					"icon": "icon-7.png",
 					"text": " г. Москва, 2-й Кожевнический переулок, д.12, <br>Подъезд 13, 3 этаж",
 					"link": {
 						"text": "На карте",
 						"path": "/",
-						"underline": true
+						"underline": true,
+						"hideOnContacts": true
 					},
 					"linkOnMobile": {
 						"text": "Cхема проезда",
-						"path": "/",
+						"attr": "data-popup-opener='map'",
 						"underline": true,
 						"showOnMobile": true
 					}
@@ -395,7 +404,7 @@
 				{
 					"link": {
 						"text": "Cхема проезда",
-						"path": "/",
+						"attr": "data-popup-opener='map'",
 						"underline": true
 					},
 					"hideOnMobile": true
@@ -420,6 +429,7 @@
 					}
 				},
 				{
+					"hideOnContacts": true,
 					"title": "Xотите у нас работать",
 					"link": {
 						"text": "hr@thediversity.ru",
@@ -453,5 +463,11 @@
 		"text": "Политика конфедициальности и обработки данных",
 		"path": "/"
 	},
-	"casesPageTitle": "Кейсы"
+	"casesPageTitle": "Кейсы",
+	"popupMap": {
+		"title": "Схема проезда",
+		"fileText": "скачать",
+		"fileSize": "(23kb pdf)",
+		"fileLink": "/"
+	}
 }

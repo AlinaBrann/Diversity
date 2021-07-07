@@ -21,29 +21,37 @@
             {% for item in footerItems %}
                 <div class="footer-col">
                     {% for blockItem in item.blocks %}
-                        <div class="footer-block{% if blockItem.hideOnMobile === true %} hidden-xs{% endif %}">
+                        <div class="contacts-block{% if blockItem.hideOnMobile === true %} hidden-xs{% endif %}">
                             {% if blockItem.title %}
-                                <div class="footer-block__title">{{ blockItem.title }}</div>
+                                <div class="contacts-block__title">{{ blockItem.title }}</div>
                             {% endif %}
                             {% if blockItem.text %}
-                                <div class="footer-block__text">{{ blockItem.text }}</div>
+                                <div class="contacts-block__text">{{ blockItem.text }}</div>
                             {% endif %}
                             {% if blockItem.link and blockItem.linkOnMobile %}
-                                <div class="footer-block__link-wrapper flex _jcsb">
+                                <div class="contacts-block__link-wrapper flex _jcsb">
                             {% endif %}
                                     {% if blockItem.link %}
-                                        <a href="{{ blockItem.link.path }}" class="footer-block__link{% if blockItem.link.underline === true %} _underline{% endif %}{% if blockItem.link.uppercase === true %} _uppercase{% endif %}">{{ blockItem.link.text }}</a>
+                                        {% if blockItem.link.path %}
+                                            <a href="{{ blockItem.link.path }}" class="contacts-block__link{% if blockItem.link.underline === true %} _underline{% endif %}{% if blockItem.link.uppercase === true %} _uppercase{% endif %}">{{ blockItem.link.text }}</a>
+                                        {% else %}
+                                            <div class="contacts-block__link{% if blockItem.link.underline === true %} _underline{% endif %}{% if blockItem.link.uppercase === true %} _uppercase{% endif %}" {% if blockItem.link.attr %} {{ blockItem.link.attr }}{% endif %} >{{ blockItem.link.text }}</div>
+                                        {% endif %}
                                     {% endif %}
                                     {% if blockItem.linkOnMobile %}
-                                        <a href="{{ blockItem.linkOnMobile.path }}" class="footer-block__link{% if blockItem.linkOnMobile.showOnMobile === true %} visible-xs{% endif %}{% if blockItem.linkOnMobile.underline === true %} _underline{% endif %}{% if blockItem.linkOnMobile.uppercase === true %} _uppercase{% endif %}">{{ blockItem.linkOnMobile.text }}</a>
+                                        {% if blockItem.linkOnMobile.path %}
+                                            <a href="{{ blockItem.linkOnMobile.path }}" class="contacts-block__link{% if blockItem.linkOnMobile.showOnMobile === true %} visible-xs{% endif %}{% if blockItem.linkOnMobile.underline === true %} _underline{% endif %}{% if blockItem.linkOnMobile.uppercase === true %} _uppercase{% endif %}">{{ blockItem.linkOnMobile.text }}</a>
+                                        {% else %}
+                                            <div class="contacts-block__link{% if blockItem.linkOnMobile.showOnMobile === true %} visible-xs{% endif %}{% if blockItem.linkOnMobile.underline === true %} _underline{% endif %}{% if blockItem.linkOnMobile.uppercase === true %} _uppercase{% endif %}" {% if blockItem.linkOnMobile.attr %} {{ blockItem.linkOnMobile.attr }}{% endif %} >{{ blockItem.linkOnMobile.text }}</div>
+                                        {% endif %}
                                     {% endif %}
                             {% if blockItem.link and blockItem.linkOnMobile %}
                                 </div>
                             {% endif %}
                             {% if blockItem.social %}
-                                <ul class="footer-block-social">
+                                <ul class="contacts-block-social">
                                     {% for item in blockItem.social %}
-                                        <li class="footer-block-social__item">
+                                        <li class="contacts-block-social__item">
                                             <a href="{{ item.link }}">
                                                 {{ icon({
                                                     name: item.icon,

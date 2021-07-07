@@ -16,7 +16,8 @@
                             <div class="innovation-slider__slide">
                                 <img src="media/img/innovation/{{ item.img }}" class="innovation-slider__img" alt="">
                                 <div class="innovation-slider__info">
-                                    {{ button({
+                                    {% set link = 'href="/innovation.html?tab=' + item.slug  + '"'%}
+                                    {{ button(tag = 'a', attr = link,  {
                                         text: item.title,
                                         class: "innovation-slider__button"
                                     })}}

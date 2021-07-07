@@ -11,9 +11,10 @@
 {% block content %}
 	{% include '../components/preloader/_preloader.nunj' %}
 	{% include '../components/header/_header.nunj' %}
-    <div class="cases-page page" data-tabs>
+    <div class="cases-page page" id="cases-page" data-tabs>
+        
         <div class="page__container container _with-pr">
-            <h1 class="page__title" data-auto-show>{{ casesPageTitle }}</h1>
+            <h1 class="page__title" data-auto-show>{{ casesPageTitle }} {{ message }}</h1>
             {{ filter(categories)}}
             <div class="cases-page__cases">
                 
@@ -46,5 +47,4 @@
         </div>
     </div>
     {% include '../components/footer/_footer.nunj' %}
-
 {% endblock content %}

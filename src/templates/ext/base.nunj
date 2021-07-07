@@ -18,7 +18,7 @@
 			{% block content %}
 			{% endblock content %}
 		</div>
-
+		{% include '../components/popups/_popups.nunj' %}
 		{% block scripts %}
 			<script src="media/js/bundle.js?hash"></script>
 		{% endblock scripts %}

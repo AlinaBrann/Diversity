@@ -9,7 +9,6 @@
 {% block title %}Кейс / {{ super() }}{% endblock title %}
 
 {% block content %}
-	{% include '../components/preloader/_preloader.nunj' %}
 	{% include '../components/header/_header.nunj' %}
         <div class="page case-page">
             <div class="page__container case-page__container">

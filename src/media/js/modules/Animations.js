@@ -72,7 +72,7 @@ function Animations() {
 				}
 			},
 			true,
-			false,
+			true,
 			55
 		);
 	}

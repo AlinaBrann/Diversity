@@ -14,6 +14,9 @@ Tabs.prototype = {
 	},
 
 	_initTabs($container) {
+		const urlParams = new URLSearchParams(window.location.search);
+		const tabParam = urlParams.get('tab');
+		console.log(tabParam);
 		let useSlideAnimation = typeof $container.attr('data-tabs-use-slideups') != 'undefined';
 		$container.find('.tabs').append("<div class='tabs__sliding-block'></div>");
 		let $openers = $container.find('[data-tab-opener]').removeClass('_active-tab');
@@ -50,18 +53,18 @@ Tabs.prototype = {
 		}
 
 		$tabs = $needTabs;
-		$tabs.first().addClass('_active-tab');
-		$openers.first().addClass('_active-tab');
-		var leftPos, newWidth;
-		var $background = $('.tabs__sliding-block');
-
-		let $firstTab = $tabs
-			.first()
-			.addClass('_active-tab')
-			.show();
-		$openers
-			.filter('[data-tab-opener="' + $firstTab.attr('data-tab') + '"]')
-			.addClass('_active-tab');
+		if (tabParam != null) {
+			$openers.filter('[data-tab-opener="' + tabParam + '"]').addClass('_active-tab');
+			$tabs.filter('[data-tab="' + tabParam + '"]').addClass('_active-tab');
+		} else {
+			let $firstTab = $tabs
+				.first()
+				.addClass('_active-tab')
+				.show();
+			$openers
+				.filter('[data-tab-opener="' + $firstTab.attr('data-tab') + '"]')
+				.addClass('_active-tab');
+		}
 
 		let $openerEvent;
 		if ($openers.parents('.tabs-nav').hasClass('_by-click')) {
@@ -79,13 +82,7 @@ Tabs.prototype = {
 
 			$openers.removeClass('_active-tab');
 			$tabs.removeClass('_active-tab');
-			var x = $this.position();
-			leftPos = x.left;
-			newWidth = $this.width();
-			$background.stop().animate({
-				left: leftPos,
-				width: newWidth,
-			});
+
 			if (useSlideAnimation) {
 				$tabs.stop().slideUp();
 			} else {

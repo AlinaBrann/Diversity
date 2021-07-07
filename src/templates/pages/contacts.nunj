@@ -1,0 +1,65 @@
+{% extends "../ext/base.nunj" %}
+
+{% from "../components/button/_button.nunj" import button %}
+{% from "../components/icon/_icon.nunj" import icon %}
+
+{% block title %}Контакты / {{ super() }}{% endblock title %}
+
+{% block content %}
+{% include '../components/preloader/_preloader.nunj' %}
+{% include '../components/header/_header.nunj' %}
+
+<div class="contacts-page page" data-tabs>
+    <div class="page__container container">
+        <div class="contacts-page__row page__row">
+            <div class="page__col contacts-page__col">
+                <h1 class="page__title" data-auto-show>Контакты</h1>
+                {% for item in footerItems.slice(0,2) %}
+                        {% for blockItem in item.blocks %}
+                            {% if blockItem.hideOnContacts != true %}
+                            <div class="contacts-block{% if blockItem.hideOnMobile === true %} hidden-xs{% endif %} contacts-page-block" data-auto-show>
+                                {% if blockItem.icon %}
+                                    <img src="media/img/title-icons/{{ blockItem.icon}}" class="contacts-block__icon">
+                                {% endif %}
+                                {% if blockItem.title %}
+                                    <div class="contacts-block__title">{{ blockItem.title }}</div>
+                                {% endif %}
+                                {% if blockItem.text %}
+                                    <div class="contacts-block__text">{{ blockItem.text }}</div>
+                                {% endif %}
+                                {% if blockItem.link and blockItem.linkOnMobile %}
+                                    <div class="contacts-block__link-wrapper flex _jcsb">
+                                {% endif %}
+                                        {% if blockItem.link and blockItem.link.hideOnContacts != true %}
+                                            {% if blockItem.link.path %}
+                                                <a href="{{ blockItem.link.path }}" class="contacts-block__link{% if blockItem.link.underline === true %} _underline{% endif %}{% if blockItem.link.uppercase === true %} _uppercase{% endif %}">{{ blockItem.link.text }}</a>
+                                            {% else %}
+                                                <div class="contacts-block__link{% if blockItem.link.underline === true %} _underline{% endif %}{% if blockItem.link.uppercase === true %} _uppercase{% endif %}" {% if blockItem.link.attr %} {{ blockItem.link.attr }}{% endif %} >{{ blockItem.link.text }}</div>
+                                            {% endif %}
+                                        {% endif %}
+                                        {% if blockItem.linkOnMobile %}
+                                            {% if blockItem.linkOnMobile.path %}
+                                                <a href="{{ blockItem.linkOnMobile.path }}" class="contacts-block__link{% if blockItem.linkOnMobile.showOnMobile === true %} visible-xs{% endif %}{% if blockItem.linkOnMobile.underline === true %} _underline{% endif %}{% if blockItem.linkOnMobile.uppercase === true %} _uppercase{% endif %}">{{ blockItem.linkOnMobile.text }}</a>
+                                            {% else %}
+                                                <div class="contacts-block__link{% if blockItem.linkOnMobile.showOnMobile === true %} visible-xs{% endif %}{% if blockItem.linkOnMobile.underline === true %} _underline{% endif %}{% if blockItem.linkOnMobile.uppercase === true %} _uppercase{% endif %}" {% if blockItem.linkOnMobile.attr %} {{ blockItem.linkOnMobile.attr }}{% endif %} >{{ blockItem.linkOnMobile.text }}</div>
+                                            {% endif %}
+                                        {% endif %}
+                                {% if blockItem.link and blockItem.linkOnMobile %}
+                                    </div>
+                                {% endif %}
+                                
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                {% endfor %}
+            </div>
+            <div class="page__col contacts-page__col hidden-xs" data-auto-show-right>
+                <img src="media/img/map.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include '../components/footer/_footer.nunj' %}
+
+{% endblock content %}

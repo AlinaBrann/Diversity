@@ -5,6 +5,7 @@ global.$ = global.jQuery = require('jquery');
 global.Draggable = Draggable;
 require('./utils/jqExtensions');
 require('slick-carousel');
+
 import TextFill from 'textfilljs';
 // prettier-ignore
 global.ProjectName = new function ProjectName() { // eslint-disable-line
@@ -28,7 +29,6 @@ global.ProjectName = new function ProjectName() { // eslint-disable-line
 	$(() => {
 		// Remove _loading modificator
 		this.dom.$html.removeClass('_loading');
-
 		
 		const headerLogo = document.querySelector('.header-logo');
 		let top = headerLogo.getBoundingClientRect().top
@@ -68,6 +68,7 @@ global.ProjectName = new function ProjectName() { // eslint-disable-line
 		$('.footer__copyright span').text(copyright);
 		
 	});
+	
 }();
 
 if (module.hot) {

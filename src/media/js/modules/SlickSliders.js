@@ -149,7 +149,6 @@ SlickSliders.prototype = {
 
 				$slides.on('beforeChange', function(e, slick, currentSlide, nextSlide) {
 					currentSlideId = nextSlide;
-					console.log(slick);
 					$dots.removeClass('_active');
 					for (let k = 0; k < $dotsContainer.length; k++) {
 						let $currentDotsContainer = $dotsContainer.eq(k);
