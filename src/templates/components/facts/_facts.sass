@@ -20,6 +20,8 @@
             position: relative
             +min-screen($screen-md)
                 width: 71%
+    ._jcc
+        display: none
     &-slide
         display: flex !important
         &-info
@@ -122,6 +124,12 @@
                 +min-screen($screen-sm)
                     bottom: 0
                     font-size: rem(12px)
+                a
+                    color: $red
+                    border-bottom: rem(1px) solid transparent
+                    @extend .transition
+                    &:hover
+                        border-bottom-color: currentColor
             &__big-text
                 font-size: 18px
                 line-height: 29px
@@ -139,8 +147,9 @@
             position: relative
             flex-shrink: 0
             flex-grow: 0
+            margin-left: auto
             &__img
-                width: 160px
+                width: 180px
                 height: 100%
                 object-fit: cover
                 +min-screen($screen-sm)
@@ -152,11 +161,14 @@
                 position: absolute
                 left: 10px
                 bottom: 15px
-                max-width: 100%
+                max-width: 70%
                 +min-screen($screen-sm)
-                    height: rem(154px)
+                    height: rem(47px)
                     left: rem(73px)
                     bottom: rem(83px)
+                    &._big
+                        left: rem(60px)
+                        height: rem(129px)
         &-founders
             display: flex
             width: 150px
@@ -228,7 +240,7 @@
                 +min-screen($screen-md)
                     font-size: rem(21px)
         &-childslider
-            width: 120px
+            width: 180px
             height: 220px
             +min-screen($screen-sm)
                 width: rem(380px)
@@ -237,8 +249,8 @@
                 width: rem(521px)
                 height: rem(661px)
             &__img
-                width: 120px
-                height: 220px
+                width: 100%
+                height: 250px
                 object-fit: cover
                 +min-screen($screen-sm)
                     width: rem(380px)
@@ -294,4 +306,4 @@
         margin-top: 10px
         +min-screen($screen-sm)
             margin-top: 0
-            margin-left: rem(60px)
+            margin-left: rem(0px)

@@ -1,0 +1,31 @@
+.checkbox
+    $parent: &
+    margin-bottom: rem(35px)
+    +min-screen($screen-md)
+        margin-bottom: rem(50px)
+    &__label
+        position: relative
+        display: block
+        padding-left: rem(30px)
+        font-size: 12px
+        color: #000
+        +min-screen($screen-md)
+            font-size: rem(16px)
+        a
+            border-bottom: 1px solid #000
+        &:before
+            +b
+            +size(rem(21px))
+            top: rem(-1px)
+            left: 0
+            border: 1px solid #000000
+            background: transparent
+            transition: 0.4s
+    &__input
+        display: none
+        &:checked
+            & +
+                #{$parent}
+                    &__label
+                        &:before
+                            background: $yellow

@@ -5,7 +5,7 @@ import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import sprites from 'postcss-sprites';
 import assets from 'postcss-assets';
-import sass from 'gulp-sass';
+// import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
 import cssmin from 'gulp-clean-css';
 import gulpif from 'gulp-if';
@@ -15,6 +15,7 @@ import colors from 'ansi-colors';
 import PATHS from '../paths';
 import { PRODUCTION } from '../config';
 
+const sass = require('gulp-sass')(require('sass'));
 const PROCESSORS = [
 	autoprefixer({
 		browsers: ['last 4 versions'],
@@ -51,7 +52,7 @@ export default function styles() {
 		.pipe(gulpif(!PRODUCTION, sourcemaps.init()))
 		.pipe(
 			sass({
-				outputStyle: 'compact',
+				outputStyle: 'expanded',
 				errLogToConsole: true,
 				indentedSyntax: true,
 			})

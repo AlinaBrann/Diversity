@@ -12,7 +12,7 @@
                 <ul class="customers-list">
                     {% for item in customers.items %}
                         <li class="customers-list__item animated-block">
-                            <img src="media/img/customers/{{ item }}" class="customers-list__img" alt="">
+                            <img src="media/img/customers/footer/{{ item }}" class="customers-list__img" alt="">
                         </li>
                     {% endfor %}
                 </ul>

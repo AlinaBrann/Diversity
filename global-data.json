@@ -1,11 +1,11 @@
 {
 	"mainTitle": "The DIVERSITY",
-	"address": "2-й Кожевнический переулок, д.12, Подъезд 13, 3 этаж",
+	"address": "г. Москва, 2-й Кожевнический переулок, дом 12, подъезд 13, этаж 3",
 	"contactsHeaderMenu": "контакты",
 	"menuItems": [
 		{
 			"name": "сервисы",
-			"anchor": "services"
+			"path": "/#services"
 		},
 		{
 			"name": "кейсы",
@@ -17,19 +17,27 @@
 		},
 		{
 			"name": "ресурсы",
-			"anchor": "resources"
+			"path": "/#resources"
 		},
 		{
 			"name": "факты",
-			"anchor": "facts"
+			"path": "/#facts"
+		},
+		{
+			"name": "контакты",
+			"path": "/contacts.html"
 		}
 	],
-	"videoSectionText": "The Diversity – <span class='_red'>кратчайший путь</span> <br>к новому потребителю",
+	"videoSection": {
+		"videoSectionText": "The Diversity – <span class='_red'>кратчайший путь</span> <br>к новому потребителю",
+		"slider": ["slider1.jpg", "slider2.jpg", "slider3.jpg", "slider4.jpg"]
+	},
 	"facts": {
 		"title": "Факты об агентстве",
 		"titleIcon": "icon-1.png",
 		"slider": [
 			{
+				"active": true,
 				"topText": "основано в ",
 				"number": "2007",
 				"underNumberText": "году",
@@ -50,21 +58,31 @@
 				]
 			},
 			{
+				"active": true,
 				"number": "75 ",
 				"underNumberText": "специалистов ",
 				"text": "Diversity работают на вас только в Москве",
-				"img": "team.png"
+				"childSlider": [
+					{
+						"img": "team.png"
+					},
+					{
+						"img": "team2.png"
+					}
+				]
 			},
 			{
-				"topText": "входим в ",
-				"number": "<span>топ</span>10",
-				"underNumberText": "агентств маркетинговых услуг России",
+				"active": true,
+				"number": "<span>№</span>1",
+				"underNumberText": "среди агентств маркетинговых услуг России",
 				"list": ["по спонтанному знанию", "по сотрудничеству", "по готовности рекомендовать"],
-				"note": "*рейтинг РАМУ 2016 г.",
+				"note": "*рейтинг <a href='https://adindex.ru/ratings/btl/2021/296451/' target='_blank'>Adindex 2021</a>",
 				"img": "ramu-img.png",
-				"logoOnImg": "ramu-logo.png"
+				"logoOnImg": "ramu-logo.svg",
+				"title": "Парки"
 			},
 			{
+				"active": true,
 				"topText": "Разрабатываем инструменты коммуникаций ",
 				"number": "<small>в </small>70<small>каналах</small>",
 				"childSlider": [
@@ -99,16 +117,36 @@
 				]
 			},
 			{
+				"active": true,
+				"number": "<span>№</span>2",
+				"underNumberText": "среди Event агентств <br>России",
+				"note": "*рейтинг <a href=' https://ramu.ru/event-services-rating/' target='_blank'>РАМУ и REMA 2022</a>",
+				"img": "event.png",
+				"logoOnImg": "ramu-logo.png",
+				"logoOnImgBig": "_big"
+			},
+			{
+				"active": true,
+				"number": "<span>№</span>1",
+				"underNumberText": "в рейтинге Trade<br>маркетинговых агентств",
+				"text": "в сегменте Shopper-marketing",
+				"note": "*рейтинг <a href='https://www.ramu.ru/novosti/novosti-assotsiatsii/ramu-infoline-ama-atm-i-popai-obem-rynka-torgovogo-marketinga-v-2021-godu-sostavil-80-mlrd-rubley/' target='_blank'>INFOLine по заказу РАМУ 2021</a>",
+				"img": "man.png",
+				"logoOnImg": "ramu-logo.png",
+				"logoOnImgBig": "_big"
+			},
+			{
+				"active": false,
 				"onlyText": "Соединяем <span class='colored-text _yellow'>людей</span> и <span class='colored-text _blue'>бренды</span>, создавая новые возможности для&nbsp;развития"
 			}
 		],
-		"buttonText": "больше об агенстве",
+		"buttonText": "больше об агентстве",
 		"buttonTextLink": "/"
 	},
 	"textOnSquares": {
 		"text": "Входит <br class='visible-xs'>в ",
 		"linkText": "The Diversity Group",
-		"link": "/"
+		"link": "https://thediversity.group/"
 	},
 	"services": {
 		"title": "Сервисы, которые <br>оптимизируют путь",
@@ -143,10 +181,12 @@
 	"cases": [
 		{
 			"name": "TetraPak Пятерочка – Shopper Marketing",
-			"img": "tetrapak-img.jpg",
+			"img": "tetrapak-img-big.jpeg",
+			"imgSrcset": "media/img/cases/tetrapak-img-big.jpeg 1000w, media/img/cases/tetrapak-img-xs.jpg 300w",
+			"preview": "tetrapak-img.jpg",
 			"logos": ["tetrapak.png", "pyaterochka.svg"],
 			"logosColor": ["tetrapak.svg", "5.png"],
-			"link": "/",
+			"link": "pyaterochka.html",
 			"category": "Shopper marketing",
 			"categorySlug": "shopperMarketing",
 			"text": "Подарили пользу молока тем, кто в&nbsp;ней нуждался",
@@ -158,94 +198,132 @@
 			]
 		},
 		{
+			"vremya-pervih.png": null,
 			"name": "Время первых – Point of Entry",
 			"img": "vremya-pervih-img.jpg",
-			"logos": ["vremya-pervih.png"],
-			"link": "/",
+			"preview": "vremya-pervih-img-preview.jpg",
+			"imgSrcset": "media/img/cases/vremya-pervih-img.jpg 1000w, media/img/cases/vremya-pervih-img-xs.jpg 300w",
+			"link": "vremya-pervih.html",
 			"category": "Point of Entry",
 			"categorySlug": "pointOfEntry",
 			"text": "Создали самую масштабную университетскую программу",
-			"fact": "<span>70%</span> <br>ВУЗов России <br>сотрудничают <br>с нами <br>ежегодно"
+			"fact": "<span>70%</span> <br><div>ВУЗов России <br>сотрудничают <br>с нами</div>",
+			"facts": [
+				"<strong>70%</strong> <span>вузов россии</span> <span>сотрудничают с нами ежегодно –</span> <small></small><small>самая масштабная университетская программа в России</small>",
+				"<strong>90%</strong> <span>студентов</span> <span> очного отделения</span> <br> <small></small><small>участвуют в программе — <br> это максимальное вовлечение</small>",
+				"<strong>1 000 000</strong> <span>студентов</span> <span>за 3 года</span> <small></small><small>лично познакомились с брендами – спонсорами проекта</small>"
+			]
 		},
 		{
 			"name": "Ganzo – Consumer Promo",
 			"img": "ganzo-img.jpg",
-			"logos": ["ganzo.png"],
-			"link": "/",
+			"preview": "ganzo-img-preview.jpg",
+			"imgSrcset": "media/img/cases/ganzo-imgMax.jpg 1000w, media/img/cases/ganzo-img-xs.jpg 300w",
+			"imgMax": "ganzo-imgMax.jpg",
+			"logosColor": ["ganzo.png"],
+			"link": "ganzo.html",
 			"category": "Consumer promo",
 			"categorySlug": "consumerPromo",
 			"text": "Мы открыли дверь <br>во взрослый мир",
-			"fact": "<span>40%</span> <br>response rate <br>это по-взрослому"
+			"fact": "<span>40%</span> <br>response rate",
+			"facts": [
+				"<strong>2 500</strong> <br><span></span> <span>выпускников</span> <br> <small></small><small>открыли для себя бренд</small>",
+				"<strong>1 000</strong> <span></span> <span>девушек и парней</span> <br> <small></small><small><b>получили образцы</b> защиты <nobr>Ganzo-качества</nobr></small>",
+				"<strong>40%</strong> <span></span><span>response rate</span> <br><small></small><small>это по-взрослому</small>"
+			]
 		},
 
 		{
 			"name": "",
 			"img": "star-img.jpg",
-			"link": "/",
+			"imgMax": "star-imgMax.jpg",
+			"preview": "star-img-preview.jpg",
+			"imgSrcset": "media/img/cases/star-imgMax.jpg 1000w, media/img/cases/star-img-xs.jpg 300w",
+			"link": "star.html",
 			"category": "Consumer promo",
 			"categorySlug": "consumerPromo",
 			"text": "Каждый месяц мы запускаем новую национальную кампанию",
-			"fact": "<span>12 000 000</span><div class='_white'>покупок продуктов</div>"
-		},
-		{
-			"name": "Acuvue",
-			"img": "acuvue-img.jpg",
-			"logos": ["acuvue.png"],
-			"link": "/",
-			"category": "Consumer promo",
-			"categorySlug": "consumerPromo",
-			"text": "Наши консультанты помогли увидеть мир лучше",
-			"fact": "<span>200</span> <br>оптик приняли <br>участие в акции"
+			"fact": "<span>12 000 000</span><div>покупок продуктов</div>",
+			"facts": [
+				"<strong>12</strong> <span>акций</span> <span>с национальным охватом <br>за 2020 год</span>  <small></small><small> и одна победительница, упавшая в обморок при вручении ей приза Филиппом Киркоровым</small>",
+				"<strong>12 000 000</strong> <span></span> <span>покупок продуктов</span><br><small></small> <small><b>и из них 15 000 упаковок купила</b> <br>одна из участниц <br>ради получения главного приза</small>",
+				"<strong>120 000</strong> <span></span> <span>выданных призов</span><small> </small><small>и один из них вручили в день рождения, 1 января, исполнив новогоднюю мечту победителя</small>"
+			]
 		},
 		{
 			"name": "",
-			"img": "img-1.jpg",
-			"logos": ["bayer.png", "astellas.png", "takeda.png", "bionorica.png"],
-			"link": "/",
+			"img": "pharm-quality-img.jpg",
+			"imgMax": "pharm-quality-imgMax.jpg",
+			"preview": "pharm-quality-img-preview.jpg",
+			"imgSrcset": "media/img/cases/pharm-quality-imgMax.jpg 1000w, media/img/cases/pharm-quality-img-xs.jpg 300w",
+			"logos": ["bayer.png"],
+			"logosColor": ["astellas.png", "bayer.png", "bionorica.png", "takeda.png"],
+			"link": "pharm-quality.html",
 			"category": "Trade",
 			"categorySlug": "trade",
 			"text": "Проверяем качество работы аптек для наших клиентов с 2012 года",
-			"fact": "<span>30%</span><br>рост продаж <br>за период работы"
+			"fact": "<span>30%</span><br><div>рост продаж <br>за период работы</div>",
+			"facts": [
+				"<strong>24 000</strong> <span></span> <span style='white-space: inherit;'><b>аптек <br>в 1 200 городах</b> это 60%</span> <br> <small></small><small>всех аптек России</small>",
+				"<strong>30%</strong> <span></span> <span><b>рост продаж</b></span> <br> <small></small> <small><b>50% представленности</b> за период <br>работы</small>",
+				"<strong>300 000</strong> <span></span> <span style='white-space: inherit;'><b>визитов мы&nbsp;уже&nbsp;совершили</b></span><small> </small><small>и&nbsp;продолжаем совершать</small>"
+			]
 		},
 		{
 			"name": "",
-			"img": "img-2.jpg",
-			"logos": ["asc.png"],
-			"link": "/",
-			"category": "Trade",
-			"categorySlug": "trade",
-			"text": "Создали программу лояльности в стиле agile",
-			"fact": "<span>3 000</span><br>активных <br>участников"
-		},
-		{
-			"name": "",
-			"img": "img-3.jpg",
+			"img": "blu-img.jpg",
+			"preview": "blu-img-preview.jpg",
+			"imgSrcset": "media/img/cases/blu-img-big.jpg 1000w, media/img/cases/blu-img-xs.jpg 300w",
 			"logos": ["my-blue.png"],
-			"link": "/",
+			"logosColor": ["my-blue.png"],
+			"link": "stereoleto.html",
 			"category": "Events",
 			"categorySlug": "events",
-			"text": "Устроили атмосферный чилл на stereoleto",
-			"fact": "<span>2 000</span><br>за 5 часов <br>контвертированы <br>в бренд"
+			"text": "Устроили атмосферный чилл на Stereoleto",
+			"fact": "<span>2 000</span><div class='_white'>пользователей<br>за 5 часов <br>контвертированы <br>в бренд</div>",
+			"facts": [
+				"<strong>2</strong>&nbsp;<span>ярких бренд корнера</span> <span><b>застроены за 5 часов</b></span> <br> <small></small><small>летом 2019</small>",
+				"<strong>7500</strong> <br> <span>активных контактов</span> <span></span> <br> <small></small> <small>план по вовлечению перевыполнен</small>",
+				"<strong>2 000</strong> <span></span> <span><b>новых пользователей</b></span><small> </small><small>конвертированы в бренд</small>"
+			]
 		},
 		{
 			"name": "",
-			"img": "img-4.jpg",
+			"img": "stoloto-img.jpg",
+			"preview": "stoloto-img-preview.jpg",
+			"imgSrcset": "media/img/cases/stoloto-img.jpg 1000w, media/img/cases/stoloto-img-xs.jpg 300w",
+			"imgMax": "stoloto-img-max.jpg",
 			"logos": ["sto.png"],
-			"link": "/",
+			"logosColor": ["stoloto.png"],
+			"link": "stoloto.html",
 			"category": "Event",
 			"categorySlug": "event",
 			"text": "Застроили самую красивую инсталляцию на ГУМ-катке",
-			"fact": "<span>100</span>дней <br>работы на главной<br>площади страны"
+			"fact": "<span>100</span>дней <br>работы на главной<br>площади страны",
+			"facts": [
+				"<span>почти</span> <strong>100</strong>&nbsp;<span>дней</span> <span><b>непрерывной работы</b></span> <br> <small></small><small>на главной площади страны</small>",
+				"<strong>400 000</strong> <span></span> <span><b>человек</b></span> <br> <small></small> <small><b>посетили нас</b> за время работы</small>",
+				"<strong>1 000 000 000</strong> <span></span> <br><span><b>рублей</b></span><small> </small><small><b>выиграл</b> один из участников лотереи</small>"
+			]
 		},
 		{
 			"name": "",
-			"img": "img-5.jpg",
+			"img": "heineken-img-preview.jpg",
+			"imgMax": "img-5Max.jpg",
+			"preview": "heineken-img-preview.jpg",
+			"imgSrcset": "media/img/cases/img-5Max.jpg 1000w, media/img/cases/heineken-img-xs.jpg 300w",
 			"logos": ["heineken.png"],
-			"link": "/",
+			"logosColor": ["heineken.png"],
+			"link": "heineken.html",
 			"category": "Digital",
 			"categorySlug": "digital",
 			"text": "Сформировали внутреннюю CRM с нуля",
-			"fact": "<span>5 000 000</span> <br>уникальных профилей<br>собрано в единую БД"
+			"fact": "<span>5 000 000</span> <br><div  class='_white'>уникальных профилей<br>собрано в единую БД</div>",
+			"facts": [
+				"<strong>5 000 000</strong><span></span> <span>уникальных ПРОФИЛЕЙ <br>cобрано</span> <small><b></b></small><small> в единую базу данных</small>",
+				"<strong>50%</strong>  <span></span> <span>реактивации</span>  <small><b></b> </small> <small>“уснувшей базы”</small>",
+				"<strong>35%</strong>&nbsp;<span></span> <span>conversion rate</span><br><small> </small><small>из e-mail рассылки</small>"
+			]
 		}
 	],
 	"innovation": {
@@ -280,7 +358,7 @@
 					"Используется в проведении информационных мероприятий для вовлечения аудитории",
 					"Интерактивный квест передает смысл сообщений не через факты, а через сопереживание"
 				],
-				"slider": ["slide-5.jpg", "slide-5.jpg", "slide-5.jpg", "slide-5.jpg"]
+				"slider": ["slide-13.jpg", "slide-14.jpg", "slide-11.jpg", "slide-12.jpg"]
 			},
 			{
 				"img": "slide-2.jpg",
@@ -296,10 +374,11 @@
 					"Связь через аккаунт в Инстаграм",
 					"Быстрая регистрация чека и мгновенная выдача подарка-мультфильма на телефон"
 				],
-				"slider": ["slide-5.jpg", "slide-3.jpg", "slide-2.jpg", "slide-1.jpg"]
+				"slider": ["slide-15.jpg", "slide-16.jpg", "slide-17.jpg"]
 			},
 			{
 				"img": "slide-3.jpg",
+				"logo": "effie.png",
 				"title": "Cемпломаты",
 				"slug": "semplomats",
 				"titleIcon": "icon-6.png",
@@ -312,7 +391,8 @@
 					"Конверсия в покупку - теперь измеримый показатель!",
 					"Стоимость за 1 контакт в 2 раза меньше по сравнению с прямым сэмплингом"
 				],
-				"slider": ["slide-5.jpg", "slide-3.jpg", "slide-2.jpg", "slide-1.jpg"]
+				"slider": ["slide-19.jpg", "slide-20.jpg"],
+				"videos": ["https://www.youtube.com/embed/hEp9gwuM5vs"]
 			}
 		]
 	},
@@ -345,7 +425,7 @@
 				"text": "Категории А&nbsp;и&nbsp;В с&nbsp;возможностью ручных работ"
 			},
 			{
-				"title": "Работа <br class='hidden-xs'>с&nbsp;персональными&nbsp;данными",
+				"title": "Работа <br class='hidden-xs'>с&nbsp;персональными данными",
 				"slug": "personalData",
 				"img": "slide-5.jpg",
 				"text": "Лицензия на&nbsp;обработку персональных данных 77-20-017980"
@@ -354,7 +434,7 @@
 				"title": "PCIDSS",
 				"slug": "PCIDSS",
 				"img": "slide-6.jpg",
-				"text": "Payment Card Industry Data Security Standard ECM-20-629A1/CC-335"
+				"text": "Сертификат безопасности по хранению и обработке данных платёжных карт № ECM-20-629A1/CC-335"
 			}
 		]
 	},
@@ -362,18 +442,21 @@
 		"title": "Наши клиенты остаются <br>с нами",
 		"titleIcon": "icon-5.png",
 		"items": [
-			"100.png",
-			"visa.png",
-			"takeda.png",
-			"IT.png",
-			"bio.png",
-			"circle.png",
-			"bay.png",
+			"imperial-tobacco.png",
+			"x5.png",
 			"5.png",
+			"multon.png",
 			"hein.png",
-			"jj.png",
+			"tetra-pak.png",
+			"tele2.png",
+			"lukoil.png",
+			"man.png",
+			"mir.png",
 			"ast.png",
-			"asc.png"
+			"zentiva.png",
+			"bay.png",
+			"takeda.png",
+			"jj.png"
 		]
 	},
 	"footerRequest": "Заказать оценку стоимости <br><span>проекта</span>",
@@ -382,32 +465,28 @@
 			"blocks": [
 				{
 					"title": "The DIVERSITY",
-					"text": "Агенство коммуникаций"
+					"text": "Агентство маркетинговых коммуникаций"
 				},
 				{
 					"title": "Офис",
 					"icon": "icon-7.png",
-					"text": " г. Москва, 2-й Кожевнический переулок, д.12, <br>Подъезд 13, 3 этаж",
+					"text": "г. Москва, 2-й Кожевнический переулок, <br>дом 12, подъезд 13, этаж 3",
 					"link": {
 						"text": "На карте",
-						"path": "/",
+						"path": "https://yandex.ru/maps/-/CCUiEAFYtD",
 						"underline": true,
-						"hideOnContacts": true
-					},
-					"linkOnMobile": {
-						"text": "Cхема проезда",
-						"attr": "data-popup-opener='map'",
-						"underline": true,
-						"showOnMobile": true
+						"hideOnContacts": true,
+						"newTab": true
 					}
 				},
 				{
+					"hideOnMobile": true,
 					"link": {
 						"text": "Cхема проезда",
-						"attr": "data-popup-opener='map'",
-						"underline": true
-					},
-					"hideOnMobile": true
+						"path": "/contacts.html",
+						"underline": true,
+						"hideOnContacts": true
+					}
 				}
 			]
 		},
@@ -442,8 +521,20 @@
 		{
 			"blocks": [
 				{
-					"title": "Присоединяйтесь",
-					"text": "к нам в соцсетях",
+					"title": "Входит",
+					"link": {
+						"text": "в The Diversity Group",
+						"path": "https://thediversity.group/",
+						"newTab": true
+					}
+				}
+			]
+		},
+		{
+			"blocks": [
+				{
+					"title": "",
+					"text": "",
 					"social": [
 						{
 							"icon": "fb",
@@ -465,7 +556,7 @@
 	},
 	"casesPageTitle": "Кейсы",
 	"popupMap": {
-		"title": "Схема проезда",
+		"title": "Схема прохода в бизнес центре горизонт",
 		"fileText": "скачать",
 		"fileSize": "(23kb pdf)",
 		"fileLink": "/"

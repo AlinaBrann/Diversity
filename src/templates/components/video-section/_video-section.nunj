@@ -1,6 +1,12 @@
 <section class="video-section">
-    <div class="video-section-media" data-auto-show>
-        <img src="media/img/video-preview.jpg" class="video-section-media__preview" alt="">
+    <div class="video-section-media">
+		<div class="video-section-slider video"  data-slider="video" data-auto-show="">
+			<div data-slider-slides>
+		        {% for slide in videoSection.slider %}
+		            <img src="media/img/{{slide}}" class="video-section-media__preview" alt="">
+		        {% endfor %}
+			</div>
+		</div>
     </div>
     <div class="video-section-squares">
         {% for col in range(1, 7)  %}
@@ -14,6 +20,6 @@
                 {% endfor %}
             </div>
         {% endfor %}
-        <h1 class="video-section-squares__text">{{ videoSectionText }}</h1>
+        <h1 class="video-section-squares__text">{{ videoSection.videoSectionText }}</h1>
     </div>
 </section>

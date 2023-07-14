@@ -1,0 +1,75 @@
+{% extends "../ext/base.nunj" %}
+
+{% from "../components/button/_button.nunj" import button %}
+{% from "../components/cases/_cases.nunj" import casesBlock %}
+{% from "../components/case/_case.nunj" import case %}
+
+{# Пример расширения существующего блока #}
+{# Например можно использовать для добавления уникальных тайтлов для каждой страницы #}
+{% block title %}Кейс / {{ super() }}{% endblock title %}
+
+{% block content %}
+	{% include '../components/header/_header.nunj' %}
+        <div class="page case-page">
+            <div class="page__container case-page__container">
+                {% for item in cases.slice(3,4) %}
+                    <div class="case case-page__case page__row">
+                        <div class="case-page__col">
+                            <div class="case-page__content" data-auto-show-left>
+                                <div class="case-category case-page__category">{{ item.category }}</div>
+                                <ul class="case-logos case-page-logos">
+                                    {% for logo in item.logosColor %}
+                                        <li class="case-logos__item case-page-logos__item">
+                                            <img src="media/img/customers/{{ logo }}" alt="">
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                                <div class="case-page__text">{{ item.text }}</div>
+                                <div class="case-page-facts">
+                                    {% for fact in item.facts %}
+                                        <div class="case-fact case-page-fact">
+                                            <div class="case-fact__triangle case-page-fact__triangle"></div>
+                                            <div class="case-fact__text case-page-fact__text">{{ fact }}</div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                                <a href="/cases.html" class="back-link">
+                                    <div class="back-link__squares">
+                                        {% for i in range(1, 7) %}
+                                            <div class="back-link__square square _small"></div>
+                                        {% endfor %}
+                                    </div>
+                                    <div class="back-link__text">&#60;все кейсы</div>
+                                </a>
+                            </div>
+                            
+                        </div>
+                        <div class="case-page__col case-page__img-wrapper" data-auto-show-right>
+                            {% if item.imgSrcset %}
+                                <img 
+                                    srcset="{{ item.imgSrcset }}"
+                                    sizes="(max-width: 475px) 150px, 
+                                            (max-width: 700px) 300px,
+                                            1000px"
+                                    src="media/img/cases/{{ item.img }}"
+                                    class="case__img case-page__img 1"
+                                    alt=""
+                                />
+                            {% else %}
+                                {% if item.imgMax %}
+                                    <img src="media/img/cases/{{ item.imgMax }}" class="case__img case-page__img imgMax" alt="">
+                                {% else %}
+                                    <img src="media/img/cases/{{ item.img }}" class="case__img case-page__img 2" alt="">
+                                {% endif %}
+                                
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor%}
+            
+            </div>
+            
+        </div>
+    {% include '../components/footer/_footer.nunj' %}
+
+{% endblock content %}

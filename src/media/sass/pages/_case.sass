@@ -1,5 +1,7 @@
 .case-page
     padding: 0
+    +max-screen($screen-sm)
+        padding-bottom: 40px
     &__container
         +max-screen($screen-sm)
             padding: 0
@@ -29,14 +31,14 @@
             padding-right: $leftIndentSM
         +min-screen($screen-md)
             padding-left: 0
-            padding-right: rem(50px)
+            padding-right: rem(18px)
             padding-top: rem(167px)
     &__category
         display: inline-block
         margin-bottom: rem(40px)
         font-size: rem(18px)
         +min-screen($screen-sm)
-            margin-bottom: rem(60px)
+            margin-bottom: rem(20px)
     &__category,
     &-fact
         position: relative
@@ -52,9 +54,21 @@
             order: -1
             +min-screen($screen-md)
                 order: 0
+                max-width: 50%
     &-logos
-        margin-bottom: rem(20px)
+        margin-bottom: rem(33px)
+        &.pharm-logo 
+            max-width: 100%
+            li 
+                margin: 0
+                padding-right: rem(35px)
+                flex: auto
+                +max-screen($screen-xs) 
+                    margin-bottom: rem(20px)
+                img 
+                    max-height: rem(33px)
         &__item
+            margin-bottom: rem(0px)
             +max-screen($screen-xs)
                 img
                     max-height: 23px
@@ -76,7 +90,7 @@
         +min-screen($screen-sm)
             flex-direction: row
     &-fact
-        flex: 0 0 43%
+        flex: 0 0 48%
         margin-bottom: rem(20px)
         line-height: rem(26px)
         +min-screen($screen-md)
@@ -85,15 +99,19 @@
         strong
             font-size: rem(35px)
         span
-            font-size: rem(22px)
+            font-size: rem(18px)
             line-height: rem(21px)
             & + span
-                font-size: rem(18px)
+                font-size: rem(14px)
         small
-            font-size: rem(14px)
+            font-size: rem(16px)
             font-family: "Lato-Thin"
+            & + small
+                text-transform: none
+                line-height: 1.1
+
         &__triangle
-            top: 18%
+            top: 16%
             left: rem(-32px)
             border-top-width: rem(20px)
             border-left-width: rem(20px)

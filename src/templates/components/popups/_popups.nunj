@@ -24,6 +24,7 @@
 				</a>
 				<div class="popup-map">
 					<img src="media/img/popup-map.jpg" class="popup-map__img" alt="">
+					<img src="media/img/popup-map-m.jpg" class="popup-map__img-m" alt="">
 					<div class="popup-map-address">
 						<img src="media/img/favicon.svg" class="popup-map-address__logo" alt="">
 						<div class="popup-map-address__text">

@@ -12,7 +12,7 @@
 	{% include '../components/header/_header.nunj' %}
         <div class="page case-page">
             <div class="page__container case-page__container">
-                {% for item in cases.slice(0,1) %}
+                {% for item in cases.slice(7,8) %}
                     <div class="case case-page__case page__row">
                         <div class="case-page__col">
                             <div class="case-page__content" data-auto-show-left>
@@ -45,7 +45,25 @@
                             
                         </div>
                         <div class="case-page__col case-page__img-wrapper" data-auto-show-right>
-                            <img src="media/img/cases/{{ item.img }}" class="case__img case-page__img" alt="">
+                            
+                            {% if item.imgMax %}
+                                <img src="media/img/cases/{{ item.imgMax }}" class="case__img case-page__img imgMax" alt="">
+                            {% else %}
+                                {% if item.imgSrcset %}
+                                    <img 
+                                        srcset="{{ item.imgSrcset }}"
+                                        sizes="(max-width: 350px) 150px, 
+                                                (max-width: 600px) 300px,
+                                                (max-width: 1400px) 500px,
+                                                1000px"
+                                        src="media/img/cases/{{ item.img }}"
+                                        class="case__img case-page__img"
+                                        alt=""
+                                    />
+                                {% else %}
+                                    <img src="media/img/cases/{{ item.img }}" class="case__img case-page__img" alt="">
+                                {% endif %}
+                            {% endif %}
                         </div>
                     </div>
                 {% endfor%}

@@ -17,76 +17,78 @@
                 </div>
                 <div class="facts-slider" data-slider-slides>
                     {% for item in facts.slider %}
-                        <div class="facts-slide">
-                            <div class="facts-slide-info">
-                                <div class="facts-slide-info__top-text">{{ item.topText }}</div>
-                                {% if item.number %}
-                                    <div class="facts-slide-info__number">{{ item.number }}</div>
-                                {% endif %}
+                        {% if item.active %}
+                            <div class="facts-slide">
+                                <div class="facts-slide-info">
+                                    <div class="facts-slide-info__top-text">{{ item.topText }}</div>
+                                    {% if item.number %}
+                                        <div class="facts-slide-info__number">{{ item.number }}</div>
+                                    {% endif %}
 
-                                {% if item.underNumberText %}
-                                    <div class="facts-slide-info__under-number">{{ item.underNumberText }}</div>
-                                {% endif %}
+                                    {% if item.underNumberText %}
+                                        <div class="facts-slide-info__under-number">{{ item.underNumberText }}</div>
+                                    {% endif %}
 
-                                {% if item.text %}
-                                    <div class="facts-slide-info__text">{{ item.text }}</div>
-                                {% endif %}
+                                    {% if item.text %}
+                                        <div class="facts-slide-info__text">{{ item.text }}</div>
+                                    {% endif %}
 
-                                {% if item.list %}
-                                    <ul class="facts-slide-info__list">
-                                        {% for i in item.list %}
-                                            <li>{{ i }}</li>
-                                        {% endfor%}
-                                    </ul>
-                                {% endif %}
+                                    {% if item.list %}
+                                        <ul class="facts-slide-info__list">
+                                            {% for i in item.list %}
+                                                <li>{{ i }}</li>
+                                            {% endfor%}
+                                        </ul>
+                                    {% endif %}
 
-                                {% if item.onlyText %}
-                                    <div class="facts-slide-info__big-text">
-                                        {{ item.onlyText }}
-                                    </div>
-                                {% endif %}
+                                    {% if item.onlyText %}
+                                        <div class="facts-slide-info__big-text">
+                                            {{ item.onlyText }}
+                                        </div>
+                                    {% endif %}
 
-                                {% if item.note %}
-                                    <div class="facts-slide-info__note">{{ item.note }}</div>
-                                {% endif %}
-                            </div>
-                            <div class="facts-slide-media">
-                                {% if item.img %}
-                                    <img src="media/img/facts/{{ item.img }}" class="facts-slide-media__img" alt="">
-                                {% endif %}
+                                    {% if item.note %}
+                                        <div class="facts-slide-info__note">{{ item.note }}</div>
+                                    {% endif %}
+                                </div>
+                                <div class="facts-slide-media">
+                                    {% if item.img %}
+                                        <img src="media/img/facts/{{ item.img }}" class="facts-slide-media__img" alt="">
+                                    {% endif %}
 
-                                {% if item.founders %}
-                                    <div class="facts-slide-founders">
-                                        {% for founder in item.founders %}
-                                            <div class="facts-slide-founders__item">
-                                                <img src="media/img/facts/{{ founder.image }}" class="facts-slide-founders__img" alt="{{ founder.name }}">
-                                                <div class="facts-slide-founders__name">{{ founder.name }}</div>
-                                            </div>
-                                        {% endfor %}
-                                    </div>
-                                {% endif %}
-
-                                {% if item.logoOnImg %}
-                                    <img src="media/img/facts/{{ item.logoOnImg }}" class="facts-slide-media__logo" alt="">
-                                {% endif %}
-                                
-                                {% if item.childSlider %}
-                                    <div class="facts-slide-childslider" data-slider="factsChild">
-                                        <div data-slider-slides>
-                                            {% for slide in item.childSlider %}
-                                                <div class="facts-slide-childslider__slide">
-                                                    <img src="media/img/facts/{{ slide.img }}" class="facts-slide-childslider__img" alt="">
-                                                    <div class="facts-slide-childslider__title">  
-                                                        <span>{{ slide.title }}</span>
-                                                    </div>
+                                    {% if item.founders %}
+                                        <div class="facts-slide-founders">
+                                            {% for founder in item.founders %}
+                                                <div class="facts-slide-founders__item">
+                                                    <img src="media/img/facts/{{ founder.image }}" class="facts-slide-founders__img" alt="{{ founder.name }}">
+                                                    <div class="facts-slide-founders__name">{{ founder.name }}</div>
                                                 </div>
-                                                
                                             {% endfor %}
                                         </div>
-                                    </div>
-                                {% endif %}
+                                    {% endif %}
+
+                                    {% if item.logoOnImg %}
+                                        <img src="media/img/facts/{{ item.logoOnImg }}" class="facts-slide-media__logo {{ item.logoOnImgBig }}" alt="">
+                                    {% endif %}
+                                    
+                                    {% if item.childSlider %}
+                                        <div class="facts-slide-childslider" data-slider="factsChild">
+                                            <div data-slider-slides>
+                                                {% for slide in item.childSlider %}
+                                                    <div class="facts-slide-childslider__slide">
+                                                        <img src="media/img/facts/{{ slide.img }}" class="facts-slide-childslider__img" alt="">
+                                                        <div class="facts-slide-childslider__title">  
+                                                            <span>{{ slide.title }}</span>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                </div>
                             </div>
-                        </div>
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>

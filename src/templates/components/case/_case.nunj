@@ -1,7 +1,11 @@
 {% macro case(props, className = '')%}
     <div class="case{% if className %} {{ className }}{% endif %}">
-        <a href="/case.html">
-            <img src="media/img/cases/{{ props.img }}" class="case__img" alt="">
+        <a href="/{{ props.link }}">
+            {% if props.preview %}
+                <img src="media/img/cases/{{ props.preview }}" class="case__img" alt="">
+            {% else %}
+                <img src="media/img/cases/{{ props.img }}" class="case__img" alt="">
+            {% endif %}
             <div class="case-category">{{ props.category }}</div>
             <div class="case-fact">
                 <div class="case-fact__triangle"></div>

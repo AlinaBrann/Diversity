@@ -20,7 +20,7 @@
         width: 100%
         max-width: 100%
         +min-screen($screen-md)
-            left: rem(91px)
+            left: rem(65px)
             bottom: rem(12px)
     &-logos
         display: flex
@@ -38,18 +38,19 @@
             margin-bottom: 13px
             &:not(:last-of-type)
                 margin-right: 18px
-            +min-screen($screen-md)  
-                margin-bottom: rem(25px)   
+            +min-screen($screen-md)
+                margin-bottom: rem(25px)
                 &:not(:last-of-type)
                     margin-right: rem(45px)
             img
                 width: auto
-                max-height: 37px
+                max-height: 67px
                 object-fit: contain
                 +min-screen($screen-md)
-                    max-height: rem(45px)
+                    max-height: rem(67px)
+                    max-width: rem(180px)
     &-text
-        width: 70%
+        width: 71%
         font-size: 14px
         line-height: 15.5px
         letter-spacing: 0.3px
@@ -57,6 +58,9 @@
         transition: opacity 0.4s
         transition-delay: .8s
         opacity: 0
+        font-family: "Lato"
+        font-weight: 400
+
         +min-screen($screen-md)
             font-size: rem(30px)
             line-height: rem(37px)
@@ -92,7 +96,7 @@
         width: max-content
         max-width: 50%
         top: 66px
-        right: 0
+        right: 3rem
         font-size: 16px
         line-height: 20px
         font-family: "Lato"
@@ -111,6 +115,7 @@
         ._white
             color: #FFF
         &__text
+            font-weight: 500
             position: relative
             z-index: 1
             transition: opacity 0.4s
@@ -128,13 +133,13 @@
             border-left: 55px solid transparent
             transform: translate(25%,0%) rotate(45deg)
             transform-origin: right top
-            animation: triangle .5s ease-in infinite alternate
+            animation: triangle 1s ease-in infinite alternate
             mix-blend-mode: multiply
             z-index: 0
             transition: opacity 0.4s
             transition-delay: 2s
             opacity: 0
-            +min-screen($screen-md)  
+            +min-screen($screen-md)
                 left: rem(-40px)
                 border-top: rem(60px) solid $red
                 border-left: rem(60px) solid transparent

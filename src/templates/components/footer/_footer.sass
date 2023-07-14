@@ -1,4 +1,5 @@
 .footer
+    position: relative
     padding: 0 16px 10px 16px
     background: #262C30
     color: transparentize(#FFF,.5)
@@ -42,7 +43,8 @@
             @extend .transition
             transition-delay: .5s
             opacity: 1
-            z-index: 1
+            z-index: 2
+            cursor: pointer
             +min-screen($screen-md)
                 opacity: 0
                 font-size: rem(25px)
@@ -72,16 +74,123 @@
             border-left: 110px solid transparent
             transform: translate(-92%,-33%) rotate(135deg)
             transform-origin: 75% 50%
-            animation: triangleBig .5s ease-in infinite alternate
+            animation: triangleBig 1s ease-in infinite alternate
             @extend .transition
             opacity: 1
-            z-index: 0
+            z-index: 1
             +min-screen($screen-md)
                 opacity: 0
                 border-top: rem(230px) solid $red
                 border-left: rem(230px) solid transparent
             ._active &
                 opacity: 1
+        &-popup
+            position: absolute
+            display: block
+            width: calc(100vw - #{rem(32px)})
+            max-width: 100vw
+            top: rem(30px)
+            right: -27px
+            padding: rem(59px) rem(20px) rem(26px) 
+            background: #FFF
+            @extend .transition
+            opacity: 0
+            pointer-events: none
+            z-index: 0
+            +min-screen($screen-xs)
+                padding: rem(59px) rem(39px) rem(26px) rem(33px) 
+            +min-screen($screen-sm)
+                width: rem(620px)
+                right: rem(5px)
+                padding: rem(37px) rem(100px) rem(40px) rem(34px) 
+            +min-screen($screen-md)
+                width: rem(710px)
+                padding: rem(57px) rem(224px) rem(40px) rem(34px) 
+            ._popup-opened &
+                opacity: 1
+                pointer-events: all
+            &__form
+                display: flex
+                flex-direction: column
+                align-items: center
+            &__row
+                width: 100%
+                display: flex
+                flex-direction: column
+                +min-screen($screen-sm)
+                    flex-direction: row
+            &__input
+                +min-screen($screen-sm)
+                    flex: 0 1 50%
+                    &:not(:last-of-type)
+                        margin-right: rem(28px)
+            &__button
+                position: relative
+                &:before
+                    +b
+                    +size(rem(48px),100%)
+                    top: 0
+                    left: calc(100% + #{rem(20px)})
+                    background: url('../img/spinner.gif') no-repeat center
+                    opacity: 0
+                &._loading
+                    &:before
+                        opacity: 1
+                +max-screen($screen-xs)
+                    padding: 2px 24px 0
+        &-succes 
+            position: absolute
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            width: calc(100vw - #{rem(32px)})
+            max-width: 100vw
+            top: rem(30px)
+            right: -27px
+            padding: rem(59px) rem(35px) rem(26px) 
+            background: #FFF
+            text-align: center
+            font-size: rem(16px)
+            line-height: rem(51px)
+            text-transform: uppercase
+            color: #000
+            font-family: "Lato"
+            @extend .transition
+            pointer-events: none
+            opacity: 0
+            z-index: 1000
+            &._opened
+                opacity: 1
+                pointer-events: all
+            +min-screen($screen-xs)
+                padding: rem(59px) rem(33px) rem(26px) rem(33px) 
+            +min-screen($screen-sm)
+                width: rem(620px)
+                right: rem(5px)
+                padding: rem(37px) rem(34px) rem(40px) rem(34px) 
+            +min-screen($screen-md)
+                width: rem(710px)
+                min-height: rem(370px)
+                padding: rem(57px) rem(34px) rem(35px) rem(34px) 
+                font-size: rem(24px)
+                line-height: rem(59px)
+            &__close
+                position: absolute
+                +size(rem(32px))
+                top: rem(10px)
+                right: rem(10px)
+                display: flex
+                align-items: center
+                justify-content: center
+                cursor: pointer
+                .icon
+                    display: block
+            &__img
+                max-width: 25%
+                margin-bottom: rem(38px)
+                +min-screen($screen-md)
+                    max-width: rem(147px)
     &-row
         display: flex
         width: 100%
@@ -102,7 +211,7 @@
         flex-direction: column
         justify-content: space-between
         +min-screen($screen-sm)
-            width: max-content        
+            width: max-content
     &-bottom
         padding-top: 5px
         font-size: 8px

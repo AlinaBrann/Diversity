@@ -42,6 +42,11 @@
             </div>
             <div class="innovation-page-slider" data-slider="innovation" data-auto-show>
                 <div data-slider-slides>
+                     {% for video in item.videos %}
+                        <div class="innovation-page-slider__slide">
+                            <iframe width="100%" height="100%" src="{{ video }}" class="innovation-page-slider__img" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    {% endfor %}
                     {% for slide in item.slider %}
                         <div class="innovation-page-slider__slide">
                             <img src="media/img/innovation/{{ slide }}" class="innovation-page-slider__img" alt="">

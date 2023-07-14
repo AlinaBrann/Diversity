@@ -11,53 +11,75 @@
 
 <div class="contacts-page page" data-tabs>
     <div class="page__container container">
+        <h1 class="page__title" data-auto-show>Контакты</h1>
         <div class="contacts-page__row page__row">
-            <div class="page__col contacts-page__col">
-                <h1 class="page__title" data-auto-show>Контакты</h1>
-                {% for item in footerItems.slice(0,2) %}
-                        {% for blockItem in item.blocks %}
-                            {% if blockItem.hideOnContacts != true %}
-                            <div class="contacts-block{% if blockItem.hideOnMobile === true %} hidden-xs{% endif %} contacts-page-block" data-auto-show>
-                                {% if blockItem.icon %}
-                                    <img src="media/img/title-icons/{{ blockItem.icon}}" class="contacts-block__icon">
+        {% for item in footerItems.slice(0,2) %}
+            {% for blockItem in item.blocks %}
+                {% if blockItem.hideOnContacts != true %}
+                <div class="contacts-block{% if blockItem.hideOnMobile === true %} hidden-xs{% endif %} contacts-page-block" data-auto-show>
+                    {% if blockItem.icon %}
+                        <img src="media/img/title-icons/{{ blockItem.icon}}" class="contacts-block__icon">
+                    {% endif %}
+                    {% if blockItem.title %}
+                        <div class="contacts-block__title">{{ blockItem.title }}</div>
+                    {% endif %}
+                    {% if blockItem.text %}
+                        <div class="contacts-block__text">{{ blockItem.text }}</div>
+                    {% endif %}
+                    {% if blockItem.link and blockItem.linkOnMobile %}
+                        <div class="contacts-block__link-wrapper flex _jcsb">
+                    {% endif %}
+                            {% if blockItem.link and blockItem.link.hideOnContacts != true %}
+                                {% if blockItem.link.path %}
+                                    <a href="{{ blockItem.link.path }}" class="contacts-block__link{% if blockItem.link.underline === true %} _underline{% endif %}{% if blockItem.link.uppercase === true %} _uppercase{% endif %}">{{ blockItem.link.text }}</a>
+                                {% else %}
+                                    <div class="contacts-block__link{% if blockItem.link.underline === true %} _underline{% endif %}{% if blockItem.link.uppercase === true %} _uppercase{% endif %}" {% if blockItem.link.attr %} {{ blockItem.link.attr }}{% endif %} >{{ blockItem.link.text }}</div>
                                 {% endif %}
-                                {% if blockItem.title %}
-                                    <div class="contacts-block__title">{{ blockItem.title }}</div>
-                                {% endif %}
-                                {% if blockItem.text %}
-                                    <div class="contacts-block__text">{{ blockItem.text }}</div>
-                                {% endif %}
-                                {% if blockItem.link and blockItem.linkOnMobile %}
-                                    <div class="contacts-block__link-wrapper flex _jcsb">
-                                {% endif %}
-                                        {% if blockItem.link and blockItem.link.hideOnContacts != true %}
-                                            {% if blockItem.link.path %}
-                                                <a href="{{ blockItem.link.path }}" class="contacts-block__link{% if blockItem.link.underline === true %} _underline{% endif %}{% if blockItem.link.uppercase === true %} _uppercase{% endif %}">{{ blockItem.link.text }}</a>
-                                            {% else %}
-                                                <div class="contacts-block__link{% if blockItem.link.underline === true %} _underline{% endif %}{% if blockItem.link.uppercase === true %} _uppercase{% endif %}" {% if blockItem.link.attr %} {{ blockItem.link.attr }}{% endif %} >{{ blockItem.link.text }}</div>
-                                            {% endif %}
-                                        {% endif %}
-                                        {% if blockItem.linkOnMobile %}
-                                            {% if blockItem.linkOnMobile.path %}
-                                                <a href="{{ blockItem.linkOnMobile.path }}" class="contacts-block__link{% if blockItem.linkOnMobile.showOnMobile === true %} visible-xs{% endif %}{% if blockItem.linkOnMobile.underline === true %} _underline{% endif %}{% if blockItem.linkOnMobile.uppercase === true %} _uppercase{% endif %}">{{ blockItem.linkOnMobile.text }}</a>
-                                            {% else %}
-                                                <div class="contacts-block__link{% if blockItem.linkOnMobile.showOnMobile === true %} visible-xs{% endif %}{% if blockItem.linkOnMobile.underline === true %} _underline{% endif %}{% if blockItem.linkOnMobile.uppercase === true %} _uppercase{% endif %}" {% if blockItem.linkOnMobile.attr %} {{ blockItem.linkOnMobile.attr }}{% endif %} >{{ blockItem.linkOnMobile.text }}</div>
-                                            {% endif %}
-                                        {% endif %}
-                                {% if blockItem.link and blockItem.linkOnMobile %}
-                                    </div>
-                                {% endif %}
-                                
-                            </div>
                             {% endif %}
-                        {% endfor %}
-                {% endfor %}
-            </div>
-            <div class="page__col contacts-page__col hidden-xs" data-auto-show-right>
-                <img src="media/img/map.png" alt="">
+                            {% if blockItem.linkOnMobile %}
+                                {% if blockItem.linkOnMobile.path %}
+                                    <a href="{{ blockItem.linkOnMobile.path }}" class="contacts-block__link{% if blockItem.linkOnMobile.showOnMobile === true %} visible-xs{% endif %}{% if blockItem.linkOnMobile.underline === true %} _underline{% endif %}{% if blockItem.linkOnMobile.uppercase === true %} _uppercase{% endif %}">{{ blockItem.linkOnMobile.text }}</a>
+                                {% else %}
+                                    <div class="contacts-block__link{% if blockItem.linkOnMobile.showOnMobile === true %} visible-xs{% endif %}{% if blockItem.linkOnMobile.underline === true %} _underline{% endif %}{% if blockItem.linkOnMobile.uppercase === true %} _uppercase{% endif %}" {% if blockItem.linkOnMobile.attr %} {{ blockItem.linkOnMobile.attr }}{% endif %} >{{ blockItem.linkOnMobile.text }}</div>
+                                {% endif %}
+                            {% endif %}
+                    {% if blockItem.link and blockItem.linkOnMobile %}
+                        </div>
+                    {% endif %}
+
+                </div>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+        </div>
+    </div>
+    <div class="contacts-map" data-auto-show>
+        <!--<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1nSCgi3HvSUPFQK_l2ed8BjEogw99kPNY" width="100%" height="100%"></iframe>-->
+        <img
+            srcset="media/img/map.jpg 1000w, media/img/map-xs.jpg 300w"
+            sizes="(max-width: 475px) 150px,
+                    (max-width: 700px) 300px,
+                    1000px"
+            src="media/img/map.jpg"
+            class="contacts-map__img"
+            alt="">
+        <div class="contacts-map-address">
+            <img src="media/img/favicon.svg" class="contacts-map-address__logo" alt="">
+            <div class="contacts-map-address__text">
+                <span>{{ mainTitle }}</span>
+                {{ address }} <br>
+                <div class="contacts-map-address__trigger" data-popup-opener="map">Как пройти?</div>
             </div>
         </div>
     </div>
+    {{ button(tag = 'a', attr = "href='https://yandex.ru/maps/-/CCUiEAFYtD' target='_blank' data-auto-show", {
+        text: "построить маршрут в яндекс.картах",
+        class: "contacts-page__button hidden-xs"
+    })}}
+    {{ button(tag = 'a', attr = "href='https://yandex.ru/maps/-/CCUiEAFYtD' target='_blank' data-auto-show", {
+        text: "маршрут в яндекс.картах",
+        class: "contacts-page__button visible-xs"
+    })}}
 </div>
 
 {% include '../components/footer/_footer.nunj' %}

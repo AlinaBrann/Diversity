@@ -7,8 +7,11 @@
         font-size: rem(20px)
         line-height: rem(23.5px)
     &__icon
-        +size(rem(56px))
-        margin-bottom: rem(24px)
+        +size(25px)
+        margin-bottom: rem(14px)
+        +min-screen($screen-md)
+            +size(rem(56px))
+            margin-bottom: rem(24px)
     &__title
         font-family: "Lato"
         text-transform: uppercase

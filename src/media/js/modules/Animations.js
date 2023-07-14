@@ -76,18 +76,25 @@ function Animations() {
 			55
 		);
 	}
-	scrollSunTl.to('.video-section', {
-		scrollTrigger: {
-			trigger: '.video-section',
-			start: 'top+=30 center',
-			once: true,
-			toggleClass: {
-				targets: '.video-section',
-				className: '_active',
+
+	if (!localStorage.getItem('visit2')) {
+		scrollSunTl.to('.video-section', {
+			scrollTrigger: {
+				trigger: '.video-section',
+				start: 'top+=30 center',
+				once: true,
+				toggleClass: {
+					targets: '.video-section',
+					className: '_active',
+				},
+				markers: false,
 			},
-			markers: false,
-		},
-	});
+		});
+
+		localStorage.setItem('visit2', 1);
+	} else {
+		$('.video-section').addClass('_active2');
+	}
 
 	let headerTrigger = document.querySelectorAll('[data-header-trigger]');
 	headerTrigger.forEach(block => {
@@ -239,15 +246,14 @@ function Animations() {
 	}
 	ShowHelper2.start();
 
-	let lastScrollTop = 0;
+	let lastScrollTop = $('.intro').height();
 	dom.$window.on('scroll', function() {
 		let scrollTop = $(this).scrollTop();
-		if (scrollTop > lastScrollTop) {
+		if (scrollTop >= lastScrollTop) {
 			$('.header').addClass('_onscroll');
 		} else {
 			$('.header').removeClass('_onscroll');
 		}
-		lastScrollTop = scrollTop;
 	});
 }
 

@@ -10,11 +10,18 @@
 				</h2>
 			</div>
             <div class="innovation-slider-wrapper">
+                <div class="video-section-squares__square innovation_square1"><span></span></div>
+                <div class="video-section-squares__square innovation_square2"><span></span></div>
                 <div data-slider="innovation">
                     <div class="innovation-slider" data-slider-slides>
                         {% for item in innovation.items %}
                             <div class="innovation-slider__slide">
-                                <img src="media/img/innovation/{{ item.img }}" class="innovation-slider__img" alt="">
+                                <a class="innovation-slider__link" href="/innovation.html?tab={{ item.slug }}">
+                                    <img src="media/img/innovation/{{ item.img }}" class="innovation-slider__img" alt="">
+                                    {% if item.logo %}
+                                        <img src="media/img/innovation/{{ item.logo }}" class="innovation-slider__logo" alt="">
+                                    {% endif %}
+                                </a>
                                 <div class="innovation-slider__info">
                                     {% set link = 'href="/innovation.html?tab=' + item.slug  + '"'%}
                                     {{ button(tag = 'a', attr = link,  {

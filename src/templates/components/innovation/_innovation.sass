@@ -32,10 +32,18 @@
             position: relative
             width: 100%
             margin-top: 40px
+            .video-section-squares__square 
+                width: 80px
+                height: 80px
+                position: absolute
+                z-index: 99
+                left: 0
+                top: 0
+                transition: none
             +min-screen($screen-sm)
                 margin-top: 0
             +min-screen($screen-md)
-                width: 63%
+                width: 64%
                 margin-top: 0
         .slick
             &-list
@@ -59,21 +67,25 @@
                 width: calc(100vw - (#{rem(130px)} - #{ $leftIndentSM}) * 2)
             +min-screen($screen-md)
                 +size(rem(600px), 100%)
+
+            .slick-center &
+                &:before
+                    opacity: 1
+
+        &__link
             &:before
                 +b
                 top: 0
                 left: 0
                 +size(100%)
-                background: url('../img/innovation/squares.svg') no-repeat 
+                background: url('../img/innovation/squares.svg') no-repeat
                 background-size: contain
                 @extend .transition
                 opacity: 0
                 z-index: 1
                 +min-screen($screen-sm)
                     +size(rem(600px), 100%)
-            .slick-center &
-                &:before
-                    opacity: 1
+
         &__img
             +size(100%)
             object-fit: cover
@@ -82,9 +94,18 @@
             +min-screen($screen-sm)
                 width: calc(100vw - (#{rem(130px)} - #{ $leftIndentSM}) * 2)
             +min-screen($screen-md)
-                +size(100%, rem(815px))
+                +size(100%, rem(757px))
             .slick-center &
                 transform: scale(1)
+        &__logo 
+            position: absolute
+            top: rem(50px)
+            left: rem(30px)
+            max-height: rem(97px)
+            @extend .transition
+            opacity: 0
+            .slick-center &
+                opacity: 1
         &__info
             position: relative
             display: flex 

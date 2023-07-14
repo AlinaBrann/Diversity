@@ -1,4 +1,5 @@
 {% from "../icon/_icon.nunj" import icon %}
+{% from "../button/_button.nunj" import button %}
 
 <footer class="footer animated-section" id="contacts" data-header-trigger>
     <div class="footer-content">
@@ -14,6 +15,43 @@
                 <div class="footer-request animated-block">
                     <div class="footer-request__triangle"></div>
                     <div class="footer-request__text">{{ footerRequest }}</div>
+                    <div class="footer-request-popup">
+                        <form class="footer-request-popup__form">
+                            <div class="footer-request-popup__inner">
+                                <div class="footer-request-popup__row">
+                                    <div class="input-wrapper input-accepted footer-request-popup__input">
+                                        <input type="text" placeholder="Имя" name="name" class="input">
+                                    </div>
+                                    <div class="input-wrapper footer-request-popup__input">
+                                        <input type="mail" name="email" placeholder="E-mail" class="input">
+                                    </div>
+                                </div>
+                                <div class="input-wrapper input-error _full-width">
+                                    <textarea placeholder="Cообщение" name="message" class="input"></textarea>
+                                </div>
+                                <div class="checkbox _full-width">
+                                    <input type="checkbox" id="rules" class="checkbox__input" name="rules">
+                                    <label for="rules" class="checkbox__label">Принимаю условия <a href="">Пользовательского соглашения</a></label>
+                                </div>
+                                {{ button({
+                                    type: "submit",
+                                    text: "отправить сообщение",
+                                    class: "footer-request-popup__button"
+                                })}}
+                            </div>
+                        </form>
+                    </div>
+                    <div class="footer-request-succes">
+                        <div class="footer-request-succes__close">
+                            {{ icon({
+                                name: "close",
+                                width: "14",
+                                height: "14"
+                            })}}
+                        </div>
+                        <img src="media/img/form-succes.png" class="footer-request-succes__img" alt="">
+                        <div class="footer-request-succes__text">Спасибо за&nbsp;ваш запрос! <br>С&nbsp;вами свяжутся в&nbsp;ближайшее время!</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -33,7 +71,7 @@
                             {% endif %}
                                     {% if blockItem.link %}
                                         {% if blockItem.link.path %}
-                                            <a href="{{ blockItem.link.path }}" class="contacts-block__link{% if blockItem.link.underline === true %} _underline{% endif %}{% if blockItem.link.uppercase === true %} _uppercase{% endif %}">{{ blockItem.link.text }}</a>
+                                            <a href="{{ blockItem.link.path }}" class="contacts-block__link{% if blockItem.link.underline === true %} _underline{% endif %}{% if blockItem.link.uppercase === true %} _uppercase{% endif %}" {% if blockItem.link.newTab === true %} target="_blank"{% endif %}>{{ blockItem.link.text }}</a>
                                         {% else %}
                                             <div class="contacts-block__link{% if blockItem.link.underline === true %} _underline{% endif %}{% if blockItem.link.uppercase === true %} _uppercase{% endif %}" {% if blockItem.link.attr %} {{ blockItem.link.attr }}{% endif %} >{{ blockItem.link.text }}</div>
                                         {% endif %}
@@ -52,14 +90,7 @@
                                 <ul class="contacts-block-social">
                                     {% for item in blockItem.social %}
                                         <li class="contacts-block-social__item">
-                                            <a href="{{ item.link }}">
-                                                {{ icon({
-                                                    name: item.icon,
-                                                    width: "26",
-                                                    height: "26",
-                                                    fill: "#FFF"
-                                                })}}
-                                            </a>
+
                                         </li>
                                     {% endfor%}
                                 </ul>

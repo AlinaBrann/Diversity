@@ -21,7 +21,7 @@
 	$parent-selector: &
 	position: relative
 	width: 95%
-	margin: 20vh 0
+	margin: 0 auto
 	background: #f7f6f6
 	box-shadow: 0px 4px 8px 11px rgba(0, 0, 0, 0.1)
 
@@ -44,11 +44,11 @@
 			right: rem(50px)
 			top: rem(46px)
 	&__container
-        padding: rem(58px) $leftIndentXS rem(45px)
-        +min-screen($screen-sm)
-            padding: rem(88px) $leftIndentSM rem(75px)
-        +min-screen($screen-md)
-            padding: rem(88px) $leftIndent rem(75px)
+		padding: rem(58px) $leftIndentXS rem(45px)
+		+min-screen($screen-sm)
+				padding: rem(88px) $leftIndentSM rem(75px)
+		+min-screen($screen-md)
+				padding: rem(88px) $leftIndent rem(75px)
 	&__title
 		margin-bottom: rem(20px)
 		font-size: 20px
@@ -78,9 +78,18 @@
 			height: rem(413px)
 		+min-screen($screen-md)
 			height: rem(613px)
+		+max-screen($screen-sm)
+			height: 337px
 		&__img
 			+size(100%)
 			object-fit: cover
+			&-m
+					display: none
+			+max-screen($screen-sm)
+				display: none
+				&-m
+					display: inline-block
+					width: 100%
 		&-address
 			position: absolute
 			display: flex
@@ -89,6 +98,10 @@
 			bottom: rem(43px)
 			padding: 0 rem(9px) rem(8px)
 			background: #FFF
+			+min-screen($screen-md)
+				display: none
+			+max-screen($screen-sm)
+				bottom: rem(-10px)
 			&__logo
 				+size(rem(30px))
 				margin-top: rem(-10px)

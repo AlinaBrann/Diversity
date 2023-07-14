@@ -1,5 +1,5 @@
 .header
-	position: fixed
+	position: absolute
 	top: 0
 	left: 0
 	width: 100%
@@ -27,6 +27,11 @@
 			display: block
 			._white &
 				display: none
+	&-fixed-menu
+		position: fixed
+		top: 2rem
+		right: 2rem
+
 	&-menu
 		position: fixed
 		top: 0
@@ -145,8 +150,10 @@
 				font-size: rem(18px)
 			+max-screen($screen-sm)
 				transform: translateX(0%)
-				._onscroll &
-					transform: translateX(130%)
+				display: none
+				
+			._onscroll &
+				transform: translateX(200px)
 			._white &
 				color: #FFF
 				&:before

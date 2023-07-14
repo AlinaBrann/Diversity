@@ -1,17 +1,76 @@
-.contacts-page
-    &__row
+.contacts
+    &-page
+        position: relative
+        display: flex
         flex-direction: column
-        +min-screen($screen-sm)
-            flex-direction: row
-    &__col
-        +min-screen($screen-sm)
-            flex: 0 0 50%
-    &-block
-        &:not(:first-of-type)
-            .contacts-block__title
-                text-transform: none
-    
-    .contacts-block__link
-        &:hover
-            color: $font_color
-            border-color: transparent
+        &__row
+            flex-direction: column
+            +min-screen($screen-sm)
+                flex-direction: row
+                flex-wrap: wrap
+                align-items: flex-end
+                justify-content: space-between
+        
+        &-block
+            margin-bottom: rem(27px)
+            +min-screen($screen-sm)
+                margin-bottom: rem(77px)
+                &.hidden-xs
+                    display: none
+            &:first-of-type
+                flex: 100%
+                
+            &:not(:first-of-type)
+                flex: 0 0 25%
+                .contacts-block__title
+                    text-transform: none
+        
+        .contacts-block__link
+            &:hover
+                color: $font_color
+                border-color: transparent
+        &__button 
+            margin: rem(32px) auto rem(124px)
+            +min-screen($screen-sm)
+                display: inline-block
+                margin: rem(52px) auto rem(124px)
+    &-map
+        position: relative
+        &__img
+            width: 100%
+            display: none
+            +min-screen($screen-sm)
+                display: block
+        &-address
+            position: absolute
+            display: flex
+            max-width: rem(260px)
+            left: 42%
+            bottom: 8%
+            padding: 0 rem(9px) rem(15px)
+            background: #FFF
+            +max-screen($screen-sm)
+                display: none
+                bottom: rem(-10px)
+            &__logo
+                +size(rem(30px))
+                margin-top: rem(-10px)
+                margin-right: rem(15px)
+            &__text
+                font-size: rem(12px)
+                span
+                    display: block
+                    font-family: "Lato"
+                    text-transform: uppercase
+                    font-size: rem(14px)
+                    line-height: rem(23.5px)
+            &__trigger
+                display: inline-block
+                margin-top: rem(10px)
+                font-family: "Lato-Thin"
+                border-bottom: 1px solid currentColor
+                text-transform: uppercase
+                @extend .transition
+                cursor: pointer
+                &:hover
+                    border-color: transparent

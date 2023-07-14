@@ -46,7 +46,6 @@
 		"gulp-rename": "^1.4.0",
 		"gulp-replace": "^1.0.0",
 		"gulp-rimraf": "^0.2.2",
-		"gulp-sass": "^4.0.2",
 		"gulp-sourcemaps": "^2.6.4",
 		"gulp-svgmin": "^2.2.0",
 		"gulp-svgstore": "^7.0.0",
@@ -56,6 +55,7 @@
 		"imagemin-pngquant": "^6.0.0",
 		"jquery": "^3.4.1",
 		"jquery-textfill": "^0.6.0",
+		"jquery-validation": "^1.19.5",
 		"json-loader": "^0.5.7",
 		"md5-file": "^4.0.0",
 		"node-notifier": "^5.2.1",
@@ -63,6 +63,7 @@
 		"postcss-sprites": "^4.2.1",
 		"prettier": "^1.18.2",
 		"raw-loader": "^0.5.1",
+		"sass": "^1.59.3",
 		"slick-carousel": "^1.8.1",
 		"static-eval": "^2.0.2",
 		"textfilljs": "^1.0.3-a",
@@ -73,6 +74,7 @@
 		"yargs": "^3.32.0"
 	},
 	"devDependencies": {
+		"gulp-sass": "^5.1.0",
 		"husky": "^1.2.0",
 		"pretty-quick": "^1.11.0"
 	}
